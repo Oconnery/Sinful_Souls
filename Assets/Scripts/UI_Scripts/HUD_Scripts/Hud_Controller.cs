@@ -6,6 +6,7 @@ public class Hud_Controller : MonoBehaviour {
 
     public GameObject statsPanel;
     public GameObject researchTree;
+    public GameObject researchTreeBackground;
     public GameObject countryPanel;
     public GameObject eventsPanel;
 
@@ -17,15 +18,18 @@ public class Hud_Controller : MonoBehaviour {
         statsPanel.SetActive(false);
     }
 
-    public void openResearchTree() {
-        researchTree.SetActive(true);
-    }
 
     public void SetCountryPanelInactive(){
         countryPanel.SetActive(false);
     }
 
-    public void SetResearchTreePanelInactive(){
+    public void openResearchTree(){
+        researchTreeBackground.SetActive(true);
+        researchTree.SetActive(true);
+    }
+
+    public void closeResearchTree(){
+        researchTreeBackground.SetActive(false);
         researchTree.SetActive(false);
     }
 

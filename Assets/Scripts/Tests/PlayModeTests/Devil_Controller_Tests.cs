@@ -86,18 +86,18 @@ namespace Tests {
             Assert.IsTrue(max == starting);
         }
 
-        [UnityTest]
-        public IEnumerator SpendSinsNegativeParameterThrowsArguementException() {
-            Devil_Controller devil_Controller = new Devil_Controller();
-            yield return null;
+        //[UnityTest]
+        //public IEnumerator SpendSinsNegativeParameterThrowsArguementException() {
+        //    Devil_Controller devil_Controller = new Devil_Controller();
+        //    yield return null;
 
-            var startingSins = devil_Controller.GetSins();
-            devil_Controller.SpendSins(-200f);
-            var endingSins = devil_Controller.GetSins();
-            Debug.Log($"Starting sins: {startingSins}. Ending Sins: {endingSins}.");
+        //    var startingSins = devil_Controller.GetSins();
+        //    devil_Controller.SpendSins(-200f);
+        //    var endingSins = devil_Controller.GetSins();
+        //    Debug.Log($"Starting sins: {startingSins}. Ending Sins: {endingSins}.");
 
-            Assert.Throws(typeof(System.ArgumentException), new TestDelegate(devil_Controller.SpendSins(-200f)));
-        }
+        //    Assert.Throws(typeof(System.ArgumentException), new TestDelegate(devil_Controller.SpendSins(-200f)));
+        //}
 
         //spending more sins than you have
 

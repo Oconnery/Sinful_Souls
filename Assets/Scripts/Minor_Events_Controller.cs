@@ -102,7 +102,7 @@ public class Minor_Events_Controller : MonoBehaviour {
     /// </summary>
     public void ChanceToCallRandomMinorEvent() {
         //will probably need mutual exlucsion lock/sempahore so that only one event can run at a time. if I have major events etc.
-        if (Random.value > .90f) { //1/10 days mean avg it should do a minor event
+        if (Random.value > .95f) { //1/20 days mean avg it should do a minor event
             ExecuteRandomMinorEvent();
         }
     }
@@ -141,13 +141,13 @@ public class Minor_Events_Controller : MonoBehaviour {
     /// <param name="country">The country object of region_controller.</param>
     /// <param name="countryObj">The string name of the country.</param>
     public void RandomWar(Region_Controller country, string countryObj) {
-        float killNeutralNumberF = Random.Range(100.0f, 100000.0f);
+        float killNeutralNumberF = Random.Range(1000.0f, 300000.0f);
         long killNeutralNumber = (long)killNeutralNumberF;
 
-        float killEvilNumberF = Random.Range(100f, 100000.0f);
+        float killEvilNumberF = Random.Range(1000f, 300000.0f);
         long killEvilNumber = (long)killEvilNumberF;
 
-        float killGoodNumberF = Random.Range(100f, 100000.0f);
+        float killGoodNumberF = Random.Range(1000f, 300000.0f);
         long killGoodNumber = (long)killGoodNumberF;
 
         KillPeople(Alignment.good, killGoodNumber, country);

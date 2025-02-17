@@ -1,0 +1,28 @@
+fileFormatVersion: 2
+guid: fd26e262813ed074cab07b3924947aec
+timeCreated: 1438038854
+licenseType: Store
+AudioImporter:
+  serializedVersion: 6
+  defaultSettings:
+    loadType: 0
+    sampleRateSetting: 0
+    sampleRateOverride: 0
+    compressionFormat: 1
+    quality: 1
+    conversionMode: 0
+  platformSettingOverrides: {}
+  forceToMono: 0
+  preloadAudioData: 1
+  loadInBackground: 0
+  3D: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 42583
+  packageName: Angels & Demons FREE
+  packageVersion: 1.1
+  assetPath: Assets/Angels and Demons (free)/Demons/Devil's caravan (extract).mp3
+  uploadId: 94993

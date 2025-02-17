@@ -11,9 +11,10 @@ public class Devil_Controller : MonoBehaviour {
     public double _sinEfficency;
 
     // Resources.
-    private double _skulls;
+    private long _skulls;
     private double _sins;
 
+    private double _skullsMultiplier;
     private double _sinsMultiplier;
 
     private long _totalEvilPopulationToday;
@@ -30,6 +31,8 @@ public class Devil_Controller : MonoBehaviour {
     public int _maxDeployableDemons;
     public int _maxDeployableBanshees;
 
+    public AudioSource buyDemonAudio;
+
     public World_Controller world_Controller;
     //private Resource _skulls;
     //private Resource _sins;
@@ -37,7 +40,7 @@ public class Devil_Controller : MonoBehaviour {
     #endregion
 
     void Start() {
-        _skulls = 0.0;
+        _skulls = 0;
         _sins = 0.0;
 
         _sinEfficency = 100.0;
@@ -52,12 +55,13 @@ public class Devil_Controller : MonoBehaviour {
         _maxDeployableBanshees = _startingAvailableBanshees;
 
         _sinsMultiplier = 0.00000000005;
+        _skullsMultiplier = 0.1948;
 
-        world_Controller = this.gameObject.GetComponent<World_Controller>();
+    world_Controller = this.gameObject.GetComponent<World_Controller>();
     }
 
     #region Get Statements
-    public double GetSkulls() {
+    public long GetSkulls() {
         return _skulls;
     }
 
@@ -108,10 +112,12 @@ public class Devil_Controller : MonoBehaviour {
     /// Buy a demon by spending the skulls resource.
     /// </summary>
     public void BuyDemon() {
-        if(_skulls >= 100.0) {
-            _skulls -= 100.0;
+        if(_skulls >= 100) {
+            _skulls -= 100;
             _maxDeployableDemons++;
             _availableDemons++;
+
+            buyDemonAudio.Play();
         }
     }
 
@@ -153,6 +159,7 @@ public class Devil_Controller : MonoBehaviour {
         for(int i = 0; i < (world_Controller.region_Controller.Length); i++) {
             _totalEvilDiedToday += world_Controller.region_Controller[i].GetEvilDied();
         }
+        Debug.Log("Todays evil deaths are: " + _totalEvilDiedToday);
     }
 
     /// <summary>
@@ -166,7 +173,7 @@ public class Devil_Controller : MonoBehaviour {
     /// Updates the skulls available to the devil faction based off the number of evil people that died today.
     /// </summary>
     public void UpdateSkulls() {
-        _skulls += (_totalEvilDiedToday / 100);
+        _skulls += (long) ((double) _totalEvilDiedToday / 100.0 * _skullsMultiplier);
     }
 
     /// <summary>
@@ -180,7 +187,7 @@ public class Devil_Controller : MonoBehaviour {
     }
 
     /// <summary>
-    /// Sets the global death count to zero.
+    /// Sets the global daily death count to zero.
     /// </summary>
     public void ResetTotalEvilDiedToday() {
         _totalEvilDiedToday = 0;

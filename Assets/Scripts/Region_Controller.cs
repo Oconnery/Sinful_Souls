@@ -1,8 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Region_Controller : MonoBehaviour {
+    // TODO: This enum should be elsewhere?
+    public enum Assignment{
+        GOOD,
+        NEUTRAL,
+        EVIL
+    };
 
     //statistics for the region
     //population
@@ -13,6 +20,10 @@ public class Region_Controller : MonoBehaviour {
 
     public long evilDiedToday; //should always be positive
     public long goodDiedToday;
+
+    // Todo: actually give real world birth/death rate data. // TODO: Below should be private with getters/setters and should be set in world controller or similar.
+    public double birthRate;
+    public double deathRate;
 
     // Rates at which people in the region sin/pray.
     // Neutral
@@ -33,7 +44,7 @@ public class Region_Controller : MonoBehaviour {
     private short localInquisitors;
 
     // The strength of a banshee/inquisitor in this region.
-    // Hasn't been added into code yet.
+    // Don't know if I will keep this
     private float inquisitorStength;
     private float bansheeStrength;
 
@@ -90,17 +101,17 @@ public class Region_Controller : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        sinRateN = 1.0f;
-        sinRateE = 1.0f;
-        prayerRateN = 1.0f;
-        prayerRateG = 1.0f;
+        sinRateN = 0.25f;
+        sinRateE = 0.25f;
+        prayerRateN = 0.25f;
+        prayerRateG = 0.25f;
 
         evilConversionRate = 1.0f;
         goodConversionRate = 1.0f;
 
-        evilPop = (population / 10); //10%
-        goodPop = (population / 10); //10%
-        neutralPop = (population / 10 * 8); //80%
+        evilPop = (population / 10L); //10%
+        goodPop = (population / 10L); //10%
+        neutralPop = (population / 10L * 8L); //80%
 
         goodClrMax = new Color(0.0f, (155f / 255f), 0.0f);
         evilClrMax = new Color((155f / 255f), 0.0f, 0.0f);
@@ -146,8 +157,12 @@ public class Region_Controller : MonoBehaviour {
         return localDemons;
     }
 
-    public short GetLocalAngels() {
+    public short GetLocalAngels(){
         return localAngels;
+    }
+
+    public void IncrementLocalAngels(){
+        localAngels++;
     }
 
     public short GetLocalBanshees() {
@@ -210,6 +225,7 @@ public class Region_Controller : MonoBehaviour {
     /// </summary>
     /// <returns></returns>
     public void CallDaily(){
+        UpdateDailyPopulationChange();
         UpdatePopEvil();
         UpdatePopGood();
         ChangeColour();
@@ -287,7 +303,7 @@ public class Region_Controller : MonoBehaviour {
     }
 
     /// <summary>
-    /// Updates the local good population based off of the number of angels and banshees in the lcoal area.
+    /// Updates the local good population based off of the number of angels and banshees in the local area.
     /// </summary>
     void UpdatePopGood(){
         for (int i = 0; i < localBanshees; i++){
@@ -334,4 +350,35 @@ public class Region_Controller : MonoBehaviour {
         }
     }
 
+    void UpdateDailyPopulationChange(){
+        long goodPopChange = CalculatePopulationChange(goodPop);
+        goodPop += goodPopChange;
+        if (goodPopChange > 0){
+            goodDiedToday += goodPopChange;
+        }
+        
+        neutralPop += CalculatePopulationChange(neutralPop);
+
+        long evilPopChange = CalculatePopulationChange(evilPop);
+        evilPop += evilPopChange;
+
+        // -1 if number is negative
+        int evilSign = Math.Sign(evilPopChange);
+        if (evilSign == -1){
+            // essentially just adds the evilPopChange(positive number version) to evilDiedToday the evilPopChange negative.
+            evilDiedToday -= evilPopChange;
+        }
+    }
+
+    long CalculatePopulationChange(double concernedPopulation){
+        double dBirths = concernedPopulation * birthRate;
+        long births = (long) dBirths;
+
+        double dDeaths = concernedPopulation * deathRate;
+        long deaths = (long) dDeaths;
+
+        long populationChange = births - deaths;
+
+        return populationChange;
+    }
 }

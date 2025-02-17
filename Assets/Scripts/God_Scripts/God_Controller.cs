@@ -11,10 +11,13 @@ public class God_Controller : MonoBehaviour {
     public double _prayerEfficency;
 
     // Resources
-    private long _prayers;
     private long _souls;
+    private long _prayers;
 
     private double _prayersMultiplier;
+
+    public int _startingAvailableAngels;
+    public int _startingAvailableInquisitors;
 
     private long _totalGoodPopulationToday;
     private long _totalGoodDeathCountToday;
@@ -24,9 +27,6 @@ public class God_Controller : MonoBehaviour {
 
     public int _maxDeployableAngels;
     public int _maxDeployableInquisitors;
-
-    public int _startingAvailableAngels;
-    public int _startingAvailableInquisitors;
 
     public World_Controller world_Controller;
 
@@ -124,7 +124,7 @@ public class God_Controller : MonoBehaviour {
         UpdateGoodDeathCountGlobal();
 
         // Update the count of people in hell.
-        world_Controller.hellDeathCount += _totalGoodDeathCountToday;
+        world_Controller.heavenDeathCount += _totalGoodDeathCountToday;
 
         // Update the resources based on the new statistics.
         UpdatePrayers();
@@ -179,7 +179,7 @@ public class God_Controller : MonoBehaviour {
     }
 
     /// <summary>
-    /// Sets the good global death count to zero
+    /// Sets the good global daily death count to zero
     /// </summary>
     public void ResetGoodDailyDeathCountGlobal(){
         _totalGoodDeathCountToday = 0;

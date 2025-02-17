@@ -16,10 +16,6 @@ public class World_Controller : MonoBehaviour {
     private short _month;
     private short _year;
     
-    public short _startingDay;
-    public short _startingMonth;
-    public short _startingYear;
-
     // The number of days in each month
     // A data structure called dateTimer?
     // Make a daily caller class?
@@ -38,7 +34,7 @@ public class World_Controller : MonoBehaviour {
     public Text skullsSoulsText;
     public Text sinsPrayersText;
     public Text sinEfficencyText;
-    public Text newsFlashText;
+    //public Text newsFlashText;
     public Text currentDateText;
     public Text hellCountText;
     public Text heavenCountText;
@@ -48,16 +44,19 @@ public class World_Controller : MonoBehaviour {
 
     // Get a reference to all of the continent controllers.
 
+    private AI_Controller ai_Controller;
+
     void Start () {
         // Find devil and god controllers.
         devil_Controller = this.gameObject.GetComponent<Devil_Controller>();
         god_Controller = this.gameObject.GetComponent<God_Controller>();
-        
-        _day = _startingDay;
-        _month = _startingMonth;
-        _year = _startingYear;
-        
 
+        ai_Controller = this.gameObject.GetComponent<AI_Controller>();
+
+        _day = (short) DateTime.Now.Day;
+        _month = (short)DateTime.Now.Month;
+        _year = (short)DateTime.Now.Year;
+        
         // Don't bother with leap year.
         _daysInMonth = new short[12] {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
         _timer = 0.0f;
@@ -115,6 +114,7 @@ public class World_Controller : MonoBehaviour {
                 // Call the methods to set resources.
                 devil_Controller.DailyShout();
                 god_Controller.DailyShout();
+                ai_Controller.AIDailyActions();
 
                 // Possibility of a random minor event.
                 this.GetComponent<Minor_Events_Controller>().ChanceToCallRandomMinorEvent();
@@ -185,8 +185,6 @@ public class World_Controller : MonoBehaviour {
         sinEfficencyText.text = "100%";
         //newsFlashText.text = "NOTHING HAPPENED TODAY!";
         currentDateText.text = "0" + _day + "/0" + _month + "/" + _year;
-        hellCountText.text = "Hell: 00k";
-        heavenCountText.text = "Heaven: 00k";
 
         if (devil_Controller.isPlayerControlled){
             // Initalizes the text values displayed on the main hud in the devil played scene.
