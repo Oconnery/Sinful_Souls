@@ -12,6 +12,7 @@ public class World_Controller : MonoBehaviour {
     public Region_Controller[] region_Controller = new Region_Controller[numberOfCountries];
 
     private const float DAY_LENGTH = 3.0f;
+    private float daytimerMultiplier = 1.0f; // at 2.0f, this represents a double increase in speed. i.e. a 10 second day would now be a 5 second day, since the timer moves faster.
     private short _day;
     private short _month;
     private short _year;
@@ -78,9 +79,10 @@ public class World_Controller : MonoBehaviour {
     }
 
     // Update is called once per frame -- fixed == xseconds .. 0.02seconds is the default .. can change with Time.fixedDeltaTime
+    // TODO: Is it better to update the time based on update() or fixedUpdate()?
     private void FixedUpdate(){
         if (!_isTimePaused){
-            _timer += Time.deltaTime;
+            _timer += Time.deltaTime * daytimerMultiplier;
 
             //update demon banshees text available every frame -- better to only do this whenever player clicks
             SetBaseUnitCountText();// only after clicking reaserch tree banshee ++ or when an event adds a banshee
@@ -95,9 +97,6 @@ public class World_Controller : MonoBehaviour {
             }
 
             if (_timer >= DAY_LENGTH){
-                if (_timer > (DAY_LENGTH+0.02f)){
-                    throw new System.Exception($"The timer ({_timer})has exceeded the length of the day add allowance for minimal allowance ({DAY_LENGTH})");
-                }
                 // A day has passed.
                 _day++;
                 Debug.Log("A day has passed.");
@@ -158,6 +157,8 @@ public class World_Controller : MonoBehaviour {
     /// Pauses the game.
     /// </summary>
     public void Pause(){
+        daytimerMultiplier = 1.0f;
+
         if (_isTimePaused)
         {
             throw new System.Exception("Pause was called whenever the game is already paused");
@@ -169,11 +170,24 @@ public class World_Controller : MonoBehaviour {
     /// Unpauses the game.
     /// </summary>
     public void UnPause(){
+        daytimerMultiplier = 1.0f;
+
         if (!_isTimePaused)
         {
             throw new System.Exception("Unpause was called whenever the game is already unpaused");
         }
         _isTimePaused = false;
+    }
+
+    // TODO: 
+    public void FastForward(){
+        // Increase game speed.
+        if (daytimerMultiplier < 16.0f)
+            daytimerMultiplier *= 2.0f;
+
+        // If the game is paused, unpause.
+        if (_isTimePaused)
+            _isTimePaused = false;
     }
 
     /// <summary>
@@ -228,6 +242,9 @@ public class World_Controller : MonoBehaviour {
     }
 
     private void SetSkullsSoulsText(){
+    // Todo: instead of ifs like the below, I should do playerControllerFaction.IsPlayerControlled() or 
+    // similar. 
+
         //Need to round like the sins
         if(devil_Controller.isPlayerControlled){
             skullsSoulsText.text = devil_Controller.GetSkulls().ToString();

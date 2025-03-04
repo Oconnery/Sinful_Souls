@@ -9,11 +9,11 @@ C:\Program Files\Unity\Hub\Editor\6000.0.35f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker1
+AssetImportWorker25
 -projectPath
 C:/Users/Oisin/Documents/GitHub/Sinful_Souls
 -logFile
-Logs/AssetImportWorker1.log
+Logs/AssetImportWorker25.log
 -srvPort
 55850
 -job-worker-count
@@ -59,12 +59,12 @@ C:/Users/Oisin/Documents/GitHub/Sinful_Souls
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [40388]  Target information:
+Player connection [42260]  Target information:
 
-Player connection [40388]  * "[IP] 192.168.1.96 [Port] 0 [Flags] 2 [Guid] 1832742720 [EditorId] 1832742720 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-JH2I4FT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [42260]  * "[IP] 192.168.1.96 [Port] 0 [Flags] 2 [Guid] 1711335486 [EditorId] 1711335486 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-JH2I4FT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [40388] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [40388] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [42260] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [42260] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 15
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,7 +76,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.15 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.35f1 (9a3bc604008a)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/Resources/UnitySubsystems
@@ -92,45 +92,45 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56692
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56012
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002700 seconds.
-- Loaded All Assemblies, in  0.238 seconds
+Registered in 0.004394 seconds.
+- Loaded All Assemblies, in  0.279 seconds
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.196 seconds
-Domain Reload Profiling: 433ms
-	BeginReloadAssembly (82ms)
+- Finished resetting the current domain, in  0.251 seconds
+Domain Reload Profiling: 528ms
+	BeginReloadAssembly (98ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (0ms)
-	RebuildCommonClasses (21ms)
+	RebuildCommonClasses (22ms)
 	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (32ms)
-	LoadAllAssembliesAndSetupDomain (94ms)
-		LoadAssemblies (80ms)
+	initialDomainReloadingComplete (41ms)
+	LoadAllAssembliesAndSetupDomain (108ms)
+		LoadAssemblies (96ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (92ms)
-			TypeCache.Refresh (91ms)
-				TypeCache.ScanAssembly (83ms)
+		AnalyzeDomain (106ms)
+			TypeCache.Refresh (105ms)
+				TypeCache.ScanAssembly (93ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (197ms)
+	FinalizeReload (251ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (178ms)
+		SetupLoadedEditorAssemblies (229ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (39ms)
-			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (26ms)
-			ProcessInitializeOnLoadAttributes (82ms)
-			ProcessInitializeOnLoadMethodAttributes (28ms)
+			InitializePlatformSupportModulesInManaged (40ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (38ms)
+			ProcessInitializeOnLoadAttributes (111ms)
+			ProcessInitializeOnLoadMethodAttributes (36ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -139,8 +139,8 @@ Domain Reload Profiling: 433ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.273 seconds
-Refreshing native plugins compatible for Editor in 0.11 ms, found 0 plugins.
+- Loaded All Assemblies, in  0.357 seconds
+Refreshing native plugins compatible for Editor in 0.09 ms, found 0 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for WebGL target not found
 Package Manager log level set to [2]
@@ -148,110 +148,102 @@ Package Manager log level set to [2]
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.200 seconds
-Domain Reload Profiling: 471ms
-	BeginReloadAssembly (106ms)
+- Finished resetting the current domain, in  0.226 seconds
+Domain Reload Profiling: 580ms
+	BeginReloadAssembly (151ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (3ms)
+		DisableScriptedObjects (4ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (24ms)
-	RebuildCommonClasses (24ms)
+		CreateAndSetChildDomain (33ms)
+	RebuildCommonClasses (25ms)
 	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (15ms)
-	LoadAllAssembliesAndSetupDomain (117ms)
-		LoadAssemblies (146ms)
+	initialDomainReloadingComplete (17ms)
+	LoadAllAssembliesAndSetupDomain (153ms)
+		LoadAssemblies (201ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (32ms)
-			TypeCache.Refresh (22ms)
-				TypeCache.ScanAssembly (16ms)
-			BuildScriptInfoCaches (7ms)
+		AnalyzeDomain (42ms)
+			TypeCache.Refresh (31ms)
+				TypeCache.ScanAssembly (22ms)
+			BuildScriptInfoCaches (8ms)
 			ResolveRequiredComponents (2ms)
-	FinalizeReload (200ms)
+	FinalizeReload (226ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (144ms)
+		SetupLoadedEditorAssemblies (167ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (8ms)
+			InitializePlatformSupportModulesInManaged (13ms)
 			SetLoadedEditorAssemblies (2ms)
-			BeforeProcessingInitializeOnLoad (39ms)
-			ProcessInitializeOnLoadAttributes (77ms)
-			ProcessInitializeOnLoadMethodAttributes (13ms)
+			BeforeProcessingInitializeOnLoad (46ms)
+			ProcessInitializeOnLoadAttributes (88ms)
+			ProcessInitializeOnLoadMethodAttributes (14ms)
 			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (3ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 0.13 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.28 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 62 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 1541 unused Assets / (0.5 MB). Loaded Objects now: 2112.
-Memory consumption went from 101.5 MB to 101.0 MB.
-Total: 3.485600 ms (FindLiveObjects: 0.214700 ms CreateObjectMapping: 0.041800 ms MarkObjects: 2.896900 ms  DeleteObjects: 0.331900 ms)
+Unloading 1539 unused Assets / (0.6 MB). Loaded Objects now: 2110.
+Memory consumption went from 101.7 MB to 101.1 MB.
+Total: 8.471600 ms (FindLiveObjects: 0.651400 ms CreateObjectMapping: 0.085500 ms MarkObjects: 6.807600 ms  DeleteObjects: 0.925600 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1711723.858384 seconds.
-  path: Assets/Art/Icon Pack/AbilityIcons_Sprites/PlayerAbilites_RES_Increase.jpg
-  artifactKey: Guid(7fe4fc348c053244e8d35fd04b44f3a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Icon Pack/AbilityIcons_Sprites/PlayerAbilites_RES_Increase.jpg using Guid(7fe4fc348c053244e8d35fd04b44f3a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0bc2d41176719b9c993e456694f123e4') in 0.0710042 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Art/Icon Pack/AbilityIcons_Sprites/PlayerAbilites_Rez.jpg
-  artifactKey: Guid(215dfe86c7028ff4599e2af2a4df218e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Icon Pack/AbilityIcons_Sprites/PlayerAbilites_Rez.jpg using Guid(215dfe86c7028ff4599e2af2a4df218e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e0ba518360f4f3338e4ae304b95778b3') in 0.0120564 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 145.044393 seconds.
-  path: Assets/TextMesh Pro/Examples & Extras/Textures/Wipe Pattern - Radial Double.psd
-  artifactKey: Guid(7631f4eff8f74ed38eb3eb9db17134e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TextMesh Pro/Examples & Extras/Textures/Wipe Pattern - Radial Double.psd using Guid(7631f4eff8f74ed38eb3eb9db17134e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2d4253dc797b05086b7639b5534034b2') in 0.0048725 seconds
+  Time since last request: 1716053.262813 seconds.
+  path: Assets/Imported_Assets_Unused/Free UI Click Sound Effects Pack/AUDIO/Crispy/SFX_UI_Click_Organic_Crispy_Negative_Error_1.wav
+  artifactKey: Guid(446bb872cb0e3044bbf59c0a0a0a4adb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported_Assets_Unused/Free UI Click Sound Effects Pack/AUDIO/Crispy/SFX_UI_Click_Organic_Crispy_Negative_Error_1.wav using Guid(446bb872cb0e3044bbf59c0a0a0a4adb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '22266c6b54b46e8928d332e66dfa0264') in 0.0715917 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.003603 seconds.
-  path: Assets/TextMesh Pro/Examples & Extras/Resources/Color Gradient Presets/Yellow to Orange - Vertical.asset
-  artifactKey: Guid(69a525efa7e6472eab268f6ea605f06e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TextMesh Pro/Examples & Extras/Resources/Color Gradient Presets/Yellow to Orange - Vertical.asset using Guid(69a525efa7e6472eab268f6ea605f06e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '07650cfbeddd8e33945dbb3c4206a56a') in 0.0012419 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 11.839793 seconds.
+  path: Assets/Imported_Assets_Unused/Free UI Click Sound Effects Pack/AUDIO/Liquid/SFX_UI_Click_Designed_Liquid_Generic_Open_1.wav
+  artifactKey: Guid(c6600c5491e54a044b5fa6d406a6e20b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported_Assets_Unused/Free UI Click Sound Effects Pack/AUDIO/Liquid/SFX_UI_Click_Designed_Liquid_Generic_Open_1.wav using Guid(c6600c5491e54a044b5fa6d406a6e20b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '76375f90a5312ad4ea2517937253490c') in 0.0140996 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
 ========================================================================
 Received Import Request.
-  Time since last request: 34.179306 seconds.
-  path: Assets/SlimUI/Modern Menu 1/Graphics/Icons/Return 128px.png
-  artifactKey: Guid(bd24f49365315ce4ab078b0114790639) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SlimUI/Modern Menu 1/Graphics/Icons/Return 128px.png using Guid(bd24f49365315ce4ab078b0114790639) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dc89444e4e4a5d7f2888e19a49d8c13a') in 0.0090097 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 25.741104 seconds.
+  path: Assets/Imported_Assets_Unused/Free UI Click Sound Effects Pack/AUDIO/Metallic/SFX_UI_Click_Designed_Metallic_Pop_Negative_Locked_1.wav
+  artifactKey: Guid(8e746bda97a9f634f9c225c03bd4bfcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported_Assets_Unused/Free UI Click Sound Effects Pack/AUDIO/Metallic/SFX_UI_Click_Designed_Metallic_Pop_Negative_Locked_1.wav using Guid(8e746bda97a9f634f9c225c03bd4bfcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ebecca43b95b34cb3dfc62ce5394a4d8') in 0.0116883 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Art/Maps/AS/RUSSIA.png
-  artifactKey: Guid(7627efc393b9f5445b4a931bb0315d2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Maps/AS/RUSSIA.png using Guid(7627efc393b9f5445b4a931bb0315d2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '98e80d48d5e3c5e6b51dfb9e55f1be15') in 0.0510535 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 7.048486 seconds.
+  path: Assets/Imported_Assets_Unused/Free UI Click Sound Effects Pack/AUDIO/Plastic/SFX_UI_Click_Organic_Plastic_Bouncy_Generic_1.wav
+  artifactKey: Guid(b6c37a87a1e05c0418ce0605b46401d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported_Assets_Unused/Free UI Click Sound Effects Pack/AUDIO/Plastic/SFX_UI_Click_Organic_Plastic_Bouncy_Generic_1.wav using Guid(b6c37a87a1e05c0418ce0605b46401d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '131d0d4edf04e66b34ae93e2627251d5') in 0.0142854 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
 ========================================================================
 Received Import Request.
-  Time since last request: 9.573908 seconds.
-  path: Assets/Art/Icon Pack/AbilityIcons_Sprites/PlayerAbilites_AOE_HOT.jpg
-  artifactKey: Guid(129a3e7cd36dc3c4ea926b1cce62f1e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Icon Pack/AbilityIcons_Sprites/PlayerAbilites_AOE_HOT.jpg using Guid(129a3e7cd36dc3c4ea926b1cce62f1e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '96fd74f839cf0e1aea3cd799db6e09a7') in 0.0140679 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 0.000020 seconds.
+  path: Assets/Imported_Assets_Unused/Free UI Click Sound Effects Pack/AUDIO/Plastic/SFX_UI_Click_Organic_Plastic_Pop_Generic_2.wav
+  artifactKey: Guid(5da10817ef5d7c343bdbfbfb1801da9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported_Assets_Unused/Free UI Click Sound Effects Pack/AUDIO/Plastic/SFX_UI_Click_Organic_Plastic_Pop_Generic_2.wav using Guid(5da10817ef5d7c343bdbfbfb1801da9e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd2ed0da693884b70ad671c2ea505825e') in 0.0126448 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000070 seconds.
-  path: Assets/Art/Icon Pack/AbilityIcons_Sprites/PlayerAbilites_DPSIncrease.jpg
-  artifactKey: Guid(906099510ced9b24ebcc8b556cf0a320) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Art/Icon Pack/AbilityIcons_Sprites/PlayerAbilites_DPSIncrease.jpg using Guid(906099510ced9b24ebcc8b556cf0a320) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '41db6108bf8cc6c2aa36d841f0f549cb') in 0.0129449 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 0.000021 seconds.
+  path: Assets/Imported_Assets_Unused/Free UI Click Sound Effects Pack/AUDIO/Plastic/SFX_UI_Click_Organic_Plastic_Wooden_Thin_Open_1.wav
+  artifactKey: Guid(5e97ee9953d5c2f41869b0d55397587f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported_Assets_Unused/Free UI Click Sound Effects Pack/AUDIO/Plastic/SFX_UI_Click_Organic_Plastic_Wooden_Thin_Open_1.wav using Guid(5e97ee9953d5c2f41869b0d55397587f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e5aa23d1546a6f093eb779326285a607') in 0.0135049 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.955448 seconds.
+  path: Assets/Imported_Assets_Unused/Free UI Click Sound Effects Pack/AUDIO/Wooden/SFX_UI_Click_Organic_Wooden_Plastic_Negative_Close_1.wav
+  artifactKey: Guid(e8af9035f5758f44da37af4225a02619) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Imported_Assets_Unused/Free UI Click Sound Effects Pack/AUDIO/Wooden/SFX_UI_Click_Organic_Wooden_Plastic_Negative_Close_1.wav using Guid(e8af9035f5758f44da37af4225a02619) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3e1dec25cb41fe369309ca41b777b897') in 0.0121883 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server

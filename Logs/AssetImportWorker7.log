@@ -1,0 +1,355 @@
+Using pre-set license
+Built from '6000.0/release' branch; Version is '6000.0.35f1 (9a3bc604008a) revision 10107846'; Using compiler version '193933523'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'en' Physical Memory: 64663 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.0.35f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker7
+-projectPath
+C:/Users/Oisin/Documents/GitHub/Sinful_Souls
+-logFile
+Logs/AssetImportWorker7.log
+-srvPort
+55850
+-job-worker-count
+15
+-background-job-worker-count
+8
+-gc-helper-count
+1
+Successfully changed project path to: C:/Users/Oisin/Documents/GitHub/Sinful_Souls
+C:/Users/Oisin/Documents/GitHub/Sinful_Souls
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [3600]  Target information:
+
+Player connection [3600]  * "[IP] 192.168.1.96 [Port] 0 [Flags] 2 [Guid] 519327461 [EditorId] 519327461 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-JH2I4FT) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [3600] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [3600] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 15
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 0.18 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.0.35f1 (9a3bc604008a)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Oisin/Documents/GitHub/Sinful_Souls/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 4090 (ID=0x2684)
+    Vendor:   NVIDIA
+    VRAM:     24142 MB
+    Driver:   32.0.15.6614
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56004
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.35f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003128 seconds.
+- Loaded All Assemblies, in  0.257 seconds
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.220 seconds
+Domain Reload Profiling: 475ms
+	BeginReloadAssembly (89ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (24ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (34ms)
+	LoadAllAssembliesAndSetupDomain (101ms)
+		LoadAssemblies (86ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (99ms)
+			TypeCache.Refresh (98ms)
+				TypeCache.ScanAssembly (88ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (220ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (198ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (41ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (28ms)
+			ProcessInitializeOnLoadAttributes (96ms)
+			ProcessInitializeOnLoadMethodAttributes (31ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.318 seconds
+Refreshing native plugins compatible for Editor in 0.09 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.213 seconds
+Domain Reload Profiling: 528ms
+	BeginReloadAssembly (121ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (4ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (29ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (16ms)
+	LoadAllAssembliesAndSetupDomain (140ms)
+		LoadAssemblies (166ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (42ms)
+			TypeCache.Refresh (31ms)
+				TypeCache.ScanAssembly (22ms)
+			BuildScriptInfoCaches (9ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (213ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (154ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (8ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (39ms)
+			ProcessInitializeOnLoadAttributes (87ms)
+			ProcessInitializeOnLoadMethodAttributes (13ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (3ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 0.25 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 62 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 1541 unused Assets / (0.6 MB). Loaded Objects now: 2112.
+Memory consumption went from 101.7 MB to 101.1 MB.
+Total: 7.841600 ms (FindLiveObjects: 0.693700 ms CreateObjectMapping: 0.104900 ms MarkObjects: 5.879500 ms  DeleteObjects: 1.161900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1714185.962532 seconds.
+  path: Assets/StatusIcons_Textures/Skill_6.mat
+  artifactKey: Guid(d547bc22ff2515e4fae24e2bd25de534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/StatusIcons_Textures/Skill_6.mat using Guid(d547bc22ff2515e4fae24e2bd25de534) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '50655835d257e558f0d41561c2aa2da7') in 0.0896081 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 399.208107 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Error2.wav
+  artifactKey: Guid(eeec8bd79e59743b4bb0a3cb19189c79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Error2.wav using Guid(eeec8bd79e59743b4bb0a3cb19189c79) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3796f28ea08d91750e1eed4b91fc3421') in 0.0308182 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/GenericNotification1.wav
+  artifactKey: Guid(5a442b2c692c0410abceac7ba5ad3b7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/GenericNotification1.wav using Guid(5a442b2c692c0410abceac7ba5ad3b7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a89097e16f809f175d6a0ac3ff27c006') in 0.0140231 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/GenericNotification4.wav
+  artifactKey: Guid(3c86c0124883c4649ace114e16b627e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/GenericNotification4.wav using Guid(3c86c0124883c4649ace114e16b627e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7eead6537fe0758307cbc4d180fdce14') in 0.0146251 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/GenericNotification9.wav
+  artifactKey: Guid(ea0b1606831ec45888682da700fa2156) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/GenericNotification9.wav using Guid(ea0b1606831ec45888682da700fa2156) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd747da842cd77aa53f20c0f999691f58') in 0.0158502 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/GenericNotification3.wav
+  artifactKey: Guid(af9c2a92fa16e4b0cb9b375d462a9f3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/GenericNotification3.wav using Guid(af9c2a92fa16e4b0cb9b375d462a9f3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7d325ac381671c966a73ec01bef4ea99') in 0.0171096 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Popup4a.wav
+  artifactKey: Guid(ba081e716fd9947559859103789a33f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Popup4a.wav using Guid(ba081e716fd9947559859103789a33f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fb6d676ef16859b07e42af79b1ef7d3e') in 0.0139684 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/SciFiNotification2.wav
+  artifactKey: Guid(ddb42f8693a0241a5958f652befd07d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/SciFiNotification2.wav using Guid(ddb42f8693a0241a5958f652befd07d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7c2819ed935130edf479960264c81a45') in 0.0174464 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/SciFiNotification3.wav
+  artifactKey: Guid(ed697055848ca4753a8faecacf8940a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/SciFiNotification3.wav using Guid(ed697055848ca4753a8faecacf8940a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '060ca2eef933c20c7bd2a018fe6b2aa2') in 0.016344 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.003289 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Success3.wav
+  artifactKey: Guid(495ebbcb6c41d424bb9e00d3eddb5fe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Success3.wav using Guid(495ebbcb6c41d424bb9e00d3eddb5fe4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '38e93e560814a821ea19be0f9654461e') in 0.0173797 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Success6.wav
+  artifactKey: Guid(262270ad62f914ce5a0a71e95e4bbfe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Success6.wav using Guid(262270ad62f914ce5a0a71e95e4bbfe6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '24750e4d65bfc4eb642f399d946c7fd6') in 0.019566 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Success11.wav
+  artifactKey: Guid(5b97c1a3a3ee1420aa6e92d5cc1e1a6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Success11.wav using Guid(5b97c1a3a3ee1420aa6e92d5cc1e1a6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '384e59ae891368c3d92c846aa39ab96b') in 0.0166084 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Success12a.wav
+  artifactKey: Guid(d93805cf997574ae7bbb36773a8c8eef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Success12a.wav using Guid(d93805cf997574ae7bbb36773a8c8eef) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bca7ebc035721880cc8c833d3deccbc6') in 0.0187045 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Success9.wav
+  artifactKey: Guid(f877c82aec4ea4c25b8587f070e2211f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Success9.wav using Guid(f877c82aec4ea4c25b8587f070e2211f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '04ee257ff399d6222b5c6e10ce0884a8') in 0.0169472 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/GenericNotification11.wav
+  artifactKey: Guid(2cb5d7e8fbccb462aa2fd95182b0cc26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/GenericNotification11.wav using Guid(2cb5d7e8fbccb462aa2fd95182b0cc26) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '486140b346000796bbc14fc88738cedd') in 0.0172944 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Success13.wav
+  artifactKey: Guid(5a8b0127c9e91409c9b61d31a906446a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Success13.wav using Guid(5a8b0127c9e91409c9b61d31a906446a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '878c6fdd6ea38380576fa1ee3d1a68f5') in 0.0168982 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Success1.wav
+  artifactKey: Guid(edbce783f7f7445edb74c947c8638018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Success1.wav using Guid(edbce783f7f7445edb74c947c8638018) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f0ae92c5c8d97762f04897ddb6a36042') in 0.0164909 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/GenericNotification5.wav
+  artifactKey: Guid(566e0209e31ec4cb8827e35b769035e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/GenericNotification5.wav using Guid(566e0209e31ec4cb8827e35b769035e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '520a752410244978591d943d5a0e2f51') in 0.0156957 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Popup1.wav
+  artifactKey: Guid(50e5d54a69d6b4543a016c665e9f12c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/Popup1.wav using Guid(50e5d54a69d6b4543a016c665e9f12c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bb73179d941600baef0a7d1f1982b0d7') in 0.0202455 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/GenericNotification8.wav
+  artifactKey: Guid(cf36b9440960248518ce0a2a7645cbf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Cyberleaf - Modern UI SFX/AlertsAndNotifications/GenericNotification8.wav using Guid(cf36b9440960248518ce0a2a7645cbf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '78d4207efab948cc5d8e6b7a05a0aab3') in 0.0172182 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
