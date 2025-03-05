@@ -2488,7 +2488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 55.899902, y: -118}
+  m_AnchoredPosition: {x: 61.8, y: -117.5}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259832087
@@ -4567,6 +4567,7 @@ GameObject:
   m_Component:
   - component: {fileID: 442966045}
   - component: {fileID: 442966046}
+  - component: {fileID: 442966051}
   - component: {fileID: 442966047}
   - component: {fileID: 442966044}
   - component: {fileID: 442966049}
@@ -4618,7 +4619,6 @@ MonoBehaviour:
   - {fileID: 535025627}
   - {fileID: 1634659823}
   - {fileID: 778686148}
-  _isTimePaused: 1
   hellDeathCount: 0
   heavenDeathCount: 0
   skullsSoulsText: {fileID: 1777258097}
@@ -4751,6 +4751,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9da9102f711b9646b309dfa9a207377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &442966051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442966043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58606eb1c8b6c75429e7b075d2730340, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playBtn: {fileID: 1298393337}
+  pauseBtn: {fileID: 1445187508}
 --- !u!1 &446326731
 GameObject:
   m_ObjectHideFlags: 0
@@ -18421,7 +18435,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241, y: -117.10004}
+  m_AnchoredPosition: {x: 235.1, y: -120.9}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1692328858

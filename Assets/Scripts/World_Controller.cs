@@ -22,7 +22,7 @@ public class World_Controller : MonoBehaviour {
     // Make a daily caller class?
     private short[] _daysInMonth;
     private float _timer;
-    public bool _isTimePaused;
+    private bool _isTimePaused;
 
     public long hellDeathCount;
     public long heavenDeathCount;
@@ -151,6 +151,10 @@ public class World_Controller : MonoBehaviour {
 
     private void UpdateContinentsClassifications() {
        
+    }
+
+    public bool GetIsTimePaused(){
+        return _isTimePaused;
     }
 
     /// <summary>

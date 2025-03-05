@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+// Contains the player mouse/touch input. For Keyboard Controls see Keyboard_Controls class.
 public class Player_Controller : MonoBehaviour {
-
     public GameObject CountryPanel;
     private GameObject CountryHit;
     private Collider2D CountryHitCollider;
+
+    private void Start(){
+
+    }
 
     public GameObject GetCountryHit(){
         return CountryHit;
@@ -44,6 +48,8 @@ public class Player_Controller : MonoBehaviour {
                 }
             }
         }
+
+        
     }
 
     /// <summary>
