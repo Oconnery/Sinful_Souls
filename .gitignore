@@ -3,11 +3,14 @@
 ###
 [Aa]ssets/AssetStoreTools*
 [Bb]uild/
+[Bb]uilds/
 [Ll]ibrary/
 [Ll]ocal[Cc]ache/
+[Ll]ogs/
 [Oo]bj/
 [Tt]emp/
 [Uu]nityGenerated/
+[Uu]ser[Ss]ettings/
 # file on crash reports
 sysinfo.txt
 # Unity3D generated meta files
@@ -51,4 +54,3 @@ SinfulSouls/.vs/SinfulSouls/v15/Server/sqlite3/storage.ide-wal
 #Assets/StatusIcons_Textures/
 WebGL Builds/
 Imported_Assets_Unused/
-Logs/
