@@ -157,12 +157,6 @@ public class World_Controller : MonoBehaviour {
     /// Pauses the game.
     /// </summary>
     public void Pause(){
-        daytimerMultiplier = 1.0f;
-
-        if (_isTimePaused)
-        {
-            throw new System.Exception("Pause was called whenever the game is already paused");
-        }
         _isTimePaused = true;
     }
 

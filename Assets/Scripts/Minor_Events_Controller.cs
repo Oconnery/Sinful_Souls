@@ -15,12 +15,12 @@ public class Minor_Events_Controller : MonoBehaviour {
     public Text eventsContentText;
     private string eventsDescr;
 
-    public GameObject eventsPanel;
+    // TODO: These should be instantiated each time at the country level. It shouldn't be displayed here or have anything to do with this class.
+    //public Text evilDeathText;
+    //public Text goodDeathText;
+    //public Text neutralDeathText;
 
-    public Text evilDeathText;
-    public Text goodDeathText;
-    public Text neutralDeathText;
-
+    public Hud_Controller hudController;
     private Devil_Controller devil_Controller;
     private God_Controller god_Controller;
 
@@ -77,14 +77,14 @@ public class Minor_Events_Controller : MonoBehaviour {
 
     // Prints the number of people who died, with floating and slowly dissapearing text (to be called for a specific country whenever people die).
     private void PrintCountryDeath(Vector3 location, long evilDeathCount, long goodDeathCount, long neutralDeathCount) {
-        // Change location and Set to active
-        SetDeathText(location, evilDeathText, evilDeathCount);
-        SetDeathText(location, goodDeathText, goodDeathCount);
-        SetDeathText(location, neutralDeathText, neutralDeathCount);
-        //double evilDead = (double)evilDeathCount;
-        //evilDead = RoundToSignificantDigits(evilDead, 3);
+        //// Change location and Set to active
+        //SetDeathText(location, evilDeathText, evilDeathCount);
+        //SetDeathText(location, goodDeathText, goodDeathCount);
+        //SetDeathText(location, neutralDeathText, neutralDeathCount);
+        ////double evilDead = (double)evilDeathCount;
+        ////evilDead = RoundToSignificantDigits(evilDead, 3);
 
-        //BUG - The location is the location on the map, not the HUD/canvas.
+        ////BUG - The location is the location on the map, not the HUD/canvas.
 
     }
 
@@ -155,7 +155,7 @@ public class Minor_Events_Controller : MonoBehaviour {
         KillPeople(Alignment.evil, killEvilNumber, country);
 
         //set event panel
-        SetEventsPanelActive();
+        hudController.SetEventsPanelActive();
         eventsDescr = $"A war has broken out in {countryObj}. {killEvilNumber} evil people, {killGoodNumber} good people and {killNeutralNumber} neutral people have died in the fighting!";
         eventsContentText.text = eventsDescr;
 
@@ -173,12 +173,13 @@ public class Minor_Events_Controller : MonoBehaviour {
         long killGoodNumber = (long)killGoodNumberF;
         if (killGoodNumber > country.goodPop) { killGoodNumber = country.goodPop; }
 
+        // TODO: None of this should be changed here. This should all be done in the regionController. goodPop, population and goodDiedToday should not be changeable outside of the one 
         country.goodPop -= killGoodNumber;
         country.population -= killGoodNumber;
         country.goodDiedToday = killGoodNumber;
 
         //set event panel
-        SetEventsPanelActive();
+        hudController.SetEventsPanelActive();
 
         //configure events text (should maybe come before activating
         eventsDescr = $"An evil murderous cult has appeared in {countryName}! {killGoodNumber} good people have been massacred!";
@@ -262,10 +263,5 @@ public class Minor_Events_Controller : MonoBehaviour {
             country.population -= numberKilled;
             country.evilDiedToday += numberToKill;
         }
-    }
-
-    public void SetEventsPanelActive() {
-        //this is for minor events
-        eventsPanel.SetActive(true);
     }
 }
