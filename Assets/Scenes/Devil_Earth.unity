@@ -3997,8 +3997,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 442966044}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: UnPause
+        m_TargetAssemblyTypeName: World_Controller, NewAssembly
+        m_MethodName: Unpause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6773,7 +6773,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 962a53d2b48e51e4791df4c9f04e2388, type: 3}
   m_Resource: {fileID: 8300000, guid: 962a53d2b48e51e4791df4c9f04e2388, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -14124,7 +14124,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 442966044}
         m_TargetAssemblyTypeName: World_Controller, NewAssembly
-        m_MethodName: UnPause
+        m_MethodName: UnpauseResetSpeed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

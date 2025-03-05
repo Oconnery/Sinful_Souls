@@ -15,6 +15,6 @@ public class Research_Tree : MonoBehaviour{
         // pause the game
         Debug.Log("Research tree disabled");
 
-        worldController.UnPause();
+        worldController.UnpauseResetSpeed();
     }
 }

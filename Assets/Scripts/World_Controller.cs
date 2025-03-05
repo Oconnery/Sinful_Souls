@@ -167,22 +167,24 @@ public class World_Controller : MonoBehaviour {
     }
 
     /// <summary>
-    /// Unpauses the game.
+    /// Unpauses the game and resets the multiplier for daily clock timer speed.
     /// </summary>
-    public void UnPause(){
+    public void UnpauseResetSpeed(){
         daytimerMultiplier = 1.0f;
 
-        if (!_isTimePaused)
-        {
-            throw new System.Exception("Unpause was called whenever the game is already unpaused");
-        }
         _isTimePaused = false;
     }
 
-    // TODO: 
+    /// <summary>
+    /// Unpauses the game and resumes at the clock speed it was set to before the pause.
+    /// </summary>
+    public void Unpause(){
+        _isTimePaused = false;
+    }
+
     public void FastForward(){
         // Increase game speed.
-        if (daytimerMultiplier < 16.0f)
+        if (daytimerMultiplier < 32.0f)
             daytimerMultiplier *= 2.0f;
 
         // If the game is paused, unpause.
