@@ -1,163 +1,195 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+using static System.Net.Mime.MediaTypeNames;
 
 public class Region_Controller : MonoBehaviour {
-    // TODO: This enum should be elsewhere?
-    public enum Assignment{
+
+    public enum Alignment{
         GOOD,
         NEUTRAL,
         EVIL
-    };
+    }
 
-    //statistics for the region
-    //population
-    public long population;
-    public long evilPop;
-    public long neutralPop;
-    public long goodPop;
+    protected class PopulationFaction {
+        private Region_Controller outerRef;
+        public Alignment alignment;
+        private ulong size; // TODO: Tie this in a function with death text, so you can only get this, and when you change it to a lower number the death text instantiates.
+        public ulong diedToday; // should always be positive
 
-    public long evilDiedToday; //should always be positive
-    public long goodDiedToday;
+        // Since I'm not using diedToday for neutral pop, I could create a class/struct that extends PopulationFaction 
+        // which contains diedToday and should only be used for good/evil pop, or something similar to this.
+
+        public PopulationFaction(Region_Controller outerRef, Alignment alignment) {
+            this.outerRef = outerRef;
+            this.alignment = alignment;
+            size = 0;
+            diedToday = 0;
+        }
+        
+        public ulong GetSize() {
+            return size;
+        }
+
+        public void Kill(ulong numberToKill) {
+            size -= numberToKill;
+            diedToday += numberToKill;
+            outerRef.InstantiateDeathText(alignment, numberToKill);
+            // TODO: Exception if numberToKill is larger than size
+        }
+
+        public void ReduceWithoutKilling(ulong reduceBy) {
+            size -= reduceBy;
+            // TODO: Exception if reduceBy is larger than size 
+        }
+
+        public void IncreaseSize(ulong increaseBy) {
+            size += increaseBy;
+        }
+    }
+
+    protected class RegionPopulation{
+        public PopulationFaction evilPopulation;
+        public PopulationFaction neutralPopulation;
+        public PopulationFaction goodPopulation;
+
+        public RegionPopulation(Region_Controller outerRef){
+            evilPopulation = new PopulationFaction(outerRef, Alignment.EVIL);
+            neutralPopulation = new PopulationFaction(outerRef, Alignment.NEUTRAL);
+            goodPopulation = new PopulationFaction(outerRef, Alignment.GOOD);
+        }
+
+        public ulong GetTotalPopulation(){
+            return (evilPopulation.GetSize() + goodPopulation.GetSize() + neutralPopulation.GetSize());
+        }
+
+        public PopulationFaction GetPopulationFactionByAlignment(Alignment alignment){
+            switch (alignment){
+                case Alignment.GOOD:
+                    return goodPopulation;
+                case Alignment.NEUTRAL:
+                    return neutralPopulation;
+                case Alignment.EVIL:
+                    return evilPopulation;
+                default:
+                    throw new System.NotImplementedException("This alignment either has not been setup properly yet, or null was passed to GetPopulationFactionByAlignment function. Alignment: " + alignment.ToString());
+            }
+        }
+
+        public void SetInitialPopulationAlignments(ulong initialTotalPopulation){
+            evilPopulation.IncreaseSize(initialTotalPopulation / 10L); //10%
+            goodPopulation.IncreaseSize(initialTotalPopulation / 10L); //10%
+            neutralPopulation.IncreaseSize(initialTotalPopulation / 10L * 8L); //80%
+        }
+
+        public void Convert(ulong numberToConvert, Alignment from, Alignment to) {
+            GetPopulationFactionByAlignment(from).ReduceWithoutKilling(numberToConvert);
+            GetPopulationFactionByAlignment(to).IncreaseSize(numberToConvert);
+        }
+    }
+
+    public Transform canvasRefTransform;
+
+    public ulong initialTotalPopulation; // TODO: This should be placed in RegionPopulation, and it should be read in by the .txt file.
+    RegionPopulation population;
 
     // Todo: actually give real world birth/death rate data. // TODO: Below should be private with getters/setters and should be set in world controller or similar.
     public double birthRate;
     public double deathRate;
 
-    // Rates at which people in the region sin/pray.
-    // Neutral
-    private float sinRateN; //starts at 1 (100%) 
-    private float prayerRateN; //starts at 1 (100%)
-
-    // Good and evil 
-    private float sinRateE; //starts at 1 (100%) 
-    private float prayerRateG; //starts at 1 (100%)
+    private float neutralSinRate; //starts at 1 (100%) 
+    private float neutralPrayerRate; //starts at 1 (100%)
+    private float evilSinRate; //starts at 1 (100%) 
+    private float goodPrayerRate; //starts at 1 (100%)
 
     // Conversion rates - the effectiveness an angel or demon will have in this region.
-    private float evilConversionRate;
-    private float goodConversionRate; //change this to conversionToGoodRate
+    private float conversionRateToEvil;
+    private float conversionRateToGood;
 
-    private short localDemons;
-    private short localAngels;
-    private short localBanshees;
-    private short localInquisitors;
-
-    // The strength of a banshee/inquisitor in this region.
-    // Don't know if I will keep this
-    private float inquisitorStength;
-    private float bansheeStrength;
-
-    //My world region pops
-    /*
-        7.5 billion people total
-
-        579 million North America 
-        //US = 330 million
-        //Mexico = 211 million
-        //Canada = 37 million
-        //Alaska = 1 million
-
-        422 million South America
-        //Argentina = 91 million
-        //Brazil = 209 million
-        //Colombia = 88 million
-        //Venezuala = 34 million
-
-        1216 million Africa
-        CENTRAL = 270 million
-        SOUTH = 201 million
-        EAST = 174 million
-        NORTH = 180 million
-        WEST = 391 million
-
-        741 million Europe
-        //Iceland = 5 million
-        //Scandinavia = 50 million
-        //Western = 425 million
-        //Eastern = 261 million
-
-        4463 million Asia
-        //China = 1400 million
-        //India = 1595 million
-        //Japan = 203 million
-        //Russia = 145 million
-        //Thailand = 279 million
-        //Khazakstan = 66 million 
-        //MiddleEast = 775 million
-
-        79 million Oceania 
-        //Australia 35 million
-        //Indonesia 44 million
-
-        ==7.5 billion total
-    */
+    private ushort localDemons;
+    private ushort localAngels;
+    private ushort localBanshees;
+    private ushort localInquisitors;
 
     //Colours according to pop
     private Renderer rend;
-    private Color currentClr;
-    private Color goodClrMax;
-    private Color evilClrMax;
+    private UnityEngine.Color currentClr;
+    private UnityEngine.Color goodClrMax;
+    private UnityEngine.Color evilClrMax;
+
+    public GameObject evilTextPrefab;
+    public GameObject goodTextPrefab;
+
+    public Vector3 evilDeathTextLocalPos;
+    public Vector3 goodDeathTextLocalPos;
 
     // Use this for initialization
     void Start() {
-        sinRateN = 0.25f;
-        sinRateE = 0.25f;
-        prayerRateN = 0.25f;
-        prayerRateG = 0.25f;
+        SetInitialRates();
 
-        evilConversionRate = 1.0f;
-        goodConversionRate = 1.0f;
+        population = new RegionPopulation(this);
 
-        evilPop = (population / 10L); //10%
-        goodPop = (population / 10L); //10%
-        neutralPop = (population / 10L * 8L); //80%
-
-        goodClrMax = new Color(0.0f, (155f / 255f), 0.0f);
-        evilClrMax = new Color((155f / 255f), 0.0f, 0.0f);
-        currentClr = new Color(0.0f, 0.0f, 0.0f, 1.0f);
+        // TODO: file should be read in instead
+        population.SetInitialPopulationAlignments(initialTotalPopulation);
+        SetAlignmentColors();
 
         //155-50 = 105 .. 1% change in pop should change colour by 1.05%
-
         rend = GetComponent<Renderer>();
         rend.material.color = currentClr;
 
-        //set the length to world controller length
-        //dayLength = world_controller.getDayLength();
+        SetInitialLocalUnits();
+    }
 
+    private void SetInitialRates(){
+        neutralSinRate = 0.25f;
+        evilSinRate = 0.25f;
+        neutralPrayerRate = 0.25f;
+        goodPrayerRate = 0.25f;
+
+        conversionRateToEvil = 1.0f;
+        conversionRateToGood = 1.0f;
+    }
+
+    private void SetAlignmentColors(){
+        goodClrMax = new UnityEngine.Color(0.0f, (155f / 255f), 0.0f);
+        evilClrMax = new UnityEngine.Color((155f / 255f), 0.0f, 0.0f);
+        currentClr = new UnityEngine.Color(0.0f, 0.0f, 0.0f, 1.0f);
+    }
+
+    private void SetInitialLocalUnits(){
         localAngels = 0;
         localDemons = 0;
         localInquisitors = 0;
         localBanshees = 0;
-
-        inquisitorStength = 0.4f;
-
-        evilDiedToday = 0;
-        goodDiedToday = 0;
     }
 
     #region gets
-    public float GetGoodPop() {
-        return goodPop;
+    public ulong GetGoodPop() {
+        return population.goodPopulation.GetSize();
     }
 
-    public float GetEvilPop() {
-        return evilPop;
+    public ulong GetEvilPop() {
+        return population.evilPopulation.GetSize();
     }
 
-    public float GetNeutralPop() {
-        return neutralPop;
+    public ulong GetNeutralPop() {
+        return population.neutralPopulation.GetSize();
     }
 
-    public float GetTotalPop() {
-        return population;
+    public ulong GetTotalPop() {
+        return population.GetTotalPopulation();
     }
 
-    public short GetLocalDemons() {
+    public ushort GetLocalDemons() {
         return localDemons;
     }
 
-    public short GetLocalAngels(){
+    public ushort GetLocalAngels(){
         return localAngels;
     }
 
@@ -165,33 +197,56 @@ public class Region_Controller : MonoBehaviour {
         localAngels++;
     }
 
-    public short GetLocalBanshees() {
+    public ushort GetLocalBanshees() {
         return localBanshees;
     }
-    public long GetEvilDied(){
-        //this should return the number of evil people that died in one day. 
-        //WHERE EVIL POP IS EVER CHANGED THE AMOUNT OF EVILDEAD SHOULD ALSO CHANGE
-        return evilDiedToday;
+    public ulong GetEvilDied(){
+        return population.evilPopulation.diedToday;
     }
 
-    public long GetGoodDied() {
-        return goodDiedToday;
+    public ulong GetGoodDied() {
+        return population.goodPopulation.diedToday;
     }
 
     public float GetConversionEvil(){
-        return evilConversionRate;
+        return conversionRateToEvil;
     }
 
     public float GetConversionGood(){
-        return goodConversionRate;
+        return conversionRateToGood;
     }
 
+    // TODO: World controller really shouldn't be doing this. 
     public void ResetDeathCounterEvil(){
-        evilDiedToday = 0;
+        population.evilPopulation.diedToday = 0;
     }
 
     public void ResetDeathCounterGood(){
-        goodDiedToday = 0;
+        population.goodPopulation.diedToday = 0;
+    }
+
+    void SetGoodConversionRate() {
+        // Base rate
+        float rate = 1.0f;
+        // Apply Banshees 
+        if (localBanshees >= 1) {
+            rate = 0.6f;
+        }
+
+        // Apply anything else
+        conversionRateToGood = rate;
+    }
+
+    void SetEvilConversionRate() {
+        // Base rate
+        float rate = 1.0f;
+        // Apply Banshees 
+        if (localInquisitors >= 1) {
+            rate = 0.6f;
+        }
+
+        // Apply anything else
+        conversionRateToEvil = rate;
     }
 
     #endregion
@@ -224,75 +279,50 @@ public class Region_Controller : MonoBehaviour {
     /// Calls functions to update populations and function to change the colour of the game object renderer based off of the population.
     /// </summary>
     /// <returns></returns>
-    public void CallDaily(){
-        UpdateDailyPopulationChange();
+    public void DailyCall(){
+        PerformDailyBirthsAndDeaths();
+        // TODO: Below two methods should effectively be called at the same time. I.e. Update Good Pop should be using the temp pop values from before UpdatePopEvil() ...
         UpdatePopEvil();
         UpdatePopGood();
         ChangeColour();
-        //return evil pop. its then added in world contr
     }
 
-    /// <summary>
-    /// Changes the colour of the renderer for this game object depending on the proportions of good and evil people.
-    /// </summary>
-    void ChangeColour(){
-        if (evilPop<goodPop){
-            //Color it the appropriate level of green.
-            double value = ((double)goodPop / ((double)goodPop + (double)evilPop));
-            value *= goodClrMax.g;
-            float valueF =(float) value;
-            currentClr = new Color(0.0f, valueF, 0.0f);
-            rend.material.color = currentClr;
-        } else if (evilPop>goodPop){
-            //Color it the appropriate level of red.
-            double value = ((double)evilPop /((double)goodPop+(double)evilPop));
-            value *= evilClrMax.r;
-            float valueF = (float)value;
-            currentClr = new Color(valueF, 0.0f, 0.0f);
-            rend.material.color = currentClr;
-        } else if (evilPop == goodPop){ 
-            // Do nothing?
-        } else { throw new System.Exception("The evil population or good population has been changed while ChangeColour method was running."); }
+    private void PerformDailyBirthsAndDeaths() {
+        PopulationFactionBirthsAndDeaths(population.goodPopulation);
+        PopulationFactionBirthsAndDeaths(population.neutralPopulation);
+        PopulationFactionBirthsAndDeaths(population.evilPopulation);
     }
 
     /// <summary>
     /// Updates the local evil population based off of the number of demons and inquisitors in the local area.
     /// </summary>
-    void UpdatePopEvil(){
-        for (int i=0; i<localInquisitors; i++){
-            evilConversionRate -= 0.4f; 
-            if (evilConversionRate < 0){
-              throw new System.Exception($"The evilConversionRate for {this.name} is below zero ({evilConversionRate}).");
-            }
-        }
+    private void UpdatePopEvil(){
+        SetEvilConversionRate();
         // NW: Each demon increases evilPop by 10,000 each day.
         // This is done by converting 8000 neutral people to evil, and 2000 good people to evil.
-        int neutralNumberToConvert = (int)(8000* evilConversionRate);
-        int goodNumberToConvert = (int)(2000* evilConversionRate); 
+        ulong neutralNumberToConvert = (uint)(8000* conversionRateToEvil);
+        ulong goodNumberToConvert = (uint)(2000* conversionRateToEvil); 
 
         for (int i=0; i< localDemons; i++){
-            if (evilPop < population){
+            ulong evilPopulation = population.evilPopulation.GetSize();
+            ulong neutralPopulation = population.neutralPopulation.GetSize();
+            ulong goodPopulation = population.goodPopulation.GetSize();
+
+            if (evilPopulation < population.GetTotalPopulation()){
                 // Convert neutral people to evil.
-                if (neutralPop > neutralNumberToConvert){
-                    // Decrease neutral. Increase evil.
-                    neutralPop -= neutralNumberToConvert;
-                    evilPop += neutralNumberToConvert;
+                if (neutralPopulation > neutralNumberToConvert){
+                    population.Convert(neutralNumberToConvert, Alignment.NEUTRAL, Alignment.EVIL);
                 } else{
                     // Convert as many neutral people as there are.
-                    long neutralPopTemp = neutralPop;
-                    neutralPop = 0;
-                    evilPop += neutralPopTemp;
+                    population.Convert(neutralPopulation, Alignment.NEUTRAL, Alignment.EVIL);
                 }
 
                 // Convert good people to evil.
-                if (goodPop > goodNumberToConvert){
-                    // Decrease good. Increase evil.
-                    goodPop -= goodNumberToConvert;
-                    evilPop += goodNumberToConvert;
+                if (goodPopulation > goodNumberToConvert){
+                    population.Convert(goodNumberToConvert, Alignment.GOOD, Alignment.EVIL);
                 }
-                else if (goodPop > 0){
-                    evilPop += goodPop;
-                    goodPop = 0;
+                else if (population.goodPopulation.GetSize() > 0){
+                    population.Convert(goodPopulation, Alignment.GOOD, Alignment.EVIL);
                 }
             }//end if evil pop < pop check
             else {
@@ -302,83 +332,140 @@ public class Region_Controller : MonoBehaviour {
         }
     }
 
-    /// <summary>
-    /// Updates the local good population based off of the number of angels and banshees in the local area.
-    /// </summary>
-    void UpdatePopGood(){
-        for (int i = 0; i < localBanshees; i++){
-            goodConversionRate = 1.0f;
-            goodConversionRate -= 0.4f;
-            if (goodConversionRate < 0){
-                throw new System.Exception($"The goodConversionRate for {this.name} is below zero ({goodConversionRate}).");
-            }
-        }
+    private void UpdatePopGood() {
+        SetGoodConversionRate();
+
         // NW: Each angel increases goodPop by 10,000 each day.
         // This is done by converting 8000 neutral people to good, and 2000 evil people to good.
-        int neutralNumberToConvert = (int)(8000 * goodConversionRate);
-        int evilNumberToConvert = (int)(2000 * goodConversionRate);
+        ulong neutralNumberToConvert = (uint)(8000 * conversionRateToGood);
+        ulong evilNumberToConvert = (uint)(2000 * conversionRateToGood);
 
-        for (int i = 0; i < localAngels; i++){
-            if (goodPop < population){
+        for (int i = 0; i < localAngels; i++) {
+            ulong evilPopulation = population.evilPopulation.GetSize();
+            ulong neutralPopulation = population.neutralPopulation.GetSize();
+            ulong goodPopulation = population.goodPopulation.GetSize();
+
+            if (goodPopulation < population.GetTotalPopulation()) {
                 // Convert neutral people to good.
-                if (neutralPop > neutralNumberToConvert){
-                    // Decrease neutral. Increase good.
-                    neutralPop -= neutralNumberToConvert;
-                    goodPop += neutralNumberToConvert;
-                }
-                else{
+                if (neutralPopulation > neutralNumberToConvert) {
+                    population.Convert(neutralNumberToConvert, Alignment.NEUTRAL, Alignment.GOOD);
+                } else {
                     // Convert as many neutral people as there are.
-                    long neutralPopTemp = neutralPop;
-                    neutralPop = 0;
-                    goodPop += neutralPopTemp;
+                    population.Convert(neutralPopulation, Alignment.NEUTRAL, Alignment.GOOD);
                 }
 
                 // Convert evil people to good.
-                if (evilPop > evilNumberToConvert){
-                    // Decrease good. Increase evil.
-                    evilPop -= evilNumberToConvert;
-                    goodPop += evilNumberToConvert;
+                if (evilPopulation > evilNumberToConvert) {
+                    population.Convert(evilNumberToConvert, Alignment.EVIL, Alignment.GOOD);
+                } else if (population.goodPopulation.GetSize() > 0) {
+                    population.Convert(goodPopulation, Alignment.EVIL, Alignment.GOOD);
                 }
-                else if (evilPop > 0){
-                    evilPop += goodPop;
-                    goodPop = 0;
-                }
-            }//end if evil pop < pop check
-            else{
-                print("Demons in " + this.name + " aren't converting people");
+            }
+            else {
+                print("Angels in " + this.name + " aren't converting people");
             }
         }
     }
 
-    void UpdateDailyPopulationChange(){
-        long goodPopChange = CalculatePopulationChange(goodPop);
-        goodPop += goodPopChange;
-        if (goodPopChange > 0){
-            goodDiedToday += goodPopChange;
-        }
-        
-        neutralPop += CalculatePopulationChange(neutralPop);
+    private void PopulationFactionBirthsAndDeaths(PopulationFaction populationFaction){
+        double naturalCausesDeathsD = populationFaction.GetSize() * deathRate;
+        ulong naturalCausesDeaths = (ulong) naturalCausesDeathsD;
 
-        long evilPopChange = CalculatePopulationChange(evilPop);
-        evilPop += evilPopChange;
+        double dBirths = populationFaction.GetSize() * birthRate;
+        ulong births = (ulong)dBirths;
 
-        // -1 if number is negative
-        int evilSign = Math.Sign(evilPopChange);
-        if (evilSign == -1){
-            // essentially just adds the evilPopChange(positive number version) to evilDiedToday the evilPopChange negative.
-            evilDiedToday -= evilPopChange;
+        // Kill people who died of natural causes according to death rate
+        KillPeople(populationFaction.alignment, naturalCausesDeaths);
+        // Birth people according to the birth rate. // TODO: THESE PEOPLE SHOULD BE ASSIGNED AS CLOSE TO THE SAME FRACTION OF THE CURRENT POP AS IS EVIL/NEUTRAL/GOOD as is possible.
+        populationFaction.IncreaseSize(births);
+    }
+
+    /// <summary>
+    /// Changes the colour of the renderer for this game object depending on the proportions of good and evil people.
+    /// </summary>
+    private void ChangeColour(){
+        ulong goodPopSize = population.goodPopulation.GetSize();
+        ulong evilPopSize = population.evilPopulation.GetSize();
+
+        if (evilPopSize < goodPopSize){
+            //Color it the appropriate level of green.
+            double value = ((double)goodPopSize / ((double)goodPopSize + (double)evilPopSize));
+            value *= goodClrMax.g;
+            float valueF = (float)value;
+            currentClr = new UnityEngine.Color(0.0f, valueF, 0.0f);
+            rend.material.color = currentClr;
+        } else if (evilPopSize > goodPopSize){
+            //Color it the appropriate level of red.
+            double value = ((double)evilPopSize / ((double)goodPopSize + (double)evilPopSize));
+            value *= evilClrMax.r;
+            float valueF = (float)value;
+            currentClr = new UnityEngine.Color(valueF, 0.0f, 0.0f);
+            rend.material.color = currentClr;
+        } else if (evilPopSize == goodPopSize){
+            // Do nothing
+        } else { throw new System.Exception("The evil population or good population has been changed while ChangeColour method was running."); }
+    }
+
+    private void InstantiateDeathText(Alignment alignment, ulong deaths){
+        switch (alignment){
+            case Alignment.GOOD:
+                InstantiateGoodDeathText(deaths);
+                break;
+            case Alignment.EVIL:
+                InstantiateEvilDeathText(deaths);
+                break;
         }
     }
 
-    long CalculatePopulationChange(double concernedPopulation){
-        double dBirths = concernedPopulation * birthRate;
-        long births = (long) dBirths;
+    private void InstantiateGoodDeathText(ulong deaths){
+        Vector3 gameObjectWorldSpacePos = Camera.main.transform.TransformPoint(transform.position);
+        Vector3 initialPos = gameObjectWorldSpacePos + evilDeathTextLocalPos;
+        initialPos.z = 0;
 
-        double dDeaths = concernedPopulation * deathRate;
-        long deaths = (long) dDeaths;
+        Debug.Log(name + " localPosition variable is: " + initialPos.x + ", " + initialPos.y + ", " + initialPos.z);
+        // add the evilDeathTextLocalPos, or convert evilDeathTextLocalPos to local pos from world space and then add them?
 
-        long populationChange = births - deaths;
+        GameObject textGO = Instantiate(evilTextPrefab, initialPos, Quaternion.identity, canvasRefTransform);
+        textGO.SetActive(false);
+        textGO.GetComponent<TextMeshProUGUI>().text = deaths.ToString();
+        textGO.name += "_" + name;
+        textGO.SetActive(true);
+    }
 
-        return populationChange;
+    private void InstantiateEvilDeathText(ulong deaths){
+        Vector3 gameObjectWorldSpacePos = Camera.main.transform.TransformPoint(transform.position);
+        Vector3 initialPos = gameObjectWorldSpacePos + goodDeathTextLocalPos;
+        initialPos.z = 0;
+
+        Debug.Log(name + " localPosition variable is: " + initialPos.x + ", " + initialPos.y + ", " + initialPos.z);
+        // add the evilDeathTextLocalPos, or convert evilDeathTextLocalPos to local pos from world space and then add them?
+
+        GameObject textGO = Instantiate(goodTextPrefab, initialPos, Quaternion.identity, canvasRefTransform);
+        textGO.SetActive(false);
+        textGO.GetComponent<TextMeshProUGUI>().text = deaths.ToString();
+        textGO.name += "_" + name;
+        textGO.SetActive(true);
+    }
+
+    public ulong KillPeople(Alignment alignment, ulong numberToKill){
+        PopulationFaction populationFaction = population.GetPopulationFactionByAlignment(alignment);
+
+        ulong factionSize = populationFaction.GetSize();
+
+        if (numberToKill > factionSize) {
+            populationFaction.Kill(factionSize);            
+            return factionSize;
+        }
+        else{
+            populationFaction.Kill(numberToKill);
+            return numberToKill;
+        }
+    }
+
+    public ulong KillPeople(Alignment alignment, ulong numberToKillMinimum, ulong numberToKillMaximum){
+        float numberToKillF = UnityEngine.Random.Range(numberToKillMinimum, numberToKillMaximum);
+        ulong numberToKill = (ulong)numberToKillF;
+
+        return KillPeople(alignment, numberToKill);
     }
 }

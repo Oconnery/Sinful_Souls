@@ -17,8 +17,8 @@ public class Devil_Controller : MonoBehaviour {
     private double _skullsMultiplier;
     private double _sinsMultiplier;
 
-    private long _totalEvilPopulationToday;
-    private long _totalEvilDiedToday;
+    private ulong _totalEvilPopulationToday;
+    private ulong _totalEvilDiedToday;
 
     // The starting available units allows the game designer to change gameplay in the inspector without changing code, 
     // whilst keeping the avaialable units varaibles private. 
@@ -148,7 +148,7 @@ public class Devil_Controller : MonoBehaviour {
         _totalEvilPopulationToday = 0;
 
         for(int i = 0; i < (world_Controller.region_Controller.Length); i++) {
-            _totalEvilPopulationToday += world_Controller.region_Controller[i].evilPop;
+            _totalEvilPopulationToday += world_Controller.region_Controller[i].GetEvilPop();
         }
     }
 

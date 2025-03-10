@@ -11,22 +11,22 @@ public class God_Controller : MonoBehaviour {
     public double _prayerEfficency;
 
     // Resources
-    private long _souls;
-    private long _prayers;
+    private ulong _souls;
+    private ulong _prayers;
 
     private double _prayersMultiplier;
 
-    public int _startingAvailableAngels;
-    public int _startingAvailableInquisitors;
+    public uint _startingAvailableAngels;
+    public uint _startingAvailableInquisitors;
 
-    private long _totalGoodPopulationToday;
-    private long _totalGoodDeathCountToday;
+    private ulong _totalGoodPopulationToday;
+    private ulong _totalGoodDeathCountToday;
 
-    public int _availableAngels;
-    public int _availableInquisitors;
+    public uint _availableAngels;
+    public uint _availableInquisitors;
 
-    public int _maxDeployableAngels;
-    public int _maxDeployableInquisitors;
+    public uint _maxDeployableAngels;
+    public uint _maxDeployableInquisitors;
 
     public World_Controller world_Controller;
 
@@ -53,19 +53,19 @@ public class God_Controller : MonoBehaviour {
 	}
 
     #region Get Statements
-    public long GetSouls(){
+    public ulong GetSouls(){
         return _souls;
     }
 
-    public long GetPrayers(){
+    public ulong GetPrayers(){
        return _prayers;
     }
 
-    public int GetAvailableAngels(){
+    public uint GetAvailableAngels(){
         return _availableAngels;
     }
 
-    public int GetAvailableInquisitors(){
+    public uint GetAvailableInquisitors(){
         return _availableInquisitors;
     }
     #endregion
@@ -92,7 +92,7 @@ public class God_Controller : MonoBehaviour {
     /// Reduces the prayers resource.
     /// </summary>
     /// <param name="prayersToSpend">The number of prayers that should be spent.</param>
-    public void SpendPrayers(long prayersToSpend){
+    public void SpendPrayers(ulong prayersToSpend){
         //Method to prevent other classes from increasing prayers. 
         if (prayersToSpend> _prayers){
             throw new System.ArgumentException($"The number of prayers ({_prayers}) is less than the amount passed from the Devil_Research_Information class object({prayersToSpend}.)");
@@ -124,6 +124,7 @@ public class God_Controller : MonoBehaviour {
         UpdateGoodDeathCountGlobal();
 
         // Update the count of people in hell.
+        // TODO: Code like this is really bad and old (from 2020) and should be fixed.
         world_Controller.heavenDeathCount += _totalGoodDeathCountToday;
 
         // Update the resources based on the new statistics.
@@ -142,7 +143,7 @@ public class God_Controller : MonoBehaviour {
         _totalGoodDeathCountToday = 0;
 
         for (int i =0; i < (world_Controller.region_Controller.Length); i++){
-            _totalGoodPopulationToday += world_Controller.region_Controller[i].evilPop;
+            _totalGoodPopulationToday += world_Controller.region_Controller[i].GetEvilPop();
         }
     }
 
@@ -159,7 +160,7 @@ public class God_Controller : MonoBehaviour {
     /// Updates the number of prayers made available to the god faction based off the total number of good people and global sin efficency (need to take into account local sin efficency?)  
     /// </summary>
     private void UpdatePrayers(){
-        _prayers += (long)(_prayerEfficency * _totalGoodPopulationToday * _prayersMultiplier);
+        _prayers += (ulong)(_prayerEfficency * _totalGoodPopulationToday * _prayersMultiplier);
     }
 
     /// <summary>

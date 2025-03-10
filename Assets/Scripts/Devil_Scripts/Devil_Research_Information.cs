@@ -28,42 +28,5 @@ public class Devil_Research_Information : MonoBehaviour {
  
     #region Research Tiers
     
-    // Activate certain points in research.
-    public void ActivateTierOneRankOne(){
-        if (devil_Controller.GetSins() > 50){
-            devil_Controller.SpendSins(50);
-            devil_Controller._sinEfficency += 0.1;
-        }
-    }
-
-    public void ActivateTierOneRankTwo(){
-        if (devil_Controller.GetSins() > 50){
-            devil_Controller.SpendSins(50);
-            int randomNumber = (int)(Random.Range(0.0f, 25.0f));
-            if (devil_Controller.world_Controller.region_Controller[randomNumber].neutralPop > 1000000){
-                devil_Controller.world_Controller.region_Controller[randomNumber].evilPop += 1000000;
-                devil_Controller.world_Controller.region_Controller[randomNumber].neutralPop -= 1000000;
-            }
-        }
-    }
-
-    public void ActivateTierOneRankThree(){
-
-    }
-
-    public void ActivateTierTwoRankOne(){
-
-
-    }
-
-    public void ActiveTierTwoRankTwo(){
-
-
-    }
-
-    public void ActiveTierTwoRankThree(){
-
-
-    }
     #endregion
 }

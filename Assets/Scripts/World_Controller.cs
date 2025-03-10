@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using System;
 
 public class World_Controller : MonoBehaviour {
-    // A script containing things that affect the world as a whole.
     private const int numberOfCountries = 26;
 
     // 26 country references are stored here and accessed from methods in this class and the devil/god controller classes.
@@ -24,18 +23,15 @@ public class World_Controller : MonoBehaviour {
     private float _timer;
     private bool _isTimePaused;
 
-    public long hellDeathCount;
-    public long heavenDeathCount;
+    public ulong hellDeathCount;
+    public ulong heavenDeathCount;
 
-    // Reference to the god and devil controllers
     private Devil_Controller devil_Controller;
     private God_Controller god_Controller;
 
-    //HUD references (assigned to the game object this class is implemented onto (game controller)
     public Text skullsSoulsText;
     public Text sinsPrayersText;
     public Text sinEfficencyText;
-    //public Text newsFlashText;
     public Text currentDateText;
     public Text hellCountText;
     public Text heavenCountText;
@@ -43,22 +39,19 @@ public class World_Controller : MonoBehaviour {
     public Text baseUnitCountText;
     public Text specialUnitCountText;
 
-    // Get a reference to all of the continent controllers.
-
     private AI_Controller ai_Controller;
 
     void Start () {
         // Find devil and god controllers.
         devil_Controller = this.gameObject.GetComponent<Devil_Controller>();
         god_Controller = this.gameObject.GetComponent<God_Controller>();
-
         ai_Controller = this.gameObject.GetComponent<AI_Controller>();
 
         _day = (short) DateTime.Now.Day;
-        _month = (short)DateTime.Now.Month;
-        _year = (short)DateTime.Now.Year;
+        _month = (short) DateTime.Now.Month;
+        _year = (short) DateTime.Now.Year;
         
-        // Don't bother with leap year.
+        // Don't bother with leap year for now.
         _daysInMonth = new short[12] {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
         _timer = 0.0f;
 
@@ -71,6 +64,7 @@ public class World_Controller : MonoBehaviour {
 
         _isTimePaused = false;
 
+        // Below should probably be a in a HUD class.
         hellDeathCount = 0;
         heavenDeathCount = 0;
 
@@ -104,8 +98,8 @@ public class World_Controller : MonoBehaviour {
                 // Reset timer 
                 _timer = 0.0f;
 
-                // Update the populations in the whole world.
-                UpdateAllRegionStatistics();
+                // Update the populations in the whole world. TODO: can I do this with listeners instead?
+                UpdateAllRegionStatistics(); 
 
                 // Set the ownership and control level of the continents 
 
@@ -145,7 +139,7 @@ public class World_Controller : MonoBehaviour {
     /// </summary>
     private void UpdateAllRegionStatistics(){
         for (int i = 0; i < region_Controller.Length; i++){
-            region_Controller[i].CallDaily();
+            region_Controller[i].DailyCall();
         }
     }
 
@@ -169,7 +163,6 @@ public class World_Controller : MonoBehaviour {
     /// </summary>
     public void UnpauseResetSpeed(){
         daytimerMultiplier = 1.0f;
-
         _isTimePaused = false;
     }
 
@@ -237,7 +230,6 @@ public class World_Controller : MonoBehaviour {
         else{
             currentDateText.text += _month + "/";
         }
-
         currentDateText.text += _year;
     }
 

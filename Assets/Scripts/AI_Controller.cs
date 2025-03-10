@@ -35,7 +35,7 @@ public class AI_Controller : MonoBehaviour {
         //god_Controller._availableAngels = god_Controller._maxDeployableAngels;
 
         // Place angels in random countries.
-        for (int i = god_Controller._availableAngels; i > 0; i--){
+        for (uint i = god_Controller._availableAngels; i > 0; i--){
             int randomNumber = (int)(Random.Range(0.0f, 26.0f));
             world_Controller.region_Controller[randomNumber].IncrementLocalAngels();
         }

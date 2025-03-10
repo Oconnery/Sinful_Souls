@@ -221,14 +221,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 270000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 67777543
   birthRate: 0.00006438356
   deathRate: 0.00003969863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &11008319
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -719,14 +721,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 201000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 3464366
   birthRate: 0.00006438356
   deathRate: 0.00003969863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &42350401
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,14 +832,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 775000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 2342346342
   birthRate: 0.00003769863
   deathRate: 0.00002969863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &42350405
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2488,7 +2494,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 61.8, y: -117.5}
+  m_AnchoredPosition: {x: 61.80005, y: -117.5}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &259832087
@@ -2709,14 +2715,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 88000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 4564568877
   birthRate: 0.00002569863
   deathRate: 0.00001969863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &276516355
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3626,14 +3634,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 37000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 342345
   birthRate: 0.00001669863
   deathRate: 0.00001769863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &334483310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3735,14 +3745,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 261000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 56456456
   birthRate: 0.00001819863
   deathRate: 0.00001769863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &334483315
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4638,7 +4650,7 @@ Transform:
   m_GameObject: {fileID: 442966043}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2219718, y: 0.6209451, z: -0.05859375}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5185,85 +5197,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461392006}
   m_CullTransparentMesh: 1
---- !u!1 &464232500
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 464232501}
-  - component: {fileID: 464232503}
-  - component: {fileID: 464232502}
-  m_Layer: 5
-  m_Name: Good_Death_Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &464232501
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464232500}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 903152511}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 704, y: -415}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &464232502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464232500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.9764706, b: 0, a: 0.60784316}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 36
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: +246,789
---- !u!222 &464232503
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464232500}
-  m_CullTransparentMesh: 0
 --- !u!1 &464987662
 GameObject:
   m_ObjectHideFlags: 0
@@ -5492,14 +5425,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 5000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 23432
   birthRate: 0.00001669863
   deathRate: 0.00001769863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!61 &486398689
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6061,14 +5996,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 391000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 5645645
   birthRate: 0.00006438356
   deathRate: 0.00003969863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &535025628
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6340,14 +6277,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 425000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 45675467456
   birthRate: 0.00001819863
   deathRate: 0.00001769863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &543067273
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7803,6 +7742,89 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 629144891}
   m_CullTransparentMesh: 1
+--- !u!1 &645931479
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 645931483}
+  - component: {fileID: 645931482}
+  - component: {fileID: 645931481}
+  m_Layer: 5
+  m_Name: Canvas_World_Space
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &645931481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645931479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 1
+--- !u!223 &645931482
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645931479}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 519420031}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: -1296494851
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &645931483
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645931479}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.018518519, y: 0.018518519, z: 0.018518519}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1247905026}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920.0001, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &670336143
 GameObject:
   m_ObjectHideFlags: 0
@@ -8026,7 +8048,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &685253981
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8149,14 +8171,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 91000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 2348787
   birthRate: 0.00002569863
   deathRate: 0.00001969863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &695003807
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8903,14 +8927,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 35000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 995448
   birthRate: 0.00001819863
   deathRate: 0.00001769863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &789117222
 GameObject:
   m_ObjectHideFlags: 0
@@ -9088,14 +9114,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 174000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 36436363
   birthRate: 0.00006438356
   deathRate: 0.00003969863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &805050003
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9555,7 +9583,7 @@ GameObject:
   - component: {fileID: 903152508}
   - component: {fileID: 903152512}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas_Screen_Overlay
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9636,8 +9664,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 916941158}
-  - {fileID: 464232501}
   - {fileID: 2013292955}
   - {fileID: 809068792}
   - {fileID: 685253981}
@@ -9657,7 +9683,7 @@ RectTransform:
   - {fileID: 1972456645}
   - {fileID: 1445187507}
   - {fileID: 995687432}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1247905026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -9686,85 +9712,6 @@ MonoBehaviour:
   fastForwardBtn: {fileID: 995687433}
   researchTreeBtn: {fileID: 584406985}
   worldController: {fileID: 442966044}
---- !u!1 &916941157
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 916941158}
-  - component: {fileID: 916941160}
-  - component: {fileID: 916941159}
-  m_Layer: 0
-  m_Name: Evil_Death_Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &916941158
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916941157}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 903152511}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -836.1, y: -412}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &916941159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916941157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.4392157, g: 0.03137255, b: 0.023529412, a: 0.60784316}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
-    m_FontSize: 36
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 3
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: 100,000
---- !u!222 &916941160
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916941157}
-  m_CullTransparentMesh: 0
 --- !u!1 &929405137
 GameObject:
   m_ObjectHideFlags: 0
@@ -9867,14 +9814,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 330000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 330000000
   birthRate: 0.00001669863
   deathRate: 0.00001769863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &929405141
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11287,14 +11236,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 279000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 2342354
   birthRate: 0.00003169863
   deathRate: 0.00002909863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &1037529061
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12432,14 +12383,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 1595000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 324543563454
   birthRate: 0.00003169863
   deathRate: 0.00002909863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &1104128528
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13140,14 +13093,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 209000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 45654648
   birthRate: 0.00002569863
   deathRate: 0.00001969863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1221913853
 GameObject:
   m_ObjectHideFlags: 0
@@ -13364,6 +13319,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236505791}
   m_CullTransparentMesh: 1
+--- !u!1 &1247905025
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1247905026}
+  m_Layer: 5
+  m_Name: UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1247905026
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247905025}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 645931483}
+  - {fileID: 903152511}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1251567316
 GameObject:
   m_ObjectHideFlags: 0
@@ -15367,6 +15355,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c87b689a56f1165468938de1b40a46da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1490211322
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1490211323}
+  m_Layer: 0
+  m_Name: GoodDeathTextPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1490211323
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490211322}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1, y: 0.367, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1501362059}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1494996380
 GameObject:
   m_ObjectHideFlags: 0
@@ -15477,7 +15496,9 @@ Transform:
   m_LocalPosition: {x: -16.472393, y: 4.0381126, z: 0.2265625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1850559180}
+  - {fileID: 1490211323}
   m_Father: {fileID: 1546623648}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1501362060
@@ -15746,14 +15767,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 1000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 678678
   birthRate: 0.00001669863
   deathRate: 0.00001769863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1510561348
 GameObject:
   m_ObjectHideFlags: 0
@@ -16698,14 +16721,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 44000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 8898776
   birthRate: 0.00003169863
   deathRate: 0.00002909863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &1634659824
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17231,14 +17256,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 34000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 4564578
   birthRate: 0.00002569863
   deathRate: 0.00001969863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &1654806600
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18148,14 +18175,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 143800000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 2353255
   birthRate: 0.00002438356
   deathRate: 0.00003369863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1663219326
 GameObject:
   m_ObjectHideFlags: 0
@@ -18706,14 +18735,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 180000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 3453456523
   birthRate: 0.00006438356
   deathRate: 0.00003969863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &1717114684
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -19567,14 +19598,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 50000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 453465
   birthRate: 0.00001819863
   deathRate: 0.00001769863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &1811110403
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -19748,7 +19781,7 @@ Transform:
   m_GameObject: {fileID: 1823204644}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.1046982, y: 3.675208, z: 0.12109375}
+  m_LocalPosition: {x: 3.1047277, y: 3.675178, z: 0.12109375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19983,14 +20016,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 1400000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 234234423444
   birthRate: 0.00001169863
   deathRate: 0.0000269863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!1 &1829875655
 GameObject:
   m_ObjectHideFlags: 0
@@ -20128,6 +20163,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1829875655}
   m_CullTransparentMesh: 1
+--- !u!1 &1850559179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1850559180}
+  m_Layer: 0
+  m_Name: EvilDeathTextPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1850559180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850559179}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1501362059}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1854608387
 GameObject:
   m_ObjectHideFlags: 0
@@ -20379,14 +20445,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 203000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 2342343
   birthRate: 0.00001219863
   deathRate: 0.00001119863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &1916843838
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21167,14 +21235,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 66000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 23432425
   birthRate: 0.00003769863
   deathRate: 0.00002969863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &1961780773
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -22221,14 +22291,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe3bef155eaf03e408ed5abd921c9403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  population: 211000000
-  evilPop: 0
-  neutralPop: 0
-  goodPop: 0
-  evilDiedToday: 0
-  goodDiedToday: 0
+  canvasRefTransform: {fileID: 645931483}
+  initialTotalPopulation: 3242342
   birthRate: 0.00002969863
   deathRate: 0.00003969863
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
+  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
 --- !u!60 &2031324510
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -23158,7 +23230,7 @@ SceneRoots:
   - {fileID: 1663219327}
   - {fileID: 1755741147}
   - {fileID: 973843940}
-  - {fileID: 903152511}
   - {fileID: 875555708}
   - {fileID: 442966045}
   - {fileID: 583303640}
+  - {fileID: 1247905026}
