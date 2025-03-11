@@ -229,8 +229,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: -5.92831, y: -10.954, z: 0}
 --- !u!60 &11008319
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -729,8 +728,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: -53.428, y: 0.974, z: 0}
 --- !u!1 &42350401
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,8 +838,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: -2.7707, y: 17.321655, z: 0}
 --- !u!60 &42350405
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -2723,8 +2720,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: 21.829, y: 0, z: 0}
 --- !u!60 &276516355
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3642,8 +3638,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: -54.32, y: -25.03, z: 0}
 --- !u!1 &334483310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3753,8 +3748,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: -1.89623, y: 4.0857, z: 0}
 --- !u!60 &334483315
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5433,8 +5427,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: -69.253, y: 21.0261, z: 0}
 --- !u!61 &486398689
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6004,8 +5997,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: 13.9454, y: -7.719, z: 0}
 --- !u!60 &535025628
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6285,8 +6277,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: -6.81223, y: -6.0123, z: 0}
 --- !u!60 &543067273
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8179,8 +8170,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: -13, y: 0, z: 0}
 --- !u!60 &695003807
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8935,8 +8925,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: -45.1409, y: 52.9972, z: 0}
 --- !u!1 &789117222
 GameObject:
   m_ObjectHideFlags: 0
@@ -9122,8 +9111,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: 12.658, y: 13.066, z: 0}
 --- !u!60 &805050003
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9822,8 +9810,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: -12, y: 6, z: 0}
 --- !u!60 &929405141
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11244,8 +11231,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: 9.174, y: 5.60799, z: 0}
 --- !u!60 &1037529061
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12391,8 +12377,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: -10.8419, y: 13.37362, z: 0}
 --- !u!60 &1104128528
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13101,8 +13086,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: 23.8368, y: 19.5014, z: 0}
 --- !u!1 &1221913853
 GameObject:
   m_ObjectHideFlags: 0
@@ -15775,8 +15759,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: 56.51, y: 16.84, z: 0}
 --- !u!1 &1510561348
 GameObject:
   m_ObjectHideFlags: 0
@@ -16729,8 +16712,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: -47.0777, y: 6.3113, z: 0}
 --- !u!60 &1634659824
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -17264,8 +17246,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: 11.2114, y: 7.0058, z: 0}
 --- !u!60 &1654806600
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -18183,8 +18164,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: -88.57, y: -26.5243, z: 0}
 --- !u!1 &1663219326
 GameObject:
   m_ObjectHideFlags: 0
@@ -18743,8 +18723,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: 41.74369, y: -6.228013, z: 0}
 --- !u!60 &1717114684
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -19606,8 +19585,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: -23.540218, y: -7.7482, z: 0}
 --- !u!60 &1811110403
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -20024,8 +20002,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: 0, y: -6.98395, z: 0}
 --- !u!1 &1829875655
 GameObject:
   m_ObjectHideFlags: 0
@@ -20453,8 +20430,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: 20.753, y: -33.1203, z: 0}
 --- !u!60 &1916843838
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21243,8 +21219,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: 2.654, y: -6.7183, z: 0}
 --- !u!60 &1961780773
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -22299,8 +22274,7 @@ MonoBehaviour:
     type: 3}
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
-  evilDeathTextLocalPos: {x: 0, y: 0, z: 0}
-  goodDeathTextLocalPos: {x: 0, y: 0, z: 0}
+  deathTextOffset: {x: -71.58, y: 9.2304, z: 0}
 --- !u!60 &2031324510
 PolygonCollider2D:
   m_ObjectHideFlags: 0

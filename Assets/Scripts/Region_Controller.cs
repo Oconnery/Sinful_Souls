@@ -37,10 +37,12 @@ public class Region_Controller : MonoBehaviour {
         }
 
         public void Kill(ulong numberToKill) {
-            size -= numberToKill;
-            diedToday += numberToKill;
-            outerRef.InstantiateDeathText(alignment, numberToKill);
-            // TODO: Exception if numberToKill is larger than size
+            if (numberToKill > 0) {
+                size -= numberToKill;
+                diedToday += numberToKill;
+                outerRef.InstantiateDeathText(alignment, numberToKill);
+                // TODO: Exception if numberToKill is larger than size
+            }
         }
 
         public void ReduceWithoutKilling(ulong reduceBy) {
@@ -125,8 +127,7 @@ public class Region_Controller : MonoBehaviour {
     public GameObject evilTextPrefab;
     public GameObject goodTextPrefab;
 
-    public Vector3 evilDeathTextLocalPos;
-    public Vector3 goodDeathTextLocalPos;
+    public Vector3 deathTextOffset;
 
     // Use this for initialization
     void Start() {
@@ -418,12 +419,9 @@ public class Region_Controller : MonoBehaviour {
     }
 
     private void InstantiateGoodDeathText(ulong deaths){
-        Vector3 initialPos = transform.position + evilDeathTextLocalPos; 
-        initialPos.z = 0;
-
+        Vector3 offset = canvasRefTransform.TransformPoint(deathTextOffset);
+        Vector3 initialPos = new Vector3((transform.position.x + offset.x), (transform.position.y + offset.y), 0);
         Debug.Log(name + " localPosition variable is: " + initialPos.x + ", " + initialPos.y + ", " + initialPos.z);
-        // add the evilDeathTextLocalPos, or convert evilDeathTextLocalPos to local pos from world space and then add them?
-
         GameObject textGO = Instantiate(evilTextPrefab, initialPos, Quaternion.identity, canvasRefTransform);
         textGO.SetActive(false);
         textGO.GetComponent<TextMeshProUGUI>().text = deaths.ToString();
@@ -432,12 +430,9 @@ public class Region_Controller : MonoBehaviour {
     }
 
     private void InstantiateEvilDeathText(ulong deaths){
-        Vector3 initialPos = transform.position + goodDeathTextLocalPos;
-        initialPos.z = 0;
-
+        Vector3 offset = canvasRefTransform.TransformPoint(deathTextOffset);
+        Vector3 initialPos = new Vector3((transform.position.x + offset.x), (transform.position.y + offset.y), 0);
         Debug.Log(name + " localPosition variable is: " + initialPos.x + ", " + initialPos.y + ", " + initialPos.z);
-        // add the evilDeathTextLocalPos, or convert evilDeathTextLocalPos to local pos from world space and then add them?
-
         GameObject textGO = Instantiate(goodTextPrefab, initialPos, Quaternion.identity, canvasRefTransform);
         textGO.SetActive(false);
         textGO.GetComponent<TextMeshProUGUI>().text = deaths.ToString();
