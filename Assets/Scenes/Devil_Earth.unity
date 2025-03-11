@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 67777543
+  initialTotalPopulation: 270000000
   birthRate: 0.00006438356
   deathRate: 0.00003969863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -722,7 +722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 3464366
+  initialTotalPopulation: 201000000
   birthRate: 0.00006438356
   deathRate: 0.00003969863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -833,7 +833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 2342346342
+  initialTotalPopulation: 775000000
   birthRate: 0.00003769863
   deathRate: 0.00002969863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -2716,7 +2716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 4564568877
+  initialTotalPopulation: 88000000
   birthRate: 0.00002569863
   deathRate: 0.00001969863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -3635,7 +3635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 342345
+  initialTotalPopulation: 37000000
   birthRate: 0.00001669863
   deathRate: 0.00001769863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -3746,7 +3746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 56456456
+  initialTotalPopulation: 261000000
   birthRate: 0.00001819863
   deathRate: 0.00001769863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -5426,7 +5426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 23432
+  initialTotalPopulation: 500000
   birthRate: 0.00001669863
   deathRate: 0.00001769863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -5997,7 +5997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 5645645
+  initialTotalPopulation: 391000000
   birthRate: 0.00006438356
   deathRate: 0.00003969863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -6278,7 +6278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 45675467456
+  initialTotalPopulation: 425000000
   birthRate: 0.00001819863
   deathRate: 0.00001769863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -8172,7 +8172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 2348787
+  initialTotalPopulation: 91000000
   birthRate: 0.00002569863
   deathRate: 0.00001969863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -8928,7 +8928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 995448
+  initialTotalPopulation: 35000000
   birthRate: 0.00001819863
   deathRate: 0.00001769863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -9115,7 +9115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 36436363
+  initialTotalPopulation: 174000000
   birthRate: 0.00006438356
   deathRate: 0.00003969863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -11237,7 +11237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 2342354
+  initialTotalPopulation: 279000000
   birthRate: 0.00003169863
   deathRate: 0.00002909863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -12384,7 +12384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 324543563454
+  initialTotalPopulation: 1595000000
   birthRate: 0.00003169863
   deathRate: 0.00002909863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -13094,7 +13094,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 45654648
+  initialTotalPopulation: 209000000
   birthRate: 0.00002569863
   deathRate: 0.00001969863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -15768,7 +15768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 678678
+  initialTotalPopulation: 1000000
   birthRate: 0.00001669863
   deathRate: 0.00001769863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -16722,7 +16722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 8898776
+  initialTotalPopulation: 44000000
   birthRate: 0.00003169863
   deathRate: 0.00002909863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -17257,7 +17257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 4564578
+  initialTotalPopulation: 34000000
   birthRate: 0.00002569863
   deathRate: 0.00001969863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -18176,7 +18176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 2353255
+  initialTotalPopulation: 143800000
   birthRate: 0.00002438356
   deathRate: 0.00003369863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -18736,7 +18736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 3453456523
+  initialTotalPopulation: 180000000
   birthRate: 0.00006438356
   deathRate: 0.00003969863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -19599,7 +19599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 453465
+  initialTotalPopulation: 50000000
   birthRate: 0.00001819863
   deathRate: 0.00001769863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -20017,7 +20017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 234234423444
+  initialTotalPopulation: 1400000000
   birthRate: 0.00001169863
   deathRate: 0.0000269863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -20446,7 +20446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 2342343
+  initialTotalPopulation: 203000000
   birthRate: 0.00001219863
   deathRate: 0.00001119863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -21236,7 +21236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 23432425
+  initialTotalPopulation: 66000000
   birthRate: 0.00003769863
   deathRate: 0.00002969863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
@@ -22292,7 +22292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvasRefTransform: {fileID: 645931483}
-  initialTotalPopulation: 3242342
+  initialTotalPopulation: 211000000
   birthRate: 0.00002969863
   deathRate: 0.00003969863
   evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,

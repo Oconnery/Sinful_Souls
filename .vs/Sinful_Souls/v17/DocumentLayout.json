@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|c:\\users\\oisin\\documents\\github\\sinful_souls\\assets\\scripts\\region_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|solutionrelative:assets\\scripts\\region_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2CCC2355-CDEC-9415-0FC3-8E1891C9D7DC}|Assembly-CSharp.csproj|c:\\users\\oisin\\documents\\github\\sinful_souls\\assets\\region_populations.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{2CCC2355-CDEC-9415-0FC3-8E1891C9D7DC}|Assembly-CSharp.csproj|solutionrelative:assets\\region_populations.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,13 +34,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "region_populations.txt",
+              "DocumentMoniker": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\region_populations.txt",
+              "RelativeDocumentMoniker": "Assets\\region_populations.txt",
+              "ToolTip": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\region_populations.txt",
+              "RelativeToolTip": "Assets\\region_populations.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-03-11T11:26:39.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Region_Controller.cs",
               "DocumentMoniker": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\Region_Controller.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Region_Controller.cs",
               "ToolTip": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\Region_Controller.cs",
               "RelativeToolTip": "Assets\\Scripts\\Region_Controller.cs",
-              "ViewState": "AgIAAI0BAAAAAAAAAAAYwL0BAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAJgBAAAAAAAAAAA3wLkBAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-05T16:26:44.168Z",
               "EditorCaption": ""

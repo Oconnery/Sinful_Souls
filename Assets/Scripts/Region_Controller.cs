@@ -418,8 +418,7 @@ public class Region_Controller : MonoBehaviour {
     }
 
     private void InstantiateGoodDeathText(ulong deaths){
-        Vector3 gameObjectWorldSpacePos = Camera.main.transform.TransformPoint(transform.position);
-        Vector3 initialPos = gameObjectWorldSpacePos + evilDeathTextLocalPos;
+        Vector3 initialPos = transform.position + evilDeathTextLocalPos; 
         initialPos.z = 0;
 
         Debug.Log(name + " localPosition variable is: " + initialPos.x + ", " + initialPos.y + ", " + initialPos.z);
@@ -433,8 +432,7 @@ public class Region_Controller : MonoBehaviour {
     }
 
     private void InstantiateEvilDeathText(ulong deaths){
-        Vector3 gameObjectWorldSpacePos = Camera.main.transform.TransformPoint(transform.position);
-        Vector3 initialPos = gameObjectWorldSpacePos + goodDeathTextLocalPos;
+        Vector3 initialPos = transform.position + goodDeathTextLocalPos;
         initialPos.z = 0;
 
         Debug.Log(name + " localPosition variable is: " + initialPos.x + ", " + initialPos.y + ", " + initialPos.z);
