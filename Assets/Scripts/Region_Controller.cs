@@ -126,8 +126,11 @@ public class Region_Controller : MonoBehaviour {
 
     public GameObject evilTextPrefab;
     public GameObject goodTextPrefab;
-
     public Vector3 deathTextOffset;
+    private float minDeathTextSize;
+    private float maxDeathTextSize;
+    private const ulong minProgressiveDeathTextDeathValue = 100;
+    private const ulong maxProgressiveDeathTextDeathValue = 10000;
 
     // Use this for initialization
     void Start() {
@@ -144,6 +147,9 @@ public class Region_Controller : MonoBehaviour {
         rend.material.color = currentClr;
 
         SetInitialLocalUnits();
+  
+        minDeathTextSize = 14;
+        maxDeathTextSize = 72;
     }
 
     private void SetInitialRates(){
@@ -418,13 +424,15 @@ public class Region_Controller : MonoBehaviour {
         }
     }
 
+    // TODO: All the death text stuff should be in it's own class
     private void InstantiateGoodDeathText(ulong deaths){
         Vector3 offset = canvasRefTransform.TransformPoint(deathTextOffset);
         Vector3 initialPos = new Vector3((transform.position.x + offset.x), (transform.position.y + offset.y), 0);
-        Debug.Log(name + " localPosition variable is: " + initialPos.x + ", " + initialPos.y + ", " + initialPos.z);
+        float fontSize = CalculateDeathTextFontSize(deaths);
+
         GameObject textGO = Instantiate(evilTextPrefab, initialPos, Quaternion.identity, canvasRefTransform);
-        textGO.SetActive(false);
         textGO.GetComponent<TextMeshProUGUI>().text = deaths.ToString();
+        textGO.GetComponent<TextMeshProUGUI>().fontSize = fontSize;
         textGO.name += "_" + name;
         textGO.SetActive(true);
     }
@@ -432,12 +440,35 @@ public class Region_Controller : MonoBehaviour {
     private void InstantiateEvilDeathText(ulong deaths){
         Vector3 offset = canvasRefTransform.TransformPoint(deathTextOffset);
         Vector3 initialPos = new Vector3((transform.position.x + offset.x), (transform.position.y + offset.y), 0);
-        Debug.Log(name + " localPosition variable is: " + initialPos.x + ", " + initialPos.y + ", " + initialPos.z);
+        float fontSize = CalculateDeathTextFontSize(deaths);
+
         GameObject textGO = Instantiate(goodTextPrefab, initialPos, Quaternion.identity, canvasRefTransform);
-        textGO.SetActive(false);
         textGO.GetComponent<TextMeshProUGUI>().text = deaths.ToString();
+        textGO.GetComponent<TextMeshProUGUI>().fontSize = fontSize;
         textGO.name += "_" + name;
         textGO.SetActive(true);
+    }
+
+    private float CalculateDeathTextFontSize(ulong deaths){
+        // have a few different font sizes for different death levels? or make it progressively bigger each death up until a certain max size (72 or something)
+        // lets try make the font bigger progressively with each death.
+        switch(deaths){
+            case < minProgressiveDeathTextDeathValue:
+                return minDeathTextSize;
+            case > maxProgressiveDeathTextDeathValue: 
+                return maxDeathTextSize;
+            default:
+                return CalculateDeathTextFontSizeProgessively(deaths);
+        }
+    }
+
+    private float CalculateDeathTextFontSizeProgessively(ulong deaths) {
+        float fontSizeDifference = maxDeathTextSize - minDeathTextSize;
+        ulong deathMinMaxDifference = maxProgressiveDeathTextDeathValue - minProgressiveDeathTextDeathValue;
+
+        // Calculate how much above the minimum font size it should be:
+        float fontSizeIncrease = (float) Math.Floor(deaths / (deathMinMaxDifference / fontSizeDifference));
+        return minDeathTextSize + fontSizeIncrease;
     }
 
     public ulong KillPeople(Alignment alignment, ulong numberToKill){
