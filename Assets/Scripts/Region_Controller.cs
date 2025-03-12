@@ -431,7 +431,7 @@ public class Region_Controller : MonoBehaviour {
         float fontSize = CalculateDeathTextFontSize(deaths);
 
         GameObject textGO = Instantiate(evilTextPrefab, initialPos, Quaternion.identity, canvasRefTransform);
-        textGO.GetComponent<TextMeshProUGUI>().text = deaths.ToString();
+        textGO.GetComponent<TextMeshProUGUI>().text = deaths.ToString(); // todo: don't get component twice
         textGO.GetComponent<TextMeshProUGUI>().fontSize = fontSize;
         textGO.name += "_" + name;
         textGO.SetActive(true);
