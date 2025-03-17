@@ -1,0 +1,1092 @@
+fileFormatVersion: 2
+guid: 7c596c57b30d9c149a987c6a0f2339a0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 227121335298186738
+    second: INDONESIA_BORDER_0
+  - first:
+      213: -87250164239553571
+    second: INDONESIA_BORDER_1
+  - first:
+      213: -3800830223148173353
+    second: INDONESIA_BORDER_2
+  - first:
+      213: -9175207004134225552
+    second: INDONESIA_BORDER_3
+  - first:
+      213: 8729086971992404913
+    second: INDONESIA_BORDER_4
+  - first:
+      213: -957716374868830300
+    second: INDONESIA_BORDER_5
+  - first:
+      213: 2989596295251290506
+    second: INDONESIA_BORDER_6
+  - first:
+      213: -5059433838347489332
+    second: INDONESIA_BORDER_7
+  - first:
+      213: -5051802975050861076
+    second: INDONESIA_BORDER_8
+  - first:
+      213: -7163142308622828647
+    second: INDONESIA_BORDER_9
+  - first:
+      213: -5924856941482398507
+    second: INDONESIA_BORDER_10
+  - first:
+      213: 3440252248186336422
+    second: INDONESIA_BORDER_11
+  - first:
+      213: 5704146924372476502
+    second: INDONESIA_BORDER_12
+  - first:
+      213: 8627266532463216511
+    second: INDONESIA_BORDER_13
+  - first:
+      213: 5543829174536440904
+    second: INDONESIA_BORDER_14
+  - first:
+      213: -5493212834075709912
+    second: INDONESIA_BORDER_15
+  - first:
+      213: -3671242610901192895
+    second: INDONESIA_BORDER_16
+  - first:
+      213: -3870126722790266228
+    second: INDONESIA_BORDER_17
+  - first:
+      213: 7117185385324429273
+    second: INDONESIA_BORDER_18
+  - first:
+      213: -3114472540795113894
+    second: INDONESIA_BORDER_19
+  - first:
+      213: 8630727509526991178
+    second: INDONESIA_BORDER_20
+  - first:
+      213: 8634920975911573470
+    second: INDONESIA_BORDER_21
+  - first:
+      213: -970724708041587033
+    second: INDONESIA_BORDER_22
+  - first:
+      213: 1696620774219536771
+    second: INDONESIA_BORDER_23
+  - first:
+      213: 8499335546926446613
+    second: INDONESIA_BORDER_24
+  - first:
+      213: -1707915136481142440
+    second: INDONESIA_BORDER_25
+  - first:
+      213: -1577528010482117882
+    second: INDONESIA_BORDER_26
+  - first:
+      213: -2458588290601697847
+    second: INDONESIA_BORDER_27
+  - first:
+      213: -6040251940347327388
+    second: INDONESIA_BORDER_28
+  - first:
+      213: 7860565661485615981
+    second: INDONESIA_BORDER_29
+  - first:
+      213: -6865178952399506853
+    second: INDONESIA_BORDER_30
+  - first:
+      213: -8469648284571748522
+    second: INDONESIA_BORDER_31
+  - first:
+      213: 1494680908734613598
+    second: INDONESIA_BORDER_32
+  - first:
+      213: -3797131523528990493
+    second: INDONESIA_BORDER_33
+  - first:
+      213: -6665022698149642184
+    second: INDONESIA_BORDER_34
+  - first:
+      213: 2255030773982349813
+    second: INDONESIA_BORDER_35
+  - first:
+      213: -6488781065359602560
+    second: INDONESIA_BORDER_36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_0
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 611
+        width: 16
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fd5c5fa6a5e62300800000000000000
+      internalID: 227121335298186738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_1
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 553
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddb28e910760acef0800000000000000
+      internalID: -87250164239553571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_2
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 497
+        width: 54
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d73fa9bc0db04bc0800000000000000
+      internalID: -3800830223148173353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_3
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 488
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07947e197dd1ba080800000000000000
+      internalID: -9175207004134225552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_4
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 473
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b3f8133a52f32970800000000000000
+      internalID: 8729086971992404913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_5
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 436
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a75e50080285b2f0800000000000000
+      internalID: -957716374868830300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_6
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 445
+        width: 22
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a89e640bdfd2d7920800000000000000
+      internalID: 2989596295251290506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_7
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 406
+        width: 51
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccfe4b4eab749c9b0800000000000000
+      internalID: -5059433838347489332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_8
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 454
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce5f4d4b5f364e9b0800000000000000
+      internalID: -5051802975050861076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 399
+        width: 25
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99bf6f2b508679c90800000000000000
+      internalID: -7163142308622828647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_10
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 266
+        width: 116
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dc2fe1c00ea6cda0800000000000000
+      internalID: -5924856941482398507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_11
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 335
+        width: 99
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a4b2e6413b3ebf20800000000000000
+      internalID: 3440252248186336422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_12
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 278
+        width: 105
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 652cbd5e763392f40800000000000000
+      internalID: 5704146924372476502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_13
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 261
+        width: 76
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f77061ab3353ab770800000000000000
+      internalID: 8627266532463216511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_14
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 326
+        width: 24
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84c01b30343afec40800000000000000
+      internalID: 5543829174536440904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_15
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 204
+        width: 99
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82eec4d180034c3b0800000000000000
+      internalID: -5493212834075709912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_16
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 288
+        width: 34
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14fe4f4eb402d0dc0800000000000000
+      internalID: -3671242610901192895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_17
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 176
+        width: 94
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8ae65c104c8a4ac0800000000000000
+      internalID: -3870126722790266228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_18
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 260
+        width: 28
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9df3dd4466255c260800000000000000
+      internalID: 7117185385324429273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_19
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 218
+        width: 101
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5ee23fa9bb27c4d0800000000000000
+      internalID: -3114472540795113894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_20
+      rect:
+        serializedVersion: 2
+        x: 700
+        y: 243
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a415c8e31f086c770800000000000000
+      internalID: 8630727509526991178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_21
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 232
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed757c8b0e665d770800000000000000
+      internalID: 8634920975911573470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_22
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 216
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a68c7a650b4782f0800000000000000
+      internalID: -970724708041587033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_23
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 220
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38957e5ea9b9b8710800000000000000
+      internalID: 1696620774219536771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_24
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 215
+        width: 31
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 518b66506a4b3f570800000000000000
+      internalID: 8499335546926446613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_25
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 200
+        width: 39
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85957877b344c48e0800000000000000
+      internalID: -1707915136481142440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_26
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 220
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6031cffe1ae7b1ae0800000000000000
+      internalID: -1577528010482117882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_27
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 200
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cd30c1d9f651edd0800000000000000
+      internalID: -2458588290601697847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_28
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 202
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ccbb5ecd6bc2ca0800000000000000
+      internalID: -6040251940347327388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_29
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 198
+        width: 13
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6bcb7272d6561d60800000000000000
+      internalID: 7860565661485615981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_30
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 186
+        width: 15
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b523db6bd1cf9b0a0800000000000000
+      internalID: -6865178952399506853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_31
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 168
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 657ba9162c3c57a80800000000000000
+      internalID: -8469648284571748522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_32
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 153
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e584fa90e5c2eb410800000000000000
+      internalID: 1494680908734613598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_33
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 102
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e0ed965ff0ed4bc0800000000000000
+      internalID: -3797131523528990493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_34
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 91
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83000e83b251183a0800000000000000
+      internalID: -6665022698149642184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_35
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 47
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f9cac09a8a7b4f10800000000000000
+      internalID: 2255030773982349813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: INDONESIA_BORDER_36
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 0
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08cc5f5000833f5a0800000000000000
+      internalID: -6488781065359602560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      INDONESIA_BORDER_0: 227121335298186738
+      INDONESIA_BORDER_1: -87250164239553571
+      INDONESIA_BORDER_10: -5924856941482398507
+      INDONESIA_BORDER_11: 3440252248186336422
+      INDONESIA_BORDER_12: 5704146924372476502
+      INDONESIA_BORDER_13: 8627266532463216511
+      INDONESIA_BORDER_14: 5543829174536440904
+      INDONESIA_BORDER_15: -5493212834075709912
+      INDONESIA_BORDER_16: -3671242610901192895
+      INDONESIA_BORDER_17: -3870126722790266228
+      INDONESIA_BORDER_18: 7117185385324429273
+      INDONESIA_BORDER_19: -3114472540795113894
+      INDONESIA_BORDER_2: -3800830223148173353
+      INDONESIA_BORDER_20: 8630727509526991178
+      INDONESIA_BORDER_21: 8634920975911573470
+      INDONESIA_BORDER_22: -970724708041587033
+      INDONESIA_BORDER_23: 1696620774219536771
+      INDONESIA_BORDER_24: 8499335546926446613
+      INDONESIA_BORDER_25: -1707915136481142440
+      INDONESIA_BORDER_26: -1577528010482117882
+      INDONESIA_BORDER_27: -2458588290601697847
+      INDONESIA_BORDER_28: -6040251940347327388
+      INDONESIA_BORDER_29: 7860565661485615981
+      INDONESIA_BORDER_3: -9175207004134225552
+      INDONESIA_BORDER_30: -6865178952399506853
+      INDONESIA_BORDER_31: -8469648284571748522
+      INDONESIA_BORDER_32: 1494680908734613598
+      INDONESIA_BORDER_33: -3797131523528990493
+      INDONESIA_BORDER_34: -6665022698149642184
+      INDONESIA_BORDER_35: 2255030773982349813
+      INDONESIA_BORDER_36: -6488781065359602560
+      INDONESIA_BORDER_4: 8729086971992404913
+      INDONESIA_BORDER_5: -957716374868830300
+      INDONESIA_BORDER_6: 2989596295251290506
+      INDONESIA_BORDER_7: -5059433838347489332
+      INDONESIA_BORDER_8: -5051802975050861076
+      INDONESIA_BORDER_9: -7163142308622828647
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

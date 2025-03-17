@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|c:\\users\\oisin\\documents\\github\\sinful_souls\\assets\\scripts\\ui_scripts\\death_text.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|solutionrelative:assets\\scripts\\ui_scripts\\death_text.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\assets\\scripts\\ui_scripts\\region_panel_script.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|solutionrelative:assets\\scripts\\ui_scripts\\region_panel_script.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CCC2355-CDEC-9415-0FC3-8E1891C9D7DC}|Assembly-CSharp.csproj|C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\assets\\region_populations.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{2CCC2355-CDEC-9415-0FC3-8E1891C9D7DC}|Assembly-CSharp.csproj|solutionrelative:assets\\region_populations.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\assets\\scripts\\player_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|solutionrelative:assets\\scripts\\player_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|c:\\users\\oisin\\documents\\github\\sinful_souls\\assets\\scripts\\devil_scripts\\devil_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|solutionrelative:assets\\scripts\\devil_scripts\\devil_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|c:\\users\\oisin\\documents\\github\\sinful_souls\\assets\\scripts\\region_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|solutionrelative:assets\\scripts\\region_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\assets\\scripts\\ui_scripts\\hud_scripts\\hud_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|solutionrelative:assets\\scripts\\ui_scripts\\hud_scripts\\hud_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,41 +42,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Devil_Controller.cs",
-              "DocumentMoniker": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\Devil_Scripts\\Devil_Controller.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Devil_Scripts\\Devil_Controller.cs",
-              "ToolTip": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\Devil_Scripts\\Devil_Controller.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Devil_Scripts\\Devil_Controller.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAZAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Region_Panel_Script.cs",
+              "DocumentMoniker": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\UI_Scripts\\Region_Panel_Script.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI_Scripts\\Region_Panel_Script.cs",
+              "ToolTip": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\UI_Scripts\\Region_Panel_Script.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI_Scripts\\Region_Panel_Script.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAswDUAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T18:25:30.31Z",
+              "WhenOpened": "2025-03-16T23:19:06.081Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "region_populations.txt",
-              "DocumentMoniker": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\region_populations.txt",
-              "RelativeDocumentMoniker": "Assets\\region_populations.txt",
-              "ToolTip": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\region_populations.txt",
-              "RelativeToolTip": "Assets\\region_populations.txt",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2025-03-11T11:26:39.041Z",
+              "Title": "Player_Controller.cs",
+              "DocumentMoniker": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\Player_Controller.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player_Controller.cs",
+              "ToolTip": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\Player_Controller.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player_Controller.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowC4AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T19:26:11.926Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Death_Text.cs",
-              "DocumentMoniker": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\UI_Scripts\\Death_Text.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI_Scripts\\Death_Text.cs",
-              "ToolTip": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\UI_Scripts\\Death_Text.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI_Scripts\\Death_Text.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAA5wGAAAAABAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Region_Controller.cs",
+              "DocumentMoniker": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\Region_Controller.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Region_Controller.cs",
+              "ToolTip": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\Region_Controller.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Region_Controller.cs",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAswLIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T11:27:41.2Z",
+              "WhenOpened": "2025-03-16T22:59:44.207Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Hud_Controller.cs",
+              "DocumentMoniker": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\UI_Scripts\\HUD_Scripts\\Hud_Controller.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UI_Scripts\\HUD_Scripts\\Hud_Controller.cs",
+              "ToolTip": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\UI_Scripts\\HUD_Scripts\\Hud_Controller.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UI_Scripts\\HUD_Scripts\\Hud_Controller.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwCYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T20:03:07.066Z",
               "EditorCaption": ""
             }
           ]

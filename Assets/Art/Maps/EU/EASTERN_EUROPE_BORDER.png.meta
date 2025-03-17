@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: 89b7eab9db5e01f4fa5d5f201e29672b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2700741016197568512
+    second: EASTERN_EUROPE_BORDER_0
+  - first:
+      213: -4708614860697232981
+    second: EASTERN_EUROPE_BORDER_1
+  - first:
+      213: 5600265824857206524
+    second: EASTERN_EUROPE_BORDER_2
+  - first:
+      213: 7745965805350042874
+    second: EASTERN_EUROPE_BORDER_3
+  - first:
+      213: -2293684845714586450
+    second: EASTERN_EUROPE_BORDER_4
+  - first:
+      213: -4754231413034586663
+    second: EASTERN_EUROPE_BORDER_5
+  - first:
+      213: -4517198506231701662
+    second: EASTERN_EUROPE_BORDER_6
+  - first:
+      213: 2035455037143250155
+    second: EASTERN_EUROPE_BORDER_7
+  - first:
+      213: -537769289512559815
+    second: EASTERN_EUROPE_BORDER_8
+  - first:
+      213: -6093818260091119293
+    second: EASTERN_EUROPE_BORDER_9
+  - first:
+      213: 7383433613091811397
+    second: EASTERN_EUROPE_BORDER_10
+  - first:
+      213: -3966257928442371129
+    second: EASTERN_EUROPE_BORDER_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_0
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 252
+        width: 65
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 008673bda5a058ad0800000000000000
+      internalID: -2700741016197568512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 278
+        width: 37
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba914044bb3a7aeb0800000000000000
+      internalID: -4708614860697232981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 160
+        width: 88
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfeaf52a81428bd40800000000000000
+      internalID: 5600265824857206524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_3
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 225
+        width: 60
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc363e2cd23f7b60800000000000000
+      internalID: 7745965805350042874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_4
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 194
+        width: 79
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea44c7809c13b20e0800000000000000
+      internalID: -2293684845714586450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 149
+        width: 57
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dde11608b3950eb0800000000000000
+      internalID: -4754231413034586663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_6
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 100
+        width: 208
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26f522844efaf41c0800000000000000
+      internalID: -4517198506231701662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_7
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 72
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be4f33d62936f3c10800000000000000
+      internalID: 2035455037143250155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_8
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 71
+        width: 61
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93b5d7f2ea57988f0800000000000000
+      internalID: -537769289512559815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_9
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 349da7134986e6ba0800000000000000
+      internalID: -6093818260091119293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_10
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 40
+        width: 17
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 540340380c9377660800000000000000
+      internalID: 7383433613091811397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_11
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 0
+        width: 86
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c3ad9f9d6505f8c0800000000000000
+      internalID: -3966257928442371129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      EASTERN_EUROPE_BORDER_0: -2700741016197568512
+      EASTERN_EUROPE_BORDER_1: -4708614860697232981
+      EASTERN_EUROPE_BORDER_10: 7383433613091811397
+      EASTERN_EUROPE_BORDER_11: -3966257928442371129
+      EASTERN_EUROPE_BORDER_2: 5600265824857206524
+      EASTERN_EUROPE_BORDER_3: 7745965805350042874
+      EASTERN_EUROPE_BORDER_4: -2293684845714586450
+      EASTERN_EUROPE_BORDER_5: -4754231413034586663
+      EASTERN_EUROPE_BORDER_6: -4517198506231701662
+      EASTERN_EUROPE_BORDER_7: 2035455037143250155
+      EASTERN_EUROPE_BORDER_8: -537769289512559815
+      EASTERN_EUROPE_BORDER_9: -6093818260091119293
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

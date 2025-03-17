@@ -1,21 +1,28 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class Hud_Controller : MonoBehaviour
-{
+public class Hud_Controller : MonoBehaviour{
     public GameObject statsPanel;
+
     public GameObject researchTree;
     public GameObject researchTreeBackground;
-    public GameObject countryPanel;
+
+    private Region_Panel_Script currentRegionOpen;
+    public GameObject regionPanel;
+
     public GameObject eventsPanel;
 
-    // Could move below btns to their own class and then disable all the buttons there with a public function.
     public Button playBtn;
     public Button pauseBtn;
     public Button fastForwardBtn;
+
     public Button researchTreeBtn;
 
     public World_Controller worldController;
+
+    public void SetCurrentRegionOpen(Region_Panel_Script region){
+        currentRegionOpen = region;
+    }
 
     public void OpenStatsScreen(){
         statsPanel.SetActive(true);
@@ -28,11 +35,11 @@ public class Hud_Controller : MonoBehaviour
     }
 
     public void SetCountryPanelActive(){
-        countryPanel.SetActive(true);
+        regionPanel.SetActive(true);
     }
 
     public void SetCountryPanelInactive(){
-        countryPanel.SetActive(false);
+        regionPanel.SetActive(false);
     }
 
     public void OpenResearchTree(){

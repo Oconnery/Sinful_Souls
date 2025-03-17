@@ -1,61 +1,73 @@
-﻿using System.Collections;
+using Mono.Cecil.Cil;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Country_Info : MonoBehaviour{
-    public Text countryName;
+// TODO: All of the old code here needs refactored/cleaned
+public class Region_Panel_Script : MonoBehaviour{
+    public GameObject worldController;
+    public Player_Controller playerController;
 
+    public Text countryName;
     public Text evilNumber;
     public Text goodNumber;
     public Text neutralNumber;
-
     public Text localDemons;
     public Text localAngels;
-
-    public Text conversionGood;
-    public Text conversionEvil;
-
-    private GameObject worldContr;
-
     //public Text localInquisitors; -- unknown at game start
     public Text localBanshees;
+    public Text conversionGood;
+    public Text conversionEvil;
 
     public GameObject demonDotPrefab;
     public GameObject bansheeDotPrefab;
 
-    // Use this for initialization
-    void Start(){
+    private Region_Controller currentCountry;
+
+
+
+    void Start() {
         countryName.text = "Country_Name";//this.gameObject.ToString();
         evilNumber.text = "XXX";
         goodNumber.text = "YYY";
         neutralNumber.text = "ZZZ";
         this.gameObject.SetActive(false);
-        worldContr = GameObject.Find("GameController");
         conversionEvil.text = "100%";
         conversionGood.text = "100%";
     }
 
-    public void ChangeCountryPanelText(GameObject country){
-        countryName.text = country.name;
-        evilNumber.text = "Evil: " + country.GetComponent<Region_Controller>().GetEvilPop().ToString("0");
-        goodNumber.text = "Good: " + country.GetComponent<Region_Controller>().GetGoodPop().ToString("0");
-        neutralNumber.text = "Neutral: " + country.GetComponent<Region_Controller>().GetNeutralPop().ToString("0");
-        localDemons.text = country.GetComponent<Region_Controller>().GetLocalDemons().ToString();
-        localAngels.text = country.GetComponent<Region_Controller>().GetLocalAngels().ToString();
-        localBanshees.text = country.GetComponent<Region_Controller>().GetLocalBanshees().ToString();
-        conversionEvil.text = (country.GetComponent<Region_Controller>().GetConversionEvil()*100).ToString() + "%";
-        conversionGood.text = (country.GetComponent<Region_Controller>().GetConversionGood()*100).ToString() + "%";
+    public void SetCurrentCountry(Region_Controller currentCountry) {
+        this.currentCountry = currentCountry;
     }
 
+    public void ExitRegionPanel() {
+        // Disable the border
+        currentCountry.borderRef.SetActive(false);
+        // Disable the region panel
+        this.gameObject.SetActive(false);
+    }
 
-    public void addDemon(){
+    public void ChangeCountryPanelText(GameObject country) {
+        Region_Controller regionController = country.GetComponent<Region_Controller>();
+        countryName.text = country.name;
+        evilNumber.text = "Evil: " + regionController.GetEvilPop().ToString("0");
+        goodNumber.text = "Good: " + regionController.GetGoodPop().ToString("0");
+        neutralNumber.text = "Neutral: " + regionController.GetNeutralPop().ToString("0");
+        localDemons.text = regionController.GetLocalDemons().ToString();
+        localAngels.text = regionController.GetLocalAngels().ToString();
+        localBanshees.text = regionController.GetLocalBanshees().ToString();
+        conversionEvil.text = (regionController.GetConversionEvil() * 100).ToString() + "%";
+        conversionGood.text = (regionController.GetConversionGood() * 100).ToString() + "%";
+    }
+
+    public void addDemon() {
         //if theres any demons available
-        if (worldContr.GetComponent<Devil_Controller>().GetAvailableDemons()>0) {
+        if (worldController.GetComponent<Devil_Controller>().GetAvailableDemons() > 0) {
             print("+1 Demon");
             string country = this.countryName.text;
             //anything better than find? - maybe make more efficent in future
-            GameObject countryObj = GameObject.Find(country);
+            GameObject countryObj = GameObject.Find(country); // TODO: This is terrible old code that needs fixed.
             //Increment local demons
             countryObj.GetComponent<Region_Controller>().IncrementLocalDemons();
             //reload ui for demon .. 
@@ -63,31 +75,31 @@ public class Country_Info : MonoBehaviour{
 
             //decrement the available demons
             //world controller demons --
-            worldContr.GetComponent<Devil_Controller>().DecrementGlobalDemons();
+            worldController.GetComponent<Devil_Controller>().DecrementGlobalDemons();
 
             //add demon orange dot //instantiates prefab
             //new gameobj
             GameObject demonDot = demonDotPrefab;
             Vector3 dotLocation = new Vector3(0.0f, 0.0f, 0.0f);
-            dotLocation = worldContr.GetComponent<Player_Controller>().GetRandomCountryLocale();
+            dotLocation = worldController.GetComponent<Player_Controller>().GetCountryRandomLocale();
             demonDot = Instantiate(demonDot, dotLocation, Quaternion.identity);
 
             //Name the orange dot (so it can be deleted when removed) //demonPresence UNITEDSTATES1
-            demonDot.name = "demonPresence_" + worldContr.GetComponent<Player_Controller>().GetCountryHit().name+ 
-                countryObj.GetComponent<Region_Controller>().GetLocalDemons().ToString();
+            demonDot.name = "demonPresence_" + worldController.GetComponent<Player_Controller>().GetCountryHit().name +
+            countryObj.GetComponent<Region_Controller>().GetLocalDemons().ToString();
         }
     }
 
-    public void takeAwayDemon(){
+    public void removeDemon() {
         string country = this.countryName.text;
         //anything better than find? - maybe make more efficent in future
-        GameObject countryObj = GameObject.Find(country);
+        GameObject countryObj = GameObject.Find(country); // TODO: This is terrible old code that needs fixed.
 
-        if (countryObj.GetComponent<Region_Controller>().GetLocalDemons()>0){
+        if (countryObj.GetComponent<Region_Controller>().GetLocalDemons() > 0) {
             print("-1 Demon");
 
             //delete demon orange dot
-            Destroy(GameObject.Find("demonPresence_" + worldContr.GetComponent<Player_Controller>().GetCountryHit().name +
+            Destroy(GameObject.Find("demonPresence_" + worldController.GetComponent<Player_Controller>().GetCountryHit().name +
             countryObj.GetComponent<Region_Controller>().GetLocalDemons().ToString()));
 
             //Decrement demons
@@ -96,12 +108,12 @@ public class Country_Info : MonoBehaviour{
             localDemons.text = countryObj.GetComponent<Region_Controller>().GetLocalDemons().ToString();
 
             //decrement available demons on world controller
-            worldContr.GetComponent<Devil_Controller>().IncrementGlobalDemons();
+            worldController.GetComponent<Devil_Controller>().IncrementGlobalDemons();
         }
     }
 
-    public void addBanshee(){
-        if (worldContr.GetComponent<Devil_Controller>().GetAvailableBanshees() > 0){
+    public void addBanshee() {
+        if (worldController.GetComponent<Devil_Controller>().GetAvailableBanshees() > 0) {
             print("+1 Banshee");
             string country = this.countryName.text;
             //anything better than find? - maybe make more efficent in future
@@ -111,31 +123,31 @@ public class Country_Info : MonoBehaviour{
             localBanshees.text = countryObj.GetComponent<Region_Controller>().GetLocalBanshees().ToString();
 
             //decrement available demons on world controller
-            worldContr.GetComponent<Devil_Controller>().DecrementGlobalBanshees();
+            worldController.GetComponent<Devil_Controller>().DecrementGlobalBanshees();
 
             //add banshee black dot //instantiates prefab at loc vec3 and default rot
             //new gameobj
             GameObject bansheeDot = bansheeDotPrefab;
             Vector3 dotLocation = new Vector3(0.0f, 0.0f, 0.0f);
-            dotLocation = worldContr.GetComponent<Player_Controller>().GetRandomCountryLocale();
+            dotLocation = worldController.GetComponent<Player_Controller>().GetCountryRandomLocale();
             bansheeDot = Instantiate(bansheeDot, dotLocation, Quaternion.identity);
 
             //Name the black dot (so it can be deleted when removed) //demonPresence UNITEDSTATES1
-            bansheeDot.name = "bansheePresence_" + worldContr.GetComponent<Player_Controller>().GetCountryHit().name +
+            bansheeDot.name = "bansheePresence_" + worldController.GetComponent<Player_Controller>().GetCountryHit().name +
             countryObj.GetComponent<Region_Controller>().GetLocalDemons().ToString();
         }
     }
 
-    public void TakeAwayBanshee(){
+    public void removeBanshee() {
         string country = this.countryName.text;
         //anything better than find? - maybe make more efficent in future
         GameObject countryObj = GameObject.Find(country);
 
-        if (countryObj.GetComponent<Region_Controller>().GetLocalBanshees() > 0){
+        if (countryObj.GetComponent<Region_Controller>().GetLocalBanshees() > 0) {
             print("-1 Banshee");
 
             //delete banshee black dot
-            Destroy(GameObject.Find("bansheePresence_" + worldContr.GetComponent<Player_Controller>().GetCountryHit().name +
+            Destroy(GameObject.Find("bansheePresence_" + worldController.GetComponent<Player_Controller>().GetCountryHit().name +
             countryObj.GetComponent<Region_Controller>().GetLocalDemons().ToString()));
 
             countryObj.GetComponent<Region_Controller>().DecrementLocalBanshees();
@@ -144,6 +156,6 @@ public class Country_Info : MonoBehaviour{
         }
 
         //increment available banshees on world controller
-        worldContr.GetComponent<Devil_Controller>().IncrementGlobalBanshees();
+        worldController.GetComponent<Devil_Controller>().IncrementGlobalBanshees();
     }
 }

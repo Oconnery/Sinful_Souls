@@ -5,58 +5,54 @@ using UnityEngine.EventSystems;
 
 // Contains the player mouse/touch input. For Keyboard Controls see Keyboard_Controls class.
 public class Player_Controller : MonoBehaviour {
-    public GameObject CountryPanel;
-    private GameObject CountryHit;
-    private Collider2D CountryHitCollider;
+    
+    public Hud_Controller hudController;
+    public GameObject regionPanel;
 
-    private void Start(){
-
-    }
+    private GameObject regionHit;
+    private Collider2D regionHitCollider;
 
     public GameObject GetCountryHit(){
-        return CountryHit;
+        return regionHit;
     }
 
     private void Update() {
-        if (Input.touchCount > 0){ 
-            if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) {
-                // Fix methods so that they also accept touch.position etc.
-                Touch touch = Input.GetTouch(0);
+        // touch controls
+        //if (Input.touchCount > 0){ 
+        //    if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) {
+        //        // Fix methods so that they also accept touch.position etc.
+        //        Touch touch = Input.GetTouch(0);
 
-                Debug.Log("Mouse pos" + Input.mousePosition);
-                RaycastHit2D objectHit = InstantiateCastRay();
+        //        Debug.Log("Mouse pos" + Input.mousePosition);
+        //        RaycastHit2D objectHit = DrawRayCast();
 
-                if (objectHit){
-                    Debug.Log("Clicked country: " + objectHit.collider.gameObject);
-                    StoreHitInfoGlobally(objectHit);
-                    SetCountryPanelUI(objectHit);
-                }
-            }
-        }
+        //        if (objectHit){ // TODO: Check it's a country
+        //            Debug.Log("Clicked country: " + objectHit.collider.gameObject);
+        //            StoreHitInfoGlobally(objectHit);
+        //            SetCountryPanelUI(objectHit);
+        //        }
+        //    }
+        //}
 
-        // Left click.
-        else if (Input.GetMouseButtonDown(0)) {
+        // left click
+        if (Input.GetMouseButtonDown(0)) {
             // Check that pointer is not over a game object.
             if (!EventSystem.current.IsPointerOverGameObject()) {
                 Debug.Log("Mouse pos" + Input.mousePosition);
-                RaycastHit2D objectHit = InstantiateCastRay();
+                RaycastHit2D objectHit = DrawRayCast();
 
-                if (objectHit) {
+                if (objectHit) { // TODO: Check it's a country
                     Debug.Log("Clicked country: " + objectHit.collider.gameObject);
-                    StoreHitInfoGlobally(objectHit);
+                    StoreHitInfo(objectHit);
                     SetCountryPanelUI(objectHit);
+                    // TODO: Enable border in the region.
+                    regionHit.GetComponent<Region_Controller>().borderRef.SetActive(true);
                 }
             }
         }
-
-        
     }
 
-    /// <summary>
-    /// Draw cast ray.
-    /// </summary>
-    /// <returns> Object detailing information about the object raycasted to.</returns>
-    private RaycastHit2D InstantiateCastRay(){
+    private RaycastHit2D DrawRayCast(){
         // Description of ray from camera through to the screen at mouse position.
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         // Cast ray. Set hit2D.
@@ -68,20 +64,19 @@ public class Player_Controller : MonoBehaviour {
     /// Stores a raycast hit object gloablly, including it's associated collider.
     /// </summary>
     /// <param name="raycastHit2D"> The information of an object that was hit by a raycast.</param>
-    private void StoreHitInfoGlobally(RaycastHit2D raycastHit2D){
+    private void StoreHitInfo(RaycastHit2D raycastHit2D){
         // Store collider as class wide object.
-        CountryHitCollider = raycastHit2D.collider;
+        regionHitCollider = raycastHit2D.collider;
         // Store country hit as class wide object.
-        CountryHit = raycastHit2D.collider.gameObject;
+        regionHit = raycastHit2D.collider.gameObject;
     }
 
-    /// <summary>
-    /// Sets the country panel UI.
-    /// </summary>
     private void SetCountryPanelUI(RaycastHit2D raycastHit2D){
         // Change the information displayed on the panel
-        CountryPanel.GetComponent<Country_Info>().ChangeCountryPanelText(raycastHit2D.collider.gameObject);
-        CountryPanel.SetActive(true);
+        Region_Panel_Script regionPanelScript = regionPanel.GetComponent<Region_Panel_Script>();
+        regionPanelScript.SetCurrentCountry(regionHit.GetComponent<Region_Controller>());
+        regionPanelScript.ChangeCountryPanelText(raycastHit2D.collider.gameObject);
+        hudController.SetCountryPanelActive();
         ClipCountryPanel();
     }
 
@@ -94,7 +89,7 @@ public class Player_Controller : MonoBehaviour {
         float positionY = CalculateCountryPanelPosition(Input.mousePosition.y, Screen.height, 215);
 
         // Apply position to country panel.
-        CountryPanel.transform.position = new Vector3(positionX, positionY, 0.0f);
+        regionPanel.transform.position = new Vector3(positionX, positionY, 0.0f);
     }
 
     /// <summary>
@@ -118,12 +113,12 @@ public class Player_Controller : MonoBehaviour {
         return amountToShiftPanel;
     }
 
-    public Vector3 GetRandomCountryLocale(){
+    public Vector3 GetCountryRandomLocale(){
         Vector3 countryLocale = GetCountryHit().transform.position;
         countryLocale.z -= 1; //put it ahead of other game objs
 
         //random location on game object  --- or even better would be the collider (size of actuat country)
-        Vector2 randMax = CountryHitCollider.bounds.size / 4; // /2 would work if there was no empty space. /4 randomly chosen 
+        Vector2 randMax = regionHitCollider.bounds.size / 4; // /2 would work if there was no empty space. /4 randomly chosen 
         Vector2 randomLocation = new Vector2(Random.Range(-randMax.x, randMax.x), Random.Range(-randMax.y, randMax.y));
 
         countryLocale.x += randomLocation.x;
@@ -132,4 +127,4 @@ public class Player_Controller : MonoBehaviour {
 
         //further improvements --- record points on maps and recursion until the randlocation is not within x amount
     }
-}//end class
+}

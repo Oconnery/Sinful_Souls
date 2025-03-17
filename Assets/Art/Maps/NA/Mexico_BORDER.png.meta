@@ -1,0 +1,702 @@
+fileFormatVersion: 2
+guid: 47eb2517c1fe4d94dbedda7fe51b74fe
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4999709479563747012
+    second: Mexico_BORDER_0
+  - first:
+      213: -9220390436923010466
+    second: Mexico_BORDER_1
+  - first:
+      213: -5315772386198011650
+    second: Mexico_BORDER_2
+  - first:
+      213: 5172407436042742986
+    second: Mexico_BORDER_3
+  - first:
+      213: 287837981796342939
+    second: Mexico_BORDER_4
+  - first:
+      213: 6859881360087454955
+    second: Mexico_BORDER_5
+  - first:
+      213: -7377801185509056708
+    second: Mexico_BORDER_6
+  - first:
+      213: -4105466388077193551
+    second: Mexico_BORDER_7
+  - first:
+      213: -7405062751280087032
+    second: Mexico_BORDER_8
+  - first:
+      213: 1829549325763711222
+    second: Mexico_BORDER_9
+  - first:
+      213: 5087478114838493622
+    second: Mexico_BORDER_10
+  - first:
+      213: -6883176511230716642
+    second: Mexico_BORDER_11
+  - first:
+      213: -6063388329841657677
+    second: Mexico_BORDER_12
+  - first:
+      213: 4270714399295351721
+    second: Mexico_BORDER_13
+  - first:
+      213: -2652662836609333194
+    second: Mexico_BORDER_14
+  - first:
+      213: -7962056320761385383
+    second: Mexico_BORDER_15
+  - first:
+      213: -322280440217596351
+    second: Mexico_BORDER_16
+  - first:
+      213: 9135281242770256104
+    second: Mexico_BORDER_17
+  - first:
+      213: 7382703892709686713
+    second: Mexico_BORDER_18
+  - first:
+      213: 4602291836280189419
+    second: Mexico_BORDER_19
+  - first:
+      213: -8060024983159762965
+    second: Mexico_BORDER_20
+  - first:
+      213: -1611378867428631914
+    second: Mexico_BORDER_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mexico_BORDER_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 89
+        width: 276
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cedc853849826540800000000000000
+      internalID: 4999709479563747012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_1
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 215
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e529bc4dfb79a0080800000000000000
+      internalID: -9220390436923010466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_2
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 191
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef046ddcd259a36b0800000000000000
+      internalID: -5315772386198011650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_3
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 179
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: accaae2982518c740800000000000000
+      internalID: 5172407436042742986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_4
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 193
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9c16d19e1b9ef300800000000000000
+      internalID: 287837981796342939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_5
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 139
+        width: 99
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be4165570c1333f50800000000000000
+      internalID: 6859881360087454955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_6
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 174
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3fd64a39e8cc9990800000000000000
+      internalID: -7377801185509056708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_7
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 62
+        width: 46
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b65a5d52147607c0800000000000000
+      internalID: -4105466388077193551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_8
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 120
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 800497259aeeb3990800000000000000
+      internalID: -7405062751280087032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_9
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 115
+        width: 61
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f0933d1b6dd36910800000000000000
+      internalID: 1829549325763711222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_10
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 117
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b9b58d046a5a9640800000000000000
+      internalID: 5087478114838493622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_11
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 110
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e15d7c18e6b0a70a0800000000000000
+      internalID: -6883176511230716642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_12
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 59
+        width: 57
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b8f98070748adba0800000000000000
+      internalID: -6063388329841657677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_13
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 100
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ab25237e10a44b30800000000000000
+      internalID: 4270714399295351721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_14
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 42
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 638450b5439df2bd0800000000000000
+      internalID: -2652662836609333194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_15
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 84
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95e2d5706f7118190800000000000000
+      internalID: -7962056320761385383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_16
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 69
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14e06caa5a7078bf0800000000000000
+      internalID: -322280440217596351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_17
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 46
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e03c96b3e907ce70800000000000000
+      internalID: 9135281242770256104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_18
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 55
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bdbade3312a47660800000000000000
+      internalID: 7382703892709686713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_19
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 7
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be139268a00aedf30800000000000000
+      internalID: 4602291836280189419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_20
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 0
+        width: 68
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bef0dfd4bf9052090800000000000000
+      internalID: -8060024983159762965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_21
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 24
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69a5850257b33a9e0800000000000000
+      internalID: -1611378867428631914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mexico_BORDER_0: 4999709479563747012
+      Mexico_BORDER_1: -9220390436923010466
+      Mexico_BORDER_10: 5087478114838493622
+      Mexico_BORDER_11: -6883176511230716642
+      Mexico_BORDER_12: -6063388329841657677
+      Mexico_BORDER_13: 4270714399295351721
+      Mexico_BORDER_14: -2652662836609333194
+      Mexico_BORDER_15: -7962056320761385383
+      Mexico_BORDER_16: -322280440217596351
+      Mexico_BORDER_17: 9135281242770256104
+      Mexico_BORDER_18: 7382703892709686713
+      Mexico_BORDER_19: 4602291836280189419
+      Mexico_BORDER_2: -5315772386198011650
+      Mexico_BORDER_20: -8060024983159762965
+      Mexico_BORDER_21: -1611378867428631914
+      Mexico_BORDER_3: 5172407436042742986
+      Mexico_BORDER_4: 287837981796342939
+      Mexico_BORDER_5: 6859881360087454955
+      Mexico_BORDER_6: -7377801185509056708
+      Mexico_BORDER_7: -4105466388077193551
+      Mexico_BORDER_8: -7405062751280087032
+      Mexico_BORDER_9: 1829549325763711222
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

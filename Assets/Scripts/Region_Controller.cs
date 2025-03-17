@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using static System.Net.Mime.MediaTypeNames;
 
 public class Region_Controller : MonoBehaviour {
 
@@ -95,6 +89,7 @@ public class Region_Controller : MonoBehaviour {
         }
     }
 
+    public GameObject borderRef;
     public Transform canvasRefTransform;
 
     public ulong initialTotalPopulation; // TODO: This should be placed in RegionPopulation, and it should be read in by the .txt file.
@@ -119,7 +114,7 @@ public class Region_Controller : MonoBehaviour {
     private ushort localInquisitors;
 
     //Colours according to pop
-    private Renderer rend;
+    private Renderer renderer;
     private UnityEngine.Color currentClr;
     private UnityEngine.Color goodClrMax;
     private UnityEngine.Color evilClrMax;
@@ -132,7 +127,6 @@ public class Region_Controller : MonoBehaviour {
     private const ulong minProgressiveDeathTextDeathValue = 100;
     private const ulong maxProgressiveDeathTextDeathValue = 10000;
 
-    // Use this for initialization
     void Start() {
         SetInitialRates();
 
@@ -143,8 +137,9 @@ public class Region_Controller : MonoBehaviour {
         SetAlignmentColors();
 
         //155-50 = 105 .. 1% change in pop should change colour by 1.05%
-        rend = GetComponent<Renderer>();
-        rend.material.color = currentClr;
+        renderer = GetComponent<Renderer>();
+        renderer.material.color = currentClr;
+        //renderer.material.
 
         SetInitialLocalUnits();
   
@@ -400,14 +395,14 @@ public class Region_Controller : MonoBehaviour {
             value *= goodClrMax.g;
             float valueF = (float)value;
             currentClr = new UnityEngine.Color(0.0f, valueF, 0.0f);
-            rend.material.color = currentClr;
+            renderer.material.color = currentClr;
         } else if (evilPopSize > goodPopSize){
             //Color it the appropriate level of red.
             double value = ((double)evilPopSize / ((double)goodPopSize + (double)evilPopSize));
             value *= evilClrMax.r;
             float valueF = (float)value;
             currentClr = new UnityEngine.Color(valueF, 0.0f, 0.0f);
-            rend.material.color = currentClr;
+            renderer.material.color = currentClr;
         } else if (evilPopSize == goodPopSize){
             // Do nothing
         } else { throw new System.Exception("The evil population or good population has been changed while ChangeColour method was running."); }
