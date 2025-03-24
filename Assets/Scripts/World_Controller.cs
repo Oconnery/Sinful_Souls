@@ -12,16 +12,16 @@ public class World_Controller : MonoBehaviour {
 
     private const float DAY_LENGTH = 3.0f;
     private float daytimerMultiplier = 1.0f; // at 2.0f, this represents a double increase in speed. i.e. a 10 second day would now be a 5 second day, since the timer moves faster.
-    private short _day;
-    private short _month;
-    private short _year;
+    private short day;
+    private short month;
+    private short year;
     
     // The number of days in each month
     // A data structure called dateTimer?
     // Make a daily caller class?
-    private short[] _daysInMonth;
-    private float _timer;
-    private bool _isTimePaused;
+    private short[] daysInMonth;
+    private float timer;
+    private bool isTimePaused;
 
     public ulong hellDeathCount;
     public ulong heavenDeathCount;
@@ -47,13 +47,13 @@ public class World_Controller : MonoBehaviour {
         god_Controller = this.gameObject.GetComponent<God_Controller>();
         ai_Controller = this.gameObject.GetComponent<AI_Controller>();
 
-        _day = (short) DateTime.Now.Day;
-        _month = (short) DateTime.Now.Month;
-        _year = (short) DateTime.Now.Year;
+        day = (short) DateTime.Now.Day;
+        month = (short) DateTime.Now.Month;
+        year = (short) DateTime.Now.Year;
         
         // Don't bother with leap year for now.
-        _daysInMonth = new short[12] {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-        _timer = 0.0f;
+        daysInMonth = new short[12] {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+        timer = 0.0f;
 
         //_evilDeathCount = 0;
 
@@ -62,7 +62,7 @@ public class World_Controller : MonoBehaviour {
             region_Controller[i].name = this.GetComponent<Minor_Events_Controller>().regionNames[i];
         }
 
-        _isTimePaused = false;
+        isTimePaused = false;
 
         // Below should probably be a in a HUD class.
         hellDeathCount = 0;
@@ -75,8 +75,8 @@ public class World_Controller : MonoBehaviour {
     // Update is called once per frame -- fixed == xseconds .. 0.02seconds is the default .. can change with Time.fixedDeltaTime
     // TODO: Is it better to update the time based on update() or fixedUpdate()?
     private void FixedUpdate(){
-        if (!_isTimePaused){
-            _timer += Time.deltaTime * daytimerMultiplier;
+        if (!isTimePaused){
+            timer += Time.deltaTime * daytimerMultiplier;
 
             //update demon banshees text available every frame -- better to only do this whenever player clicks
             SetBaseUnitCountText();// only after clicking reaserch tree banshee ++ or when an event adds a banshee
@@ -90,13 +90,13 @@ public class World_Controller : MonoBehaviour {
                 // Update
             }
 
-            if (_timer >= DAY_LENGTH){
+            if (timer >= DAY_LENGTH){
                 // A day has passed.
-                _day++;
+                day++;
                 Debug.Log("A day has passed.");
 
                 // Reset timer 
-                _timer = 0.0f;
+                timer = 0.0f;
 
                 // Update the populations in the whole world. TODO: can I do this with listeners instead?
                 UpdateAllRegionStatistics(); 
@@ -114,16 +114,16 @@ public class World_Controller : MonoBehaviour {
 
                 SetHUD();
                 try{
-                if (_day == _daysInMonth[(_month-1)]){
+                if (day == daysInMonth[(month-1)]){
                     // New month.
-                    _day = 0;
-                    if (_month == 12){
+                    day = 0;
+                    if (month == 12){
                         // Happy new year.
-                        _month = 1;
-                        _year++;
+                        month = 1;
+                        year++;
                     }
                     else{
-                        _month += 1;
+                        month += 1;
                     }
                 }// End month check if statment.
                 }
@@ -173,19 +173,49 @@ public class World_Controller : MonoBehaviour {
         return neutralPopulation;
     }
 
+    public ushort GetDeployedDemons() {
+        ushort deployedDemons = 0;
+
+        for (int i = 0; i < region_Controller.Length; i++) {
+            deployedDemons += region_Controller[i].GetLocalDemons();
+        }
+
+        return deployedDemons;
+    }
+
+    public ushort GetDeployedBanshees() {
+        ushort deployedBanshees = 0;
+
+        for (int i = 0; i < region_Controller.Length; i++) {
+            deployedBanshees += region_Controller[i].GetLocalBanshees();
+        }
+
+        return deployedBanshees;
+    }
+
+    public ushort GetDeployedAngels() {
+        ushort deployedAngels = 0;
+
+        for (int i = 0; i < region_Controller.Length; i++) {
+            deployedAngels += region_Controller[i].GetLocalAngels();
+        }
+
+        return deployedAngels;
+    }
+
     private void UpdateContinentsClassifications() {
        
     }
 
     public bool GetIsTimePaused(){
-        return _isTimePaused;
+        return isTimePaused;
     }
 
     /// <summary>
     /// Pauses the game.
     /// </summary>
     public void Pause(){
-        _isTimePaused = true;
+        isTimePaused = true;
     }
 
     /// <summary>
@@ -193,14 +223,14 @@ public class World_Controller : MonoBehaviour {
     /// </summary>
     public void UnpauseResetSpeed(){
         daytimerMultiplier = 1.0f;
-        _isTimePaused = false;
+        isTimePaused = false;
     }
 
     /// <summary>
     /// Unpauses the game and resumes at the clock speed it was set to before the pause.
     /// </summary>
     public void Unpause(){
-        _isTimePaused = false;
+        isTimePaused = false;
     }
 
     public void FastForward(){
@@ -209,8 +239,8 @@ public class World_Controller : MonoBehaviour {
             daytimerMultiplier *= 2.0f;
 
         // If the game is paused, unpause.
-        if (_isTimePaused)
-            _isTimePaused = false;
+        if (isTimePaused)
+            isTimePaused = false;
     }
 
     /// <summary>
@@ -221,7 +251,7 @@ public class World_Controller : MonoBehaviour {
         sinsPrayersText.text = "Sins: 0";
         sinEfficencyText.text = "100%";
         //newsFlashText.text = "NOTHING HAPPENED TODAY!";
-        currentDateText.text = "0" + _day + "/0" + _month + "/" + _year;
+        currentDateText.text = "0" + day + "/0" + month + "/" + year;
 
         if (devil_Controller.isPlayerControlled){
             // Initalizes the text values displayed on the main hud in the devil played scene.
@@ -229,8 +259,8 @@ public class World_Controller : MonoBehaviour {
             specialUnitCountText.text = ($"{devil_Controller.GetAvailableBanshees()} / {devil_Controller.maxDeployableBanshees}");
         }
         else if (god_Controller.isPlayerControlled){
-            baseUnitCountText.text = ($"{god_Controller._availableAngels} / {god_Controller._maxDeployableAngels}");
-            specialUnitCountText.text = ($"{god_Controller._availableInquisitors} / {god_Controller._maxDeployableInquisitors}");
+            baseUnitCountText.text = ($"{god_Controller.GetAvailableAngels()} / {god_Controller.maxDeployableAngels}");
+            specialUnitCountText.text = ($"{god_Controller.GetAvailableInquisitors()} / {god_Controller.maxDeployableInquisitors}");
         }
         else throw new System.Exception("The isPlayerControlled boolean for both God and Devil controllers is set to false.");
     }
@@ -247,20 +277,20 @@ public class World_Controller : MonoBehaviour {
 
     private void SetDateText(){
         //Check if single digit = needs 0 
-        if (_day < 10){
-            currentDateText.text = "0" + _day + "/"; //+ month + "/" + year;
+        if (day < 10){
+            currentDateText.text = "0" + day + "/"; //+ month + "/" + year;
         }
         else{
-            currentDateText.text = _day + "/";
+            currentDateText.text = day + "/";
         }
 
-        if (_month < 10){
-            currentDateText.text += "0" + _month + "/";
+        if (month < 10){
+            currentDateText.text += "0" + month + "/";
         }
         else{
-            currentDateText.text += _month + "/";
+            currentDateText.text += month + "/";
         }
-        currentDateText.text += _year;
+        currentDateText.text += year;
     }
 
     private void SetSkullsSoulsText(){

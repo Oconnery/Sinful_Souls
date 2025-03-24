@@ -11,6 +11,8 @@ public class Region_Panel_Script : MonoBehaviour{
     public GameObject gameController;
     public Player_Controller playerController;
 
+    public GameObject [] unitButtons;
+
     public TextMeshProUGUI regionNameText;
     public TextMeshProUGUI evilPopulationText;
     public TextMeshProUGUI goodPopulationText;
@@ -44,8 +46,10 @@ public class Region_Panel_Script : MonoBehaviour{
         if (region == null) {
             // Display world statistics.
             currentRegion = null;
+            DisableUnitButtons();
             UpdateToWorldRegion();
         } else {
+            EnableUnitButtons();
             currentRegion = region.GetComponent<Region_Controller>();
             regionNameText.text = region.name + ", " + region.transform.parent.name;
             evilPopulationText.text = "Evil: " + currentRegion.GetEvilPop().ToString("0");
@@ -60,29 +64,40 @@ public class Region_Panel_Script : MonoBehaviour{
         }
     }
 
-    private void UpdateToWorldRegion() {
-        Devil_Controller devilController = gameController.GetComponent<Devil_Controller>();
+    private void EnableUnitButtons() {
+        foreach (GameObject button in unitButtons) {
+            button.SetActive(true);
+        }
+    }
 
+    private void DisableUnitButtons() {
+        foreach (GameObject button in unitButtons) {
+            button.SetActive(false);
+        }
+    }
+
+    // TODO: Currentregion shouldn't exist in this context since it may accidently be used below. So this should be in a different class or something.
+    public void UpdateToWorldRegion() {
         regionNameText.text = "WORLD";
 
         World_Controller worldController = gameController.GetComponent<World_Controller>();
-
         ulong evilPop = worldController.GetTotalEvilPopulation();
         ulong goodPop = worldController.GetTotalGoodPopulation();
         ulong neutralPop = worldController.GetTotalNeutralPopulation();
-
         populationBar.SetFillAmounts(evilPop, goodPop, neutralPop);
-
         evilPopulationText.text = evilPop.ToString();
         goodPopulationText.text = goodPop.ToString();
         neutralPopulationText.text = neutralPop.ToString();
 
-        localDemonsText.text = devilController.maxDeployableDemons.ToString();
-        //localAngelsText.text = currentRegion.GetLocalAngels().ToString(); TODO: Should I even be able to see angels?
-        localBansheesText.text = devilController.maxDeployableBanshees.ToString();
+        localDemonsText.text = worldController.GetDeployedDemons().ToString(); // TODO: This should actually just be the total number of placed demons.
+        localAngelsText.text = worldController.GetDeployedDemons().ToString(); //TODO: Should I even be able to see angels?
+        localBansheesText.text = worldController.GetDeployedBanshees().ToString();// TODO: This should actually just be the total number of placed banshees.
+        Devil_Controller devilController = gameController.GetComponent<Devil_Controller>();
         sinEfficencyText.text = (devilController.sinEfficency * 100).ToString() + "%";
         //conversionGood.text = (regionController.GetConversionGood() * 100).ToString() + "%";
     }
+
+
 
     public void AddDemon() {
         if (gameController.GetComponent<Devil_Controller>().GetAvailableDemons() > 0) {

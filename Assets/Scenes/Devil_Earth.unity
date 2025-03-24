@@ -5330,14 +5330,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerControlled: 0
-  _prayerEfficency: 0
-  _startingAvailableAngels: 12
-  _startingAvailableInquisitors: 2
-  _availableAngels: 0
-  _availableInquisitors: 0
-  _maxDeployableAngels: 0
-  _maxDeployableInquisitors: 0
-  world_Controller: {fileID: 0}
+  prayerEfficency: 0
+  startingAvailableAngels: 12
+  startingAvailableInquisitors: 2
+  maxDeployableAngels: 12
+  maxDeployableInquisitors: 2
+  worldController: {fileID: 0}
 --- !u!114 &442966049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5357,7 +5355,7 @@ MonoBehaviour:
   maxDeployableDemons: 12
   maxDeployableBanshees: 2
   buyDemonAudio: {fileID: 326491156886338865}
-  world_Controller: {fileID: 0}
+  worldController: {fileID: 0}
 --- !u!114 &442966050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12812,7 +12810,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1256603953}
         m_TargetAssemblyTypeName: Region_Panel_Script, NewAssembly
-        m_MethodName: removeDemon
+        m_MethodName: RemoveDemon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14467,7 +14465,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1256603953}
         m_TargetAssemblyTypeName: Region_Panel_Script, NewAssembly
-        m_MethodName: removeBanshee
+        m_MethodName: RemoveBanshee
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15156,6 +15154,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameController: {fileID: 442966043}
   playerController: {fileID: 442966046}
+  unitButtons:
+  - {fileID: 1595447641}
+  - {fileID: 1852769508}
+  - {fileID: 1047353987}
+  - {fileID: 1187332424}
   regionNameText: {fileID: 931824803}
   evilPopulationText: {fileID: 582886513}
   goodPopulationText: {fileID: 1003100602}
@@ -18601,7 +18604,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1256603953}
         m_TargetAssemblyTypeName: Region_Panel_Script, NewAssembly
-        m_MethodName: addDemon
+        m_MethodName: AddDemon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22919,7 +22922,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1256603953}
         m_TargetAssemblyTypeName: Region_Panel_Script, NewAssembly
-        m_MethodName: addBanshee
+        m_MethodName: AddBanshee
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

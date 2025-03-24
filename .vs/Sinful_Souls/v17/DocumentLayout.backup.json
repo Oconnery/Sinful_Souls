@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|solutionrelative:assets\\scripts\\region_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|c:\\users\\oisin\\documents\\github\\sinful_souls\\assets\\scripts\\world_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\assets\\scripts\\world_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|solutionrelative:assets\\scripts\\world_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|c:\\users\\oisin\\documents\\github\\sinful_souls\\assets\\scripts\\ui_scripts\\region_panel_script.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|solutionrelative:assets\\scripts\\ui_scripts\\region_panel_script.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\assets\\scripts\\ai_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|solutionrelative:assets\\scripts\\ai_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\assets\\scripts\\devil_scripts\\devil_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|solutionrelative:assets\\scripts\\devil_scripts\\devil_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\assets\\scripts\\god_scripts\\god_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3F07F820-58E4-33E1-A0D1-8905467465C2}|NewAssembly.csproj|solutionrelative:assets\\scripts\\god_scripts\\god_controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,21 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Region_Controller.cs",
-              "DocumentMoniker": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\Region_Controller.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Region_Controller.cs",
-              "ToolTip": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\Region_Controller.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Region_Controller.cs",
-              "ViewState": "AgIAAHMAAAAAAAAAAAAUwKAAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T10:28:51.26Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
@@ -55,41 +42,51 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AI_Controller.cs",
+              "DocumentMoniker": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\AI_Controller.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\AI_Controller.cs",
+              "ToolTip": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\AI_Controller.cs",
+              "RelativeToolTip": "Assets\\Scripts\\AI_Controller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T16:57:43.04Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "World_Controller.cs",
               "DocumentMoniker": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\World_Controller.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\World_Controller.cs",
               "ToolTip": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\World_Controller.cs",
               "RelativeToolTip": "Assets\\Scripts\\World_Controller.cs",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAcwJUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAowI0AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T10:35:34.884Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Region_Panel_Script.cs",
-              "DocumentMoniker": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\UI_Scripts\\Region_Panel_Script.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\UI_Scripts\\Region_Panel_Script.cs",
-              "ToolTip": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\UI_Scripts\\Region_Panel_Script.cs",
-              "RelativeToolTip": "Assets\\Scripts\\UI_Scripts\\Region_Panel_Script.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAwwEQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-16T23:19:06.081Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-23T10:35:34.884Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Devil_Controller.cs",
-              "DocumentMoniker": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\Devil_Scripts\\Devil_Controller.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Devil_Scripts\\Devil_Controller.cs",
-              "ToolTip": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\Devil_Scripts\\Devil_Controller.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Devil_Scripts\\Devil_Controller.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAASAAAAAAAAAA==",
+              "Title": "God_Controller.cs",
+              "DocumentMoniker": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\God_Scripts\\God_Controller.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\God_Scripts\\God_Controller.cs",
+              "ToolTip": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\God_Scripts\\God_Controller.cs",
+              "RelativeToolTip": "Assets\\Scripts\\God_Scripts\\God_Controller.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwKYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-23T10:36:26.226Z",
+              "WhenOpened": "2025-03-24T16:40:47.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Region_Controller.cs",
+              "DocumentMoniker": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\Region_Controller.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Region_Controller.cs",
+              "ToolTip": "C:\\Users\\Oisin\\Documents\\GitHub\\Sinful_Souls\\Assets\\Scripts\\Region_Controller.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Region_Controller.cs",
+              "ViewState": "AgIAAFcBAAAAAAAAAAAAwF0BAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T10:28:51.26Z",
               "EditorCaption": ""
             }
           ]

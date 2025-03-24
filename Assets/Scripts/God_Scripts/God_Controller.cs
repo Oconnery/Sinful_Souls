@@ -2,130 +2,129 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class God_Controller : MonoBehaviour {
+public class God_Controller : Faction {
     #region Declaration of global variables & objects.
 
     public bool isPlayerControlled;
 
     // Default value is 100 (percent). will be changed by progresing in the research tree.
-    public double _prayerEfficency;
+    public double prayerEfficency;
 
     // Resources
-    private ulong _souls;
-    private ulong _prayers;
+    private ulong souls;
+    private double prayers;
 
-    private double _prayersMultiplier;
+    private double prayersMultiplier;
 
-    public uint _startingAvailableAngels;
-    public uint _startingAvailableInquisitors;
+    private ulong totalGoodPopulationToday;
+    private ulong totalGoodDiedToday;
 
-    private ulong _totalGoodPopulationToday;
-    private ulong _totalGoodDeathCountToday;
+    public uint startingAvailableAngels;
+    public uint startingAvailableInquisitors;
 
-    public uint _availableAngels;
-    public uint _availableInquisitors;
+    private uint availableAngels;
+    private uint availableInquisitors;
 
-    public uint _maxDeployableAngels;
-    public uint _maxDeployableInquisitors;
+    public uint maxDeployableAngels;
+    public uint maxDeployableInquisitors;
 
-    public World_Controller world_Controller;
+    public World_Controller worldController;
 
     #endregion
 
     void Start () {
-        _souls = 0;
-        _prayers = 0;
+        souls = 0;
+        prayers = 0.0;
 
-        _prayerEfficency = 100.0;
-        _totalGoodDeathCountToday = 0;
+        prayerEfficency = 1.0;
+        totalGoodDiedToday = 0;
 
         // Units available to God at game start.
-        _availableAngels = _startingAvailableAngels;
-        _availableInquisitors = _startingAvailableInquisitors;
+        availableAngels = startingAvailableAngels;
+        availableInquisitors = startingAvailableInquisitors;
 
         // The current maximum deployable unit.
-        _maxDeployableAngels = _availableAngels;
-        _maxDeployableInquisitors = _availableInquisitors;
+        maxDeployableAngels = availableAngels;
+        maxDeployableInquisitors = availableInquisitors;
 
-        _prayersMultiplier = 0;
+        prayersMultiplier = 0;
 
-        world_Controller = this.gameObject.GetComponent<World_Controller>();
+        worldController = this.gameObject.GetComponent<World_Controller>();
 	}
 
     #region Get Statements
     public ulong GetSouls(){
-        return _souls;
+        return souls;
     }
 
-    public ulong GetPrayers(){
-       return _prayers;
+    public double GetPrayers(){
+       return prayers;
     }
 
-    public uint GetAvailableAngels(){
-        return _availableAngels;
+    public uint GetAvailableAngels() {
+        return availableAngels;
     }
 
     public uint GetAvailableInquisitors(){
-        return _availableInquisitors;
+        return availableInquisitors;
+    }
+    #endregion
+
+    #region Setters
+    public void SetAvailableAngels(uint availableAngels) {
+        this.availableAngels = availableAngels;
+    }
+
+    public void SetAvailableInquisitors(uint availableInquisitors) {
+        this.availableInquisitors = availableInquisitors;
     }
     #endregion
 
     #region Increments and decrements.
     public void IncrementGlobalAngels(){
-        _availableAngels++;
+        availableAngels++;
     }
 
     public void DecrementGlobalAngels(){
-        _availableAngels--;
+        availableAngels--;
     }
 
     public void IncrementGlobalInquisitors(){
-        _availableInquisitors++;
+        availableInquisitors++;
     }
 
     public void DecrementGlobalBanshees(){
-        _availableInquisitors--;
+        availableInquisitors--;
     }
     #endregion
 
-    /// <summary>
-    /// Reduces the prayers resource.
-    /// </summary>
-    /// <param name="prayersToSpend">The number of prayers that should be spent.</param>
+
     public void SpendPrayers(ulong prayersToSpend){
         //Method to prevent other classes from increasing prayers. 
-        if (prayersToSpend> _prayers){
-            throw new System.ArgumentException($"The number of prayers ({_prayers}) is less than the amount passed from the Devil_Research_Information class object({prayersToSpend}.)");
+        if (prayersToSpend > prayers) {
+            throw new System.ArgumentException($"The number of prayers ({prayers}) is less than the amount passed from the Devil_Research_Information class object({prayersToSpend}.)");
+        } else {
+            prayers -= prayersToSpend;
         }
-        if (prayersToSpend<0){
-            throw new System.ArgumentException($"The parameter passed to SpendPrayers ({prayersToSpend}) was below zero.");
-        }
-        _prayers -= prayersToSpend;
     }
 
-    /// <summary>
-    /// Buy an angel by spending the prayers resource.
-    /// </summary>
     public void BuyAngel(){
         // Spend 100 prayers to purchase an extra angel.
-        if(_prayers>= 100){
-            _prayers -= 100;
-            _maxDeployableAngels++;
-            _availableAngels++;
+        if(prayers>= 100){
+            prayers -= 100;
+            maxDeployableAngels++;
+            availableAngels++;
         }
     }
 
-    /// <summary>
-    /// 
-    /// </summary>
     public void DailyShout(){
         // Update the daily statistics for today.
         UpdateTotalGoodPopulation();
-        UpdateGoodDeathCountGlobal();
+        UpdateTotalGoodDiedToday();
 
-        // Update the count of people in hell.
-        // TODO: Code like this is really bad and old (from 2020) and should be fixed.
-        world_Controller.heavenDeathCount += _totalGoodDeathCountToday;
+        // Update the count of people in heaven.
+        // TODO: Code like this is old (from 2020) and should be updated.
+        worldController.heavenDeathCount += totalGoodDiedToday;
 
         // Update the resources based on the new statistics.
         UpdatePrayers();
@@ -136,54 +135,35 @@ public class God_Controller : MonoBehaviour {
         ResetGoodDailyDeathCountGlobal();
     }
 
-    /// <summary>
-    /// Updates the total evil population in the world.
-    /// </summary>
     private void UpdateTotalGoodPopulation(){
-        _totalGoodDeathCountToday = 0;
+        totalGoodDiedToday = 0;
 
-        for (int i =0; i < (world_Controller.region_Controller.Length); i++){
-            _totalGoodPopulationToday += world_Controller.region_Controller[i].GetEvilPop();
+        for (int i =0; i < worldController.region_Controller.Length; i++){
+            totalGoodPopulationToday += worldController.region_Controller[i].GetGoodPop();
         }
     }
 
-    /// <summary>
-    /// Calculates and sets the total number of good people died across the whole globe.
-    /// </summary>
-    private void UpdateGoodDeathCountGlobal(){
-        for (int i=0; i < (world_Controller.region_Controller.Length); i++){
-            _totalGoodDeathCountToday += world_Controller.region_Controller[i].GetGoodDied();
+    private void UpdateTotalGoodDiedToday(){
+        for (int i=0; i < worldController.region_Controller.Length; i++){
+            totalGoodDiedToday += worldController.region_Controller[i].GetGoodDied();
         }
     }
 
-    /// <summary>
-    /// Updates the number of prayers made available to the god faction based off the total number of good people and global sin efficency (need to take into account local sin efficency?)  
-    /// </summary>
     private void UpdatePrayers(){
-        _prayers += (ulong)(_prayerEfficency * _totalGoodPopulationToday * _prayersMultiplier);
+        prayers += (ulong)(prayerEfficency * totalGoodPopulationToday * prayersMultiplier);
     }
 
-    /// <summary>
-    /// Updates the souls available to the God faction based off the number of evil people that died today.
-    /// </summary>
     public void UpdateSouls(){
-        _souls += (_totalGoodDeathCountToday / 100);
+        souls += (totalGoodDiedToday / 100);
     }
 
-    /// <summary>
-    /// Resets the total number of good people who died in a day to zero.
-    /// </summary>
     private void ResetGoodDiedTodayInEachRegion(){
-        for (int i =0; i < (world_Controller.region_Controller.Length); i++){
-            world_Controller.region_Controller[i].ResetDeathCounterGood();
+        for (int i =0; i < worldController.region_Controller.Length; i++){
+            worldController.region_Controller[i].ResetDeathCounterGood();
         }
     }
 
-    /// <summary>
-    /// Sets the good global daily death count to zero
-    /// </summary>
     public void ResetGoodDailyDeathCountGlobal(){
-        _totalGoodDeathCountToday = 0;
+        totalGoodDiedToday = 0;
     }
-
 }

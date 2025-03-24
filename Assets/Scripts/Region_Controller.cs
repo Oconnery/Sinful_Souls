@@ -31,13 +31,22 @@ public class Region_Controller : MonoBehaviour {
         }
 
         public void Kill(ulong numberToKill) {
-            if (numberToKill > 0) {
+            if (numberToKill < size) {
                 size -= numberToKill;
                 diedToday += numberToKill;
                 outerRef.InstantiateDeathText(alignment, numberToKill);
-                // TODO: Exception if numberToKill is larger than size
+            } else if (numberToKill == 0){
+                return;
+            } else {
+                ulong maxKillable = size;
+                size = 0;
+                diedToday += maxKillable;
+                outerRef.InstantiateDeathText(alignment, maxKillable);
+
+                throw new ArgumentException("The number to kill is larger than the size of this population. Not allowed. numberToKill: " + numberToKill + ", popSize: " + size);
             }
         }
+        
 
         public void ReduceWithoutKilling(ulong reduceBy) {
             size -= reduceBy;
@@ -199,10 +208,6 @@ public class Region_Controller : MonoBehaviour {
         return localAngels;
     }
 
-    public void IncrementLocalAngels(){
-        localAngels++;
-    }
-
     public ushort GetLocalBanshees() {
         return localBanshees;
     }
@@ -261,26 +266,38 @@ public class Region_Controller : MonoBehaviour {
 
     #endregion
 
-    #region increments
-    public void IncrementLocalBanshees(){
-        //called when + is clicked.
-        //if the total available angels>0
-        localBanshees++;
-        //Decrement the total number of available angels
-    }
+    #region increments and decrements
 
-    public void DecrementLocalBanshees(){
-        //called when + is clicked.
-        localBanshees--;
-        //add 1 to the total number of available angels (world controller or player controller)
-    }
-
-    public void IncrementLocalDemons(){
+    public void IncrementLocalDemons() {
         localDemons++;
     }
 
-    public void DecrementLocalDemons(){
+    public void DecrementLocalDemons() {
         localDemons--;
+    }
+
+    public void IncrementLocalAngels() {
+        localAngels++;
+    }
+
+    public void DecrementLocalAngels() {
+        localAngels++;
+    }
+
+    public void IncrementLocalBanshees() {
+        localBanshees++;
+    }
+
+    public void DecrementLocalBanshees() {
+        localBanshees--;
+    }
+
+    public void IncrementLocalInquisitors() {
+        localInquisitors++;
+    }
+
+    public void DecrementLocalInquisitors() {
+        localInquisitors--;
     }
 
     #endregion
@@ -305,44 +322,42 @@ public class Region_Controller : MonoBehaviour {
 
     /// <summary>
     /// Updates the local evil population based off of the number of demons and inquisitors in the local area.
-    /// </summary>
-    private void UpdatePopEvil(){
+    /// </summary> // TODO: This and the UpdatePopGood methods should be the same method.
+    private void UpdatePopEvil() {
         SetEvilConversionRate();
         // NW: Each demon increases evilPop by 10,000 each day.
         // This is done by converting 8000 neutral people to evil, and 2000 good people to evil.
-        ulong neutralNumberToConvert = (uint)(8000* conversionRateToEvil);
-        ulong goodNumberToConvert = (uint)(2000* conversionRateToEvil); 
+        ulong neutralNumberToConvert = (uint)(8000 * conversionRateToEvil);
+        ulong goodNumberToConvert = (uint)(2000 * conversionRateToEvil);
 
-        for (int i=0; i< localDemons; i++){
+        for (int i = 0; i < localDemons; i++) {
             ulong evilPopulation = population.evilPopulation.GetSize();
             ulong neutralPopulation = population.neutralPopulation.GetSize();
             ulong goodPopulation = population.goodPopulation.GetSize();
 
-            if (evilPopulation < population.GetTotalPopulation()){
+            if (evilPopulation < population.GetTotalPopulation()) {
                 // Convert neutral people to evil.
-                if (neutralPopulation > neutralNumberToConvert){
+                if (neutralPopulation > neutralNumberToConvert) {
                     population.Convert(neutralNumberToConvert, Alignment.NEUTRAL, Alignment.EVIL);
-                } else{
+                } else {
                     // Convert as many neutral people as there are.
                     population.Convert(neutralPopulation, Alignment.NEUTRAL, Alignment.EVIL);
                 }
 
                 // Convert good people to evil.
-                if (goodPopulation > goodNumberToConvert){
+                if (goodPopulation > goodNumberToConvert) {
                     population.Convert(goodNumberToConvert, Alignment.GOOD, Alignment.EVIL);
-                }
-                else if (population.goodPopulation.GetSize() > 0){
+                } else if (population.goodPopulation.GetSize() > 0) {
                     population.Convert(goodPopulation, Alignment.GOOD, Alignment.EVIL);
                 }
-            }//end if evil pop < pop check
-            else {
+            } else {
                 print("Demons in " + this.name + " aren't converting people");
             }
             //after make variables for effictiveness so the banshee and inquisitor can have effects 
         }
     }
 
-    private void UpdatePopGood() {
+    private void UpdatePopGood(){
         SetGoodConversionRate();
 
         // NW: Each angel increases goodPop by 10,000 each day.
@@ -367,8 +382,8 @@ public class Region_Controller : MonoBehaviour {
                 // Convert evil people to good.
                 if (evilPopulation > evilNumberToConvert) {
                     population.Convert(evilNumberToConvert, Alignment.EVIL, Alignment.GOOD);
-                } else if (population.goodPopulation.GetSize() > 0) {
-                    population.Convert(goodPopulation, Alignment.EVIL, Alignment.GOOD);
+                } else if (population.evilPopulation.GetSize() > 0) {
+                    population.Convert(evilPopulation, Alignment.EVIL, Alignment.GOOD);
                 }
             }
             else {
