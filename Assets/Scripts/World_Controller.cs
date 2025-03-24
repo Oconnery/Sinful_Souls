@@ -143,6 +143,36 @@ public class World_Controller : MonoBehaviour {
         }
     }
 
+    public ulong GetTotalEvilPopulation(){
+        ulong evilPopulation = 0;
+
+        for (int i = 0; i < region_Controller.Length; i++) {
+            evilPopulation += region_Controller[i].GetEvilPop();
+        }
+
+        return evilPopulation;
+    }
+
+    public ulong GetTotalGoodPopulation(){
+        ulong goodPopulation = 0;
+
+        for (int i = 0; i < region_Controller.Length; i++) {
+            goodPopulation += region_Controller[i].GetGoodPop();
+        }
+
+        return goodPopulation;
+    }
+
+    public ulong GetTotalNeutralPopulation(){
+        ulong neutralPopulation = 0;
+
+        for (int i = 0; i < region_Controller.Length; i++) {
+            neutralPopulation += region_Controller[i].GetNeutralPop();
+        }
+
+        return neutralPopulation;
+    }
+
     private void UpdateContinentsClassifications() {
        
     }
@@ -195,8 +225,8 @@ public class World_Controller : MonoBehaviour {
 
         if (devil_Controller.isPlayerControlled){
             // Initalizes the text values displayed on the main hud in the devil played scene.
-            baseUnitCountText.text = ($"{devil_Controller.GetAvailableDemons()} / {devil_Controller._maxDeployableDemons}");
-            specialUnitCountText.text = ($"{devil_Controller.GetAvailableBanshees()} / {devil_Controller._maxDeployableBanshees}");
+            baseUnitCountText.text = ($"{devil_Controller.GetAvailableDemons()} / {devil_Controller.maxDeployableDemons}");
+            specialUnitCountText.text = ($"{devil_Controller.GetAvailableBanshees()} / {devil_Controller.maxDeployableBanshees}");
         }
         else if (god_Controller.isPlayerControlled){
             baseUnitCountText.text = ($"{god_Controller._availableAngels} / {god_Controller._maxDeployableAngels}");
@@ -257,7 +287,7 @@ public class World_Controller : MonoBehaviour {
 
     private void SetSinsPrayersEfficencyText(){
         if (devil_Controller.isPlayerControlled){
-            sinEfficencyText.text = (devil_Controller._sinEfficency).ToString("F0");
+            sinEfficencyText.text = (devil_Controller.sinEfficency).ToString("F0");
         } else if (god_Controller.isPlayerControlled){
 
         }
@@ -272,11 +302,11 @@ public class World_Controller : MonoBehaviour {
     }
 
     private void SetBaseUnitCountText(){
-        baseUnitCountText.text = ($"{devil_Controller.GetAvailableDemons()} / {devil_Controller._maxDeployableDemons}");
+        baseUnitCountText.text = ($"{devil_Controller.GetAvailableDemons()} / {devil_Controller.maxDeployableDemons}");
     }
 
     private void SetSpecialUnitCountText(){
-        specialUnitCountText.text = ($"{devil_Controller.GetAvailableBanshees()} / {devil_Controller._maxDeployableBanshees}");
+        specialUnitCountText.text = ($"{devil_Controller.GetAvailableBanshees()} / {devil_Controller.maxDeployableBanshees}");
     }
     // End HUD methods
 }

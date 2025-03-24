@@ -31,7 +31,7 @@ namespace Tests {
             Devil_Controller devil_Controller = new Devil_Controller();
             yield return null;
 
-            Assert.IsNotNull(devil_Controller._startingAvailableDemons);
+            Assert.IsNotNull(devil_Controller.startingAvailableDemons);
         }
 
         [UnityTest]
@@ -39,7 +39,7 @@ namespace Tests {
             Devil_Controller devil_Controller = new Devil_Controller();
             yield return null;
 
-            Assert.IsNotNull(devil_Controller._startingAvailableBanshees);
+            Assert.IsNotNull(devil_Controller.startingAvailableBanshees);
         }
 
         [UnityTest]
@@ -48,7 +48,7 @@ namespace Tests {
             yield return null;
 
             var available = devil_Controller.GetAvailableDemons();
-            var starting = devil_Controller._startingAvailableDemons;
+            var starting = devil_Controller.startingAvailableDemons;
 
             Assert.IsTrue(available == starting);
         }
@@ -58,8 +58,8 @@ namespace Tests {
             Devil_Controller devil_Controller = new Devil_Controller();
             yield return null;
 
-            var max = devil_Controller._maxDeployableDemons;
-            var starting = devil_Controller._startingAvailableDemons;
+            var max = devil_Controller.maxDeployableDemons;
+            var starting = devil_Controller.startingAvailableDemons;
 
             Assert.IsTrue(max == starting);
         }
@@ -70,7 +70,7 @@ namespace Tests {
             yield return null;
 
             var available = devil_Controller.GetAvailableBanshees();
-            var starting = devil_Controller._startingAvailableBanshees;
+            var starting = devil_Controller.startingAvailableBanshees;
 
             Assert.IsTrue(available == starting);
         }
@@ -80,8 +80,8 @@ namespace Tests {
             Devil_Controller devil_Controller = new Devil_Controller();
             yield return null;
 
-            var max = devil_Controller._maxDeployableBanshees;
-            var starting = devil_Controller._startingAvailableBanshees;
+            var max = devil_Controller.maxDeployableBanshees;
+            var starting = devil_Controller.startingAvailableBanshees;
 
             Assert.IsTrue(max == starting);
         }

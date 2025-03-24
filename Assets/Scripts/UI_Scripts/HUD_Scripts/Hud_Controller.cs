@@ -34,14 +34,6 @@ public class Hud_Controller : MonoBehaviour{
         worldController.Unpause();
     }
 
-    public void SetCountryPanelActive(){
-        regionPanel.SetActive(true);
-    }
-
-    public void SetCountryPanelInactive(){
-        regionPanel.SetActive(false);
-    }
-
     public void OpenResearchTree(){
         worldController.Pause();
         researchTreeBackground.SetActive(true);

@@ -89,7 +89,7 @@ public class Region_Controller : MonoBehaviour {
         }
     }
 
-    public GameObject borderRef;
+    public GameObject borderRef; //TODO: This is used in the player controller, not here. This is not good code.
     public Transform canvasRefTransform;
 
     public ulong initialTotalPopulation; // TODO: This should be placed in RegionPopulation, and it should be read in by the .txt file.
@@ -107,6 +107,8 @@ public class Region_Controller : MonoBehaviour {
     // Conversion rates - the effectiveness an angel or demon will have in this region.
     private float conversionRateToEvil;
     private float conversionRateToGood;
+
+    private double sinEfficency;
 
     private ushort localDemons;
     private ushort localAngels;
@@ -127,7 +129,7 @@ public class Region_Controller : MonoBehaviour {
     private const ulong minProgressiveDeathTextDeathValue = 100;
     private const ulong maxProgressiveDeathTextDeathValue = 10000;
 
-    void Start() {
+    void Awake() {
         SetInitialRates();
 
         population = new RegionPopulation(this);
@@ -155,6 +157,8 @@ public class Region_Controller : MonoBehaviour {
 
         conversionRateToEvil = 1.0f;
         conversionRateToGood = 1.0f;
+
+        sinEfficency = 1.0f;
     }
 
     private void SetAlignmentColors(){
@@ -216,6 +220,10 @@ public class Region_Controller : MonoBehaviour {
 
     public float GetConversionGood(){
         return conversionRateToGood;
+    }
+
+    public double GetSinEfficency(){
+        return sinEfficency;
     }
 
     // TODO: World controller really shouldn't be doing this. 

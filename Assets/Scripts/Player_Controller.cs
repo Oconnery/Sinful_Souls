@@ -12,6 +12,8 @@ public class Player_Controller : MonoBehaviour {
     private GameObject regionHit;
     private Collider2D regionHitCollider;
 
+    private GameObject lastBorderRef;
+
     public GameObject GetCountryHit(){
         return regionHit;
     }
@@ -41,15 +43,32 @@ public class Player_Controller : MonoBehaviour {
                 Debug.Log("Mouse pos" + Input.mousePosition);
                 RaycastHit2D objectHit = DrawRayCast();
 
-                if (objectHit) { // TODO: Check it's a country
+                if (objectHit){ // TODO: Check it's a region/has a region component
                     Debug.Log("Clicked country: " + objectHit.collider.gameObject);
                     StoreHitInfo(objectHit);
                     SetCountryPanelUI(objectHit);
-                    // TODO: Enable border in the region.
-                    regionHit.GetComponent<Region_Controller>().borderRef.SetActive(true);
+
+                    if (lastBorderRef != null)
+                        lastBorderRef.SetActive(false);
+                    lastBorderRef = regionHit.GetComponent<Region_Controller>().borderRef;
+                    lastBorderRef.SetActive(true);
+                } else {
+                    DeselectRegion();
                 }
             }
+        } else {
+            if (Input.GetMouseButtonDown(1)) {
+                DeselectRegion();
+            }
         }
+    }
+
+    private void DeselectRegion(){
+        StoreNullHitInfo();
+        regionPanel.GetComponent<Region_Panel_Script>().UpdateRegionPanel(null);
+        if (lastBorderRef != null)
+            lastBorderRef.SetActive(false);
+        lastBorderRef = null;
     }
 
     private RaycastHit2D DrawRayCast(){
@@ -60,36 +79,24 @@ public class Player_Controller : MonoBehaviour {
         return raycastHit2D;
     }
 
-    /// <summary>
-    /// Stores a raycast hit object gloablly, including it's associated collider.
-    /// </summary>
-    /// <param name="raycastHit2D"> The information of an object that was hit by a raycast.</param>
-    private void StoreHitInfo(RaycastHit2D raycastHit2D){
+    private void StoreHitInfo(RaycastHit2D raycastHit2D) {
         // Store collider as class wide object.
         regionHitCollider = raycastHit2D.collider;
         // Store country hit as class wide object.
         regionHit = raycastHit2D.collider.gameObject;
     }
 
+    private void StoreNullHitInfo() {
+        // Store collider as class wide object.
+        regionHitCollider = null;
+        // Store country hit as class wide object.
+        regionHit = null;
+    }
+
     private void SetCountryPanelUI(RaycastHit2D raycastHit2D){
         // Change the information displayed on the panel
         Region_Panel_Script regionPanelScript = regionPanel.GetComponent<Region_Panel_Script>();
-        regionPanelScript.SetCurrentCountry(regionHit.GetComponent<Region_Controller>());
-        regionPanelScript.ChangeCountryPanelText(raycastHit2D.collider.gameObject);
-        hudController.SetCountryPanelActive();
-        ClipCountryPanel();
-    }
-
-    /// <summary>
-    /// Changes the position of the country panel to the position of the mouse.
-    /// </summary>
-    private void ClipCountryPanel(){
-        // Set position of X and Y.
-        float positionX = CalculateCountryPanelPosition(Input.mousePosition.x, Screen.width, 300);
-        float positionY = CalculateCountryPanelPosition(Input.mousePosition.y, Screen.height, 215);
-
-        // Apply position to country panel.
-        regionPanel.transform.position = new Vector3(positionX, positionY, 0.0f);
+        regionPanelScript.UpdateRegionPanel(regionHit);
     }
 
     /// <summary>
@@ -113,6 +120,7 @@ public class Player_Controller : MonoBehaviour {
         return amountToShiftPanel;
     }
 
+    // TODO: Should probably not be on the player controller.
     public Vector3 GetCountryRandomLocale(){
         Vector3 countryLocale = GetCountryHit().transform.position;
         countryLocale.z -= 1; //put it ahead of other game objs
