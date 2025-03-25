@@ -1,4 +1,3 @@
-using Mono.Cecil.Cil;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
@@ -85,9 +84,9 @@ public class Region_Panel_Script : MonoBehaviour{
         ulong goodPop = worldController.GetTotalGoodPopulation();
         ulong neutralPop = worldController.GetTotalNeutralPopulation();
         populationBar.SetFillAmounts(evilPop, goodPop, neutralPop);
-        evilPopulationText.text = evilPop.ToString();
-        goodPopulationText.text = goodPop.ToString();
-        neutralPopulationText.text = neutralPop.ToString();
+        evilPopulationText.text = "Evil: " + evilPop.ToString();
+        goodPopulationText.text = "Good: " + goodPop.ToString();
+        neutralPopulationText.text = "Neutral: " + neutralPop.ToString();
 
         localDemonsText.text = worldController.GetDeployedDemons().ToString(); // TODO: This should actually just be the total number of placed demons.
         localAngelsText.text = worldController.GetDeployedDemons().ToString(); //TODO: Should I even be able to see angels?
