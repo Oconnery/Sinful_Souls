@@ -2,13 +2,11 @@
 using UnityEngine.UI;
 
 public class Hud_Controller : MonoBehaviour{
+
     public GameObject statsPanel;
 
     public GameObject researchTree;
     public GameObject researchTreeBackground;
-
-    private Region_Panel_Script currentRegionOpen;
-    public GameObject regionPanel;
 
     public GameObject eventsPanel;
 
@@ -19,10 +17,6 @@ public class Hud_Controller : MonoBehaviour{
     public Button researchTreeBtn;
 
     public World_Controller worldController;
-
-    public void SetCurrentRegionOpen(Region_Panel_Script region){
-        currentRegionOpen = region;
-    }
 
     public void OpenStatsScreen(){
         statsPanel.SetActive(true);

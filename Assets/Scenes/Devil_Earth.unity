@@ -10711,7 +10711,6 @@ MonoBehaviour:
   statsPanel: {fileID: 233694990}
   researchTree: {fileID: 1563372022}
   researchTreeBackground: {fileID: 1252497856}
-  regionPanel: {fileID: 0}
   eventsPanel: {fileID: 1388978207}
   playBtn: {fileID: 1298393337}
   pauseBtn: {fileID: 1445187508}
@@ -11042,7 +11041,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: WESTERN EUROPE
+  m_text: WORLD
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -11525,6 +11524,30 @@ MonoBehaviour:
       - m_Target: {fileID: 442966049}
         m_TargetAssemblyTypeName: 
         m_MethodName: BuyDemon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 442966044}
+        m_TargetAssemblyTypeName: World_Controller, NewAssembly
+        m_MethodName: SetBaseUnitCountText
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 442966044}
+        m_TargetAssemblyTypeName: World_Controller, NewAssembly
+        m_MethodName: SetSkullsSoulsText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12743,7 +12766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1047353988
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12811,6 +12834,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1256603953}
         m_TargetAssemblyTypeName: Region_Panel_Script, NewAssembly
         m_MethodName: RemoveDemon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 442966044}
+        m_TargetAssemblyTypeName: World_Controller, NewAssembly
+        m_MethodName: SetBaseUnitCountText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14398,7 +14433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1187332425
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14466,6 +14501,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1256603953}
         m_TargetAssemblyTypeName: Region_Panel_Script, NewAssembly
         m_MethodName: RemoveBanshee
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 442966044}
+        m_TargetAssemblyTypeName: World_Controller, NewAssembly
+        m_MethodName: SetSpecialUnitCountText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18537,7 +18584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1595447642
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18605,6 +18652,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1256603953}
         m_TargetAssemblyTypeName: Region_Panel_Script, NewAssembly
         m_MethodName: AddDemon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 442966044}
+        m_TargetAssemblyTypeName: World_Controller, NewAssembly
+        m_MethodName: SetBaseUnitCountText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22855,7 +22914,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1852769509
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22923,6 +22982,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1256603953}
         m_TargetAssemblyTypeName: Region_Panel_Script, NewAssembly
         m_MethodName: AddBanshee
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 442966044}
+        m_TargetAssemblyTypeName: World_Controller, NewAssembly
+        m_MethodName: SetSpecialUnitCountText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

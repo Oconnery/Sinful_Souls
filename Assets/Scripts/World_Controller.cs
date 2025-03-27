@@ -79,15 +79,13 @@ public class World_Controller : MonoBehaviour {
             timer += Time.deltaTime * daytimerMultiplier;
 
             //update demon banshees text available every frame -- better to only do this whenever player clicks
-            SetBaseUnitCountText();// only after clicking reaserch tree banshee ++ or when an event adds a banshee
-            SetSpecialUnitCountText();// same .. except I could incorporate people dying (saying 1% of population die every year). -- so would need to be called every frame.
 
             if (devil_Controller.isPlayerControlled){
-                SetSkullsSoulsText(); // skulls need to update every frame because of events - better to just update after events click. + at day end.
-                SetSinsPrayersText();//sins becuase of spending in research tree -- better to only do this after clicking research button and whenever people are killed.
+                SetSkullsSoulsText(); // skulls need to update every frame because of events - TODO: better to just update after events click. + at day end.
+                SetSinsPrayersText();//sins becuase of spending in research tree -- TODO: better to only do this after clicking research button and whenever people are killed.
             }
             else if (god_Controller.isPlayerControlled){
-                // Update
+                // TODO
             }
 
             if (timer >= DAY_LENGTH){
@@ -293,7 +291,7 @@ public class World_Controller : MonoBehaviour {
         currentDateText.text += year;
     }
 
-    private void SetSkullsSoulsText(){
+    public void SetSkullsSoulsText(){
     // Todo: instead of ifs like the below, I should do playerControllerFaction.IsPlayerControlled() or 
     // similar. 
 
@@ -331,11 +329,12 @@ public class World_Controller : MonoBehaviour {
         heavenCountText.text = ($"Heaven: {heavenDeathCount}");
     }
 
-    private void SetBaseUnitCountText(){
+    //TODO: These should not be in this class. Should probably be in the faction class.
+    public void SetBaseUnitCountText(){
         baseUnitCountText.text = ($"{devil_Controller.GetAvailableDemons()} / {devil_Controller.maxDeployableDemons}");
     }
 
-    private void SetSpecialUnitCountText(){
+    public void SetSpecialUnitCountText(){
         specialUnitCountText.text = ($"{devil_Controller.GetAvailableBanshees()} / {devil_Controller.maxDeployableBanshees}");
     }
     // End HUD methods
