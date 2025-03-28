@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+// TODO: Change this from world controller to clock controller or similar. lots of things should be moved out of here.
 public class World_Controller : MonoBehaviour {
     private const int numberOfCountries = 26;
 
@@ -39,13 +40,16 @@ public class World_Controller : MonoBehaviour {
     public Text baseUnitCountText;
     public Text specialUnitCountText;
 
-    private AI_Controller ai_Controller;
+    // Multiple delegates/actions to enforce ordering.
+    public static event Action OnDayPassedNotifyFirst;
+    public static event Action OnDayPassedNotifySecond;
+    public static event Action OnDayPassedNotifyThird;
+    public static event Action OnDayPassedNotifyFourth;
 
     void Start () {
         // Find devil and god controllers.
         devil_Controller = this.gameObject.GetComponent<Devil_Controller>();
         god_Controller = this.gameObject.GetComponent<God_Controller>();
-        ai_Controller = this.gameObject.GetComponent<AI_Controller>();
 
         day = (short) DateTime.Now.Day;
         month = (short) DateTime.Now.Month;
@@ -72,75 +76,56 @@ public class World_Controller : MonoBehaviour {
         SetupHudText();
     }
 
-    // Update is called once per frame -- fixed == xseconds .. 0.02seconds is the default .. can change with Time.fixedDeltaTime
-    // TODO: Is it better to update the time based on update() or fixedUpdate()?
-    private void FixedUpdate(){
+    // Update is called once per frame 
+    private void Update(){
         if (!isTimePaused){
             timer += Time.deltaTime * daytimerMultiplier;
 
             //update demon banshees text available every frame -- better to only do this whenever player clicks
-
             if (devil_Controller.isPlayerControlled){
                 SetSkullsSoulsText(); // skulls need to update every frame because of events - TODO: better to just update after events click. + at day end.
-                SetSinsPrayersText();//sins becuase of spending in research tree -- TODO: better to only do this after clicking research button and whenever people are killed.
+                SetSinsPrayersText();// sins becuase of spending in research tree -- TODO: better to only do this after clicking research button and whenever people are killed.
             }
             else if (god_Controller.isPlayerControlled){
                 // TODO
             }
 
+            // So instead it should actually be in the faction class, or a similar interface. "Update resource texts". Or cant I just update the resource texts
+            // whenever the resource is changed?
+
             if (timer >= DAY_LENGTH){
                 // A day has passed.
                 day++;
                 Debug.Log("A day has passed.");
-
-                // Reset timer 
                 timer = 0.0f;
+                OnDayPassedNotifyFirst?.Invoke(); // The same as doing a null check
+                OnDayPassedNotifySecond?.Invoke();
+                OnDayPassedNotifyThird?.Invoke();
+                OnDayPassedNotifyFourth?.Invoke();
 
-                // Update the populations in the whole world. TODO: can I do this with listeners instead?
-                UpdateAllRegionStatistics(); 
-
-                // Set the ownership and control level of the continents 
-
-
-                // Call the methods to set resources.
-                devil_Controller.DailyShout();
-                god_Controller.DailyShout();
-                ai_Controller.AIDailyActions();
-
-                // Possibility of a random minor event.
-                this.GetComponent<Minor_Events_Controller>().ChanceToCallRandomMinorEvent();
-
+                // TODO: This HUD stuff shouldn't be in this class.
                 SetHUD();
                 try{
-                if (day == daysInMonth[(month-1)]){
-                    // New month.
-                    day = 0;
-                    if (month == 12){
-                        // Happy new year.
-                        month = 1;
-                        year++;
-                    }
-                    else{
-                        month += 1;
-                    }
-                }// End month check if statment.
-                }
-                catch  (System.IndexOutOfRangeException E) {
+                    if (day == daysInMonth[(month-1)]){
+                        // New month.
+                        day = 0;
+                        if (month == 12){
+                            // Happy new year.
+                            month = 1;
+                            year++;
+                        }
+                        else{
+                            month += 1;
+                        }
+                    }// End month check if statment.
+                } catch  (System.IndexOutOfRangeException E) {
                     Debug.LogError($"The public starting variables for day, month year need to be set in the World_Controller script on the gameobject {gameObject}");
                 }
             }// End timer day length if statement.
         }// End if time is not paused.
     }// End fixedupdate.
 
-    /// <summary>
-    /// Updates the neutral, evil and good populations in the region.
-    /// </summary>
-    private void UpdateAllRegionStatistics(){
-        for (int i = 0; i < region_Controller.Length; i++){
-            region_Controller[i].DailyCall();
-        }
-    }
-
+    // TODO: Should these get total population and get deployed demons methods really be in this class? Probably not, specially if I rename it to clock controller.
     public ulong GetTotalEvilPopulation(){
         ulong evilPopulation = 0;
 
@@ -201,10 +186,6 @@ public class World_Controller : MonoBehaviour {
         return deployedAngels;
     }
 
-    private void UpdateContinentsClassifications() {
-       
-    }
-
     public bool GetIsTimePaused(){
         return isTimePaused;
     }
@@ -241,6 +222,7 @@ public class World_Controller : MonoBehaviour {
             isTimePaused = false;
     }
 
+    // TODO: This definitely should not be here.
     /// <summary>
     /// Setup general HUD text and player faction HUD text.
     /// </summary>
@@ -263,6 +245,8 @@ public class World_Controller : MonoBehaviour {
         else throw new System.Exception("The isPlayerControlled boolean for both God and Devil controllers is set to false.");
     }
 
+
+    //TODO: This neither.
     /// <summary>
     /// Start HUD methods.
     /// </summary>
@@ -273,6 +257,7 @@ public class World_Controller : MonoBehaviour {
         SetSinsPrayersEfficencyText();
     }
 
+    // TODO: Or this.
     private void SetDateText(){
         //Check if single digit = needs 0 
         if (day < 10){
@@ -291,6 +276,7 @@ public class World_Controller : MonoBehaviour {
         currentDateText.text += year;
     }
 
+    // TODO: Or this.
     public void SetSkullsSoulsText(){
     // Todo: instead of ifs like the below, I should do playerControllerFaction.IsPlayerControlled() or 
     // similar. 
@@ -303,6 +289,7 @@ public class World_Controller : MonoBehaviour {
         } else{throw new System.Exception("The player isn't controlling the god or devil class."); }
     }
 
+    // TODO: Or this.
     private void SetSinsPrayersText(){
         if (devil_Controller.isPlayerControlled){
             sinsPrayersText.text = "Sins: " + Math.Floor(devil_Controller.GetSins()) + " Million";
@@ -313,6 +300,7 @@ public class World_Controller : MonoBehaviour {
         else {throw new System.Exception("The player isn't controlling the god or devil class."); }
     }
 
+    // TODO: Or this.
     private void SetSinsPrayersEfficencyText(){
         if (devil_Controller.isPlayerControlled){
             sinEfficencyText.text = (devil_Controller.sinEfficency).ToString("F0");
@@ -321,19 +309,23 @@ public class World_Controller : MonoBehaviour {
         }
     }
 
+    // TODO: Or this.
     private void SetHellText(){
         hellCountText.text = ($"Hell: {hellDeathCount}");
     }
 
+    // TODO: Or this.
     private void SetHeavenText(){
         heavenCountText.text = ($"Heaven: {heavenDeathCount}");
     }
 
+    // TODO: Or this.
     //TODO: These should not be in this class. Should probably be in the faction class.
     public void SetBaseUnitCountText(){
         baseUnitCountText.text = ($"{devil_Controller.GetAvailableDemons()} / {devil_Controller.maxDeployableDemons}");
     }
 
+    // TODO: Or this.
     public void SetSpecialUnitCountText(){
         specialUnitCountText.text = ($"{devil_Controller.GetAvailableBanshees()} / {devil_Controller.maxDeployableBanshees}");
     }

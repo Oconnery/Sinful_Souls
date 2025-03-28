@@ -50,7 +50,9 @@ public class God_Controller : Faction {
         prayersMultiplier = 0;
 
         worldController = this.gameObject.GetComponent<World_Controller>();
-	}
+
+        World_Controller.OnDayPassedNotifySecond += DailyShout;
+    }
 
     #region Get Statements
     public ulong GetSouls(){

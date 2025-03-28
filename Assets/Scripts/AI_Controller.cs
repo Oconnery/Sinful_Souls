@@ -16,9 +16,11 @@ public class AI_Controller : MonoBehaviour {
         devilController = this.gameObject.GetComponent<Devil_Controller>();
         godController = this.gameObject.GetComponent<God_Controller>();
         worldController = this.gameObject.GetComponent<World_Controller>();
+
+        World_Controller.OnDayPassedNotifyThird += DailyActions;
     }
 
-    public void AIDailyActions(){
+    public void DailyActions(){
         if (!devilController.isPlayerControlled){
             PlaceDemons();
         }

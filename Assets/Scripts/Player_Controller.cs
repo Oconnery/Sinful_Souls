@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEngine.UI.Image;
 
 // Contains the player mouse/touch input. For Keyboard Controls see Keyboard_Controls class.
-public class Player_Controller : MonoBehaviour {
+public class Player_Controller : MonoBehaviour{
     
     public Hud_Controller hudController;
     public GameObject regionPanel;
@@ -18,7 +21,7 @@ public class Player_Controller : MonoBehaviour {
         return regionHit;
     }
 
-    private void Update() {
+    private void Update(){
         // touch controls
         //if (Input.touchCount > 0){ 
         //    if (!EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)) {
@@ -37,7 +40,7 @@ public class Player_Controller : MonoBehaviour {
         //}
 
         // left click
-        if (Input.GetMouseButtonDown(0)) {
+        if (Input.GetMouseButtonDown(0)){
             // Check that pointer is not over a game object.
             if (!EventSystem.current.IsPointerOverGameObject()) {
                 Debug.Log("Mouse pos" + Input.mousePosition);
@@ -79,14 +82,14 @@ public class Player_Controller : MonoBehaviour {
         return raycastHit2D;
     }
 
-    private void StoreHitInfo(RaycastHit2D raycastHit2D) {
+    private void StoreHitInfo(RaycastHit2D raycastHit2D){
         // Store collider as class wide object.
         regionHitCollider = raycastHit2D.collider;
         // Store country hit as class wide object.
         regionHit = raycastHit2D.collider.gameObject;
     }
 
-    private void StoreNullHitInfo() {
+    private void StoreNullHitInfo(){
         // Store collider as class wide object.
         regionHitCollider = null;
         // Store country hit as class wide object.
@@ -99,40 +102,22 @@ public class Player_Controller : MonoBehaviour {
         regionPanelScript.UpdateRegionPanel(regionHit);
     }
 
-    /// <summary>
-    /// Calculates the x or y position of the mouse, minus the margin.
-    /// </summary>
-    /// <param name="mousePositionOneD"> The 1 dimensional position of the mouse pointer.</param>
-    /// <param name="screenSideSize"> The size of one of the sides of the sceen (horizontal or vertical).</param>
-    /// <param name="sideMargin"> The minimum amount that the panel has to be from the left and right or top and bottom sides of the screen. </param>
-    /// <returns></returns>
-    private float CalculateCountryPanelPosition(float mousePositionOneD, int screenSideSize, int sideMargin){
-        float amountToShiftPanel = mousePositionOneD;
-
-        // Check if mouse is past the margin at the far/top portion of the screen.
-        if (mousePositionOneD > (screenSideSize - sideMargin)){
-            amountToShiftPanel = (screenSideSize - sideMargin);
-        }
-        // Check if mouse is before the margin at the near/bottom portion of the screen
-        else if (mousePositionOneD < sideMargin){
-            amountToShiftPanel = sideMargin;
-        }
-        return amountToShiftPanel;
+    public Vector3 GetRegionRandomLocale() {
+        return GetRegionRandomLocale(regionHitCollider);
     }
 
-    // TODO: Should probably not be on the player controller.
-    public Vector3 GetCountryRandomLocale(){
-        Vector3 countryLocale = GetCountryHit().transform.position;
-        countryLocale.z -= 1; //put it ahead of other game objs
+    // TODO: Should not be on the player controller.
+    public Vector3 GetRegionRandomLocale(Collider2D collider){
+        Vector3 randomPosition;
+        Vector3 colliderPos = collider.transform.position;
+        do {
+            randomPosition = new Vector3(
+                    UnityEngine.Random.Range(collider.bounds.min.x, collider.bounds.max.x),
+                    UnityEngine.Random.Range(collider.bounds.min.y, collider.bounds.max.y),
+                    colliderPos.z);
+        } while (!regionHitCollider.OverlapPoint(randomPosition));
 
-        //random location on game object  --- or even better would be the collider (size of actuat country)
-        Vector2 randMax = regionHitCollider.bounds.size / 4; // /2 would work if there was no empty space. /4 randomly chosen 
-        Vector2 randomLocation = new Vector2(Random.Range(-randMax.x, randMax.x), Random.Range(-randMax.y, randMax.y));
-
-        countryLocale.x += randomLocation.x;
-        countryLocale.y += randomLocation.y;        
-        return countryLocale;
-
-        //further improvements --- record points on maps and recursion until the randlocation is not within x amount
+        randomPosition.z -= 1;
+        return randomPosition;
     }
 }

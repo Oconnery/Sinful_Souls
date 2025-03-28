@@ -108,10 +108,12 @@ public class Region_Controller : MonoBehaviour {
     public double birthRate;
     public double deathRate;
 
-    private float neutralSinRate; //starts at 1 (100%) 
-    private float neutralPrayerRate; //starts at 1 (100%)
-    private float evilSinRate; //starts at 1 (100%) 
-    private float goodPrayerRate; //starts at 1 (100%)
+    // CURRENTLY NOT USED /////////////////////////////////
+    //private float neutralSinRate; //starts at 1 (100%) 
+    //private float neutralPrayerRate; //starts at 1 (100%)
+    //private float evilSinRate; //starts at 1 (100%) 
+    //private float goodPrayerRate; //starts at 1 (100%)
+    // ////////////////////////////////////////////////////
 
     // Conversion rates - the effectiveness an angel or demon will have in this region.
     private float conversionRateToEvil;
@@ -139,6 +141,8 @@ public class Region_Controller : MonoBehaviour {
     private const ulong maxProgressiveDeathTextDeathValue = 10000;
 
     void Awake() {
+        World_Controller.OnDayPassedNotifyFirst += DailyCall; // In awake function because it needs to happen before other callbacks.
+
         SetInitialRates();
 
         population = new RegionPopulation(this);
@@ -159,10 +163,10 @@ public class Region_Controller : MonoBehaviour {
     }
 
     private void SetInitialRates(){
-        neutralSinRate = 0.25f;
-        evilSinRate = 0.25f;
-        neutralPrayerRate = 0.25f;
-        goodPrayerRate = 0.25f;
+        //neutralSinRate = 0.25f;
+        //evilSinRate = 0.25f;
+        //neutralPrayerRate = 0.25f;
+        //goodPrayerRate = 0.25f;
 
         conversionRateToEvil = 1.0f;
         conversionRateToGood = 1.0f;

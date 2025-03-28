@@ -12,7 +12,7 @@ public class Devil_Controller : Faction {
     public double sinEfficency;
 
     // Resources.
-    private long skulls;
+    private ulong skulls;
     private double sins;
 
     private double skullsMultiplier;
@@ -58,11 +58,13 @@ public class Devil_Controller : Faction {
         sinsMultiplier = 0.00000000005;
         skullsMultiplier = 0.1948;
 
-    worldController = this.gameObject.GetComponent<World_Controller>();
+        worldController = this.gameObject.GetComponent<World_Controller>();
+
+        World_Controller.OnDayPassedNotifySecond += DailyShout;
     }
 
     #region Get Statements
-    public long GetSkulls() {
+    public ulong GetSkulls() {
         return skulls;
     }
 
@@ -156,7 +158,7 @@ public class Devil_Controller : Faction {
     }
 
     public void UpdateSkulls() {
-        skulls += (long) ((double) totalEvilDiedToday / 100.0 * skullsMultiplier);
+        skulls += (ulong) ((double) totalEvilDiedToday / 100.0 * skullsMultiplier);
     }
 
     private void ResetEvilDiedTodayInEachRegion() {

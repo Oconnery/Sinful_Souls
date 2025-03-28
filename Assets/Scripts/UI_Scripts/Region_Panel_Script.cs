@@ -107,7 +107,7 @@ public class Region_Panel_Script : MonoBehaviour{
 
             //add demon orange dot
             Vector3 dotLocation = new Vector3(0.0f, 0.0f, 0.0f);
-            dotLocation = gameController.GetComponent<Player_Controller>().GetCountryRandomLocale();
+            dotLocation = gameController.GetComponent<Player_Controller>().GetRegionRandomLocale();
             GameObject demonDot = Instantiate(demonDotPrefab, dotLocation, Quaternion.identity);
 
             //Name the orange dot
@@ -140,7 +140,7 @@ public class Region_Panel_Script : MonoBehaviour{
 
             //add banshee dot
             Vector3 dotLocation = new Vector3(0.0f, 0.0f, 0.0f);
-            dotLocation = gameController.GetComponent<Player_Controller>().GetCountryRandomLocale();
+            dotLocation = gameController.GetComponent<Player_Controller>().GetRegionRandomLocale();
             GameObject bansheeDot = Instantiate(bansheeDotPrefab, dotLocation, Quaternion.identity);
 
             //Name the  dot (so it can be deleted when removed) //demonPresence UNITEDSTATES1

@@ -13,17 +13,20 @@ public class Minor_Events_Controller : MonoBehaviour {
     private string eventsDescr;
 
     public Hud_Controller hudController;
-    private Devil_Controller devil_Controller;
-    private God_Controller god_Controller;
+    private Devil_Controller devilController;
+    private God_Controller godController;
 
     void Start() {
         eventsDescr = "Default text";
         eventsContentText.text = eventsDescr;
 
-        devil_Controller = gameObject.GetComponent<Devil_Controller>();
-        god_Controller = gameObject.GetComponent<God_Controller>();
+        devilController = gameObject.GetComponent<Devil_Controller>();
+        godController = gameObject.GetComponent<God_Controller>();
+
+        World_Controller.OnDayPassedNotifyFourth += ChanceToCallRandomMinorEvent;
     }
 
+    // TODO: Place in a utility class.
     private double RoundToSignificantDigits(double d, int digits) {
         if (d == 0) {
             return 0;
@@ -33,6 +36,7 @@ public class Minor_Events_Controller : MonoBehaviour {
         return scale * System.Math.Round(d / scale, digits);
     }
 
+    // TODO: Remove?
     private void SetDeathText(Vector3 location, Text textToChange, long deathCount) {
         textToChange.gameObject.SetActive(false);
         if (deathCount > 0) {
@@ -64,8 +68,8 @@ public class Minor_Events_Controller : MonoBehaviour {
         else MurderousCult(currentRegion.GetComponent<Region_Controller>(), regionName);
 
         // Set populations and give resources.
-        devil_Controller.DailyShout();
-        god_Controller.DailyShout();
+        devilController.DailyShout();
+        godController.DailyShout();
     }
 
     public void RandomWar(Region_Controller regionController, string countryObj) {
