@@ -153,8 +153,7 @@ public class Region_Controller : MonoBehaviour {
 
         //155-50 = 105 .. 1% change in pop should change colour by 1.05%
         renderer = GetComponent<Renderer>();
-        renderer.material.color = currentClr;
-        //renderer.material.
+        //renderer.material.color = currentClr;
 
         SetInitialLocalUnits();
   
@@ -177,7 +176,7 @@ public class Region_Controller : MonoBehaviour {
     private void SetAlignmentColors(){
         goodClrMax = new UnityEngine.Color(0.0f, (155f / 255f), 0.0f);
         evilClrMax = new UnityEngine.Color((155f / 255f), 0.0f, 0.0f);
-        currentClr = new UnityEngine.Color(0.0f, 0.0f, 0.0f, 1.0f);
+        currentClr = new UnityEngine.Color(255f, 255f, 255f);
     }
 
     private void SetInitialLocalUnits(){

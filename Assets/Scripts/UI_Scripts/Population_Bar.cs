@@ -12,7 +12,6 @@ public class Population_Bar : MonoBehaviour{
         ulong goodPop = regionController.GetGoodPop();
         ulong totalPop = regionController.GetTotalPop();
 
-        Debug.Log(evilPop / totalPop);
         evilBar.fillAmount = (float)evilPop / (float)totalPop;
         goodBar.fillAmount = (float)goodPop / (float)totalPop;
         // The remaining percentage is neutral which is all of the background.

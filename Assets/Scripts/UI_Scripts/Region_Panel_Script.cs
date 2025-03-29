@@ -155,10 +155,10 @@ public class Region_Panel_Script : MonoBehaviour{
             //delete banshee dot
             Destroy(GameObject.Find("bansheePresence_" + gameController.GetComponent<Player_Controller>().GetCountryHit().name + currentRegion.GetLocalDemons().ToString())); //TODO: Store it locally instead of Find().
             currentRegion.DecrementLocalBanshees();
-            localBansheesText.text =currentRegion.GetLocalBanshees().ToString();
-        }
+            localBansheesText.text = currentRegion.GetLocalBanshees().ToString();
 
-        //increment available banshees on world controller
-        gameController.GetComponent<Devil_Controller>().IncrementGlobalBanshees();
+            //increment available banshees on world controller
+            gameController.GetComponent<Devil_Controller>().IncrementGlobalBanshees();
+        }
     }
 }

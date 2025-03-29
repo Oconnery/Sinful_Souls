@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Oconnery
   productName: Sinful Souls
-  defaultCursor: {fileID: 2800000, guid: 7825633d016559249ade03ab1979c7b6, type: 3}
+  defaultCursor: {fileID: 2800000, guid: 0e74a526bc508994baf3ac813d486b6b, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
