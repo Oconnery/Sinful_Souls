@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class Hud_Controller : MonoBehaviour{
-
     public GameObject statsPanel;
 
     public GameObject researchTree;
@@ -16,20 +16,117 @@ public class Hud_Controller : MonoBehaviour{
 
     public Button researchTreeBtn;
 
-    public World_Controller worldController;
+    public Text primaryResourceText;
+    public Text secondaryResourceText;
+    public Text secondaryResourceEfficencyText;
+    public Text currentDateText;
+    public Text hellCountText;
+    public Text heavenCountText;
+
+    public Text baseUnitCountText;
+    public Text specialUnitCountText;
+
+    public Devil_Controller devilController;
+    public God_Controller godController;
+
+    public Player_Controller playerController;
+
+    private void Start() {
+        Clock.OnDayPassedNotifyHUD += SetHUD; 
+        SetupHudText();
+    }
+
+    private void SetHUD() {
+        SetDateText();
+        SetHellCountText();
+        SetHeavenCountText();
+        SetPrimaryResourceText();
+        SetSecondaryResourceText();
+        SetSecondaryResourceEfficencyText();
+    }
+
+    private void SetupHudText() {
+        primaryResourceText.text = "0";
+        secondaryResourceText.text = "Sins: 0 Million";
+        secondaryResourceEfficencyText.text = "100%";
+        //newsFlashText.text = "NOTHING HAPPENED TODAY!";
+        SetDateText();
+        SetBaseUnitCountText();
+        SetSecondaryUnitCountText();
+    }
+
+    private void SetDateText() {
+        //Check if single digit = needs 0 
+        ushort day = Clock.Day;
+        ushort month = Clock.Month;
+
+        if (day < 10) {
+            currentDateText.text = "0" + day + "/"; //+ month + "/" + year;
+        } else {
+            currentDateText.text = day + "/";
+        }
+
+        if (month < 10) {
+            currentDateText.text += "0" + month + "/";
+        } else {
+            currentDateText.text += month + "/";
+        }
+        currentDateText.text += Clock.Year;
+    }
+
+    private void SetHellCountText() {
+        hellCountText.text = ($"Hell: {devilController.RealmDeathCount}");
+    }
+
+    private void SetHeavenCountText() {
+        heavenCountText.text = ($"Heaven: {godController.RealmDeathCount}");
+    }
+    public void SetPrimaryResourceText() {
+        //Need to round like the sins
+        if (playerController.PlayingAsDevil()) {
+            primaryResourceText.text = Math.Floor(devilController.PrimaryResource).ToString();
+        } else if (playerController.PlayingAsGod()) {
+            throw new NotImplementedException("God faction not implemented."); // TODO
+        } else { throw new System.Exception("The player isn't controlling the god or devil class."); }
+    }
+    private void SetSecondaryResourceText() {
+        if (playerController.PlayingAsDevil()) {
+            secondaryResourceText.text = "Sins: " + Math.Floor(devilController.SecondaryResource) + " Million";
+        } else if (playerController.PlayingAsGod()) {
+            throw new NotImplementedException("God faction not implemented."); // TODO
+        } else { throw new System.Exception("The player isn't controlling the god or devil class."); }
+    }
+
+    private void SetSecondaryResourceEfficencyText() {
+        if (playerController.PlayingAsDevil()) {
+            secondaryResourceEfficencyText.text = (devilController.SecondaryResourceGenerationEfficency).ToString("F0");
+        } else if (playerController.PlayingAsGod()) {
+            throw new NotImplementedException("God faction not implemented."); // TODO
+        }
+    }
+
+    public void SetBaseUnitCountText() {
+        Faction faction = playerController.playerControlledFaction;
+        baseUnitCountText.text = ($"{devilController.AvailableAgents} / {devilController.AgentPool}");
+    }
+
+    public void SetSecondaryUnitCountText() {
+        Faction faction = playerController.playerControlledFaction;
+        specialUnitCountText.text = ($"{devilController.AvailableSecondaryUnits} / {devilController.SecondaryUnitPool}");
+    }
 
     public void OpenStatsScreen(){
         statsPanel.SetActive(true);
-        worldController.Pause();
+        Clock.Pause();
     }
 
     public void CloseStatsScreen(){
         statsPanel.SetActive(false);
-        worldController.Unpause();
+        Clock.Unpause();
     }
 
     public void OpenResearchTree(){
-        worldController.Pause();
+        Clock.Pause();
         researchTreeBackground.SetActive(true);
         researchTree.SetActive(true);
         DisableClockHUDButtons();
@@ -38,12 +135,12 @@ public class Hud_Controller : MonoBehaviour{
     public void CloseResearchTree(){
         researchTreeBackground.SetActive(false);
         researchTree.SetActive(false);
-        worldController.Unpause();
+        Clock.Unpause();
         EnableClockHUDButtons();
     }
 
     public void SetEventsPanelActive(){
-        worldController.Pause();
+        Clock.Pause();
         eventsPanel.SetActive(true);
         DisableClockHUDButtons();
     }

@@ -1,37 +1,70 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Drawing;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 // TODO: All of the old code here needs refactored/cleaned
-public class Region_Panel_Script : MonoBehaviour{
-    public GameObject gameController;
-    public Player_Controller playerController;
+public class Region_Panel_Script : MonoBehaviour {
+    public GameObject gameController; // TODO: Should not be using GetComponent throughout this class. Should instead have public references to Devil Controller etc. here.
 
-    public GameObject [] unitButtons;
-
-    public TextMeshProUGUI regionNameText;
-    public TextMeshProUGUI evilPopulationText;
-    public TextMeshProUGUI goodPopulationText;
-    public TextMeshProUGUI neutralPopulationText;
-    public TextMeshProUGUI localDemonsText;
-    public TextMeshProUGUI localAngelsText;
+    // TODO: Make texts abstract from the different factions.
+    [SerializeField]
+    private Devil_Controller devilController;
+    [SerializeField]
+    private Player_Controller playerController;
+    [SerializeField]
+    private GameObject[] unitButtons;
+    [SerializeField]
+    private TextMeshProUGUI regionNameText;
+    [SerializeField]
+    private TextMeshProUGUI evilPopulationText;
+    [SerializeField]
+    private TextMeshProUGUI goodPopulationText;
+    [SerializeField]
+    private TextMeshProUGUI neutralPopulationText;
+    [SerializeField]
+    private TextMeshProUGUI localDemonsText; 
+    [SerializeField]
+    private TextMeshProUGUI localAngelsText;
     //public Text localInquisitors; -- unknown at game start
-    public TextMeshProUGUI localBansheesText;
-    //public Text conversionGood;
-    public TextMeshProUGUI sinEfficencyText;
-
-    public GameObject demonDotPrefab;
-    public GameObject bansheeDotPrefab;
-
-    public Population_Bar populationBar;
+    [SerializeField]
+    private TextMeshProUGUI localBansheesText;
+    [SerializeField]
+    private TextMeshProUGUI sinEfficencyText;
+    [SerializeField]
+    private GameObject demonDotPrefab;
+    [SerializeField]
+    private GameObject bansheeDotPrefab;
+    [SerializeField]
+    private Population_Bar populationBar;
+    [SerializeField]
+    private GameObject unitsContainerRef;
 
     private Region_Controller currentRegion;
+    private Dictionary<string, GameObject> demonsByRegion = new Dictionary<string, GameObject>();
+    private Dictionary<string, GameObject> bansheesByRegion = new Dictionary<string, GameObject>();
 
     private void Start() {
         UpdateToWorldRegion();
+    }
+
+    // TODO: Currentregion shouldn't exist in this context since it may accidently be used below. So this should be in a different class or something.
+    public void UpdateToWorldRegion() {
+        regionNameText.text = "WORLD";
+
+        Clock worldController = gameController.GetComponent<Clock>();
+        ulong evilPop = worldController.GetTotalEvilPopulation();
+        ulong goodPop = worldController.GetTotalGoodPopulation();
+        ulong neutralPop = worldController.GetTotalNeutralPopulation();
+        populationBar.SetFillAmounts(evilPop, goodPop, neutralPop);
+        evilPopulationText.text = "Evil: " + evilPop.ToString();
+        goodPopulationText.text = "Good: " + goodPop.ToString();
+        neutralPopulationText.text = "Neutral: " + neutralPop.ToString();
+
+        localDemonsText.text = worldController.GetDeployedDemons().ToString(); // TODO: This should actually just be the total number of placed demons.
+        localAngelsText.text = worldController.GetDeployedDemons().ToString(); //TODO: Should I even be able to see angels?
+        localBansheesText.text = worldController.GetDeployedBanshees().ToString();// TODO: This should actually just be the total number of placed banshees.
+        sinEfficencyText.text = (devilController.SecondaryResourceGenerationEfficency * 100).ToString() + "%"; // TODO: This is the global sinEfficency rate, not the local.
+                                                                                                               // Local is to be replaced with anarchy levels                                                                                                       //conversionGood.text = (regionController.GetConversionGood() * 100).ToString() + "%";
     }
 
     public void ExitRegionPanel() {
@@ -54,9 +87,9 @@ public class Region_Panel_Script : MonoBehaviour{
             evilPopulationText.text = "Evil: " + currentRegion.GetEvilPop().ToString("0");
             goodPopulationText.text = "Good: " + currentRegion.GetGoodPop().ToString("0");
             neutralPopulationText.text = "Neutral: " + currentRegion.GetNeutralPop().ToString("0");
-            localDemonsText.text = currentRegion.GetLocalDemons().ToString();
-            localAngelsText.text = currentRegion.GetLocalAngels().ToString();
-            localBansheesText.text = currentRegion.GetLocalBanshees().ToString();
+            localDemonsText.text = currentRegion.GetLocalEvilAgents().ToString();
+            localAngelsText.text = currentRegion.GetLocalGoodAgents().ToString();
+            localBansheesText.text = currentRegion.GetLocalEvilSecondaryUnits().ToString();
             sinEfficencyText.text = (currentRegion.GetSinEfficency() * 100).ToString() + "%";
             //conversionGood.text = (regionController.GetConversionGood() * 100).ToString() + "%";
             populationBar.SetFillAmounts(currentRegion);
@@ -75,90 +108,64 @@ public class Region_Panel_Script : MonoBehaviour{
         }
     }
 
-    // TODO: Currentregion shouldn't exist in this context since it may accidently be used below. So this should be in a different class or something.
-    public void UpdateToWorldRegion() {
-        regionNameText.text = "WORLD";
-
-        World_Controller worldController = gameController.GetComponent<World_Controller>();
-        ulong evilPop = worldController.GetTotalEvilPopulation();
-        ulong goodPop = worldController.GetTotalGoodPopulation();
-        ulong neutralPop = worldController.GetTotalNeutralPopulation();
-        populationBar.SetFillAmounts(evilPop, goodPop, neutralPop);
-        evilPopulationText.text = "Evil: " + evilPop.ToString();
-        goodPopulationText.text = "Good: " + goodPop.ToString();
-        neutralPopulationText.text = "Neutral: " + neutralPop.ToString();
-
-        localDemonsText.text = worldController.GetDeployedDemons().ToString(); // TODO: This should actually just be the total number of placed demons.
-        localAngelsText.text = worldController.GetDeployedDemons().ToString(); //TODO: Should I even be able to see angels?
-        localBansheesText.text = worldController.GetDeployedBanshees().ToString();// TODO: This should actually just be the total number of placed banshees.
-        Devil_Controller devilController = gameController.GetComponent<Devil_Controller>();
-        sinEfficencyText.text = (devilController.sinEfficency * 100).ToString() + "%";
-        //conversionGood.text = (regionController.GetConversionGood() * 100).ToString() + "%";
-    }
-
-
-
+    // TODO: AddAgent() instead, and get the playerController.PlayerFaction. to increase abstraction.
     public void AddDemon() {
-        if (gameController.GetComponent<Devil_Controller>().GetAvailableDemons() > 0) {
-            print("+1 Demon");
-            currentRegion.IncrementLocalDemons();
-            localDemonsText.text = currentRegion.GetLocalDemons().ToString();
-            gameController.GetComponent<Devil_Controller>().DecrementGlobalDemons();
+        if (devilController.AvailableAgents > 0) {
+            currentRegion.IncrementLocalEvilAgents();
+            devilController.AvailableAgents--;
 
-            //add demon orange dot
-            Vector3 dotLocation = new Vector3(0.0f, 0.0f, 0.0f);
-            dotLocation = gameController.GetComponent<Player_Controller>().GetRegionRandomLocale();
-            GameObject demonDot = Instantiate(demonDotPrefab, dotLocation, Quaternion.identity);
+            string localEvilAgents = currentRegion.GetLocalEvilAgents().ToString();
+            localDemonsText.text = localEvilAgents;
 
-            //Name the orange dot
-            demonDot.name = "demonPresence_" + gameController.GetComponent<Player_Controller>().GetCountryHit().name +
-            currentRegion.GetLocalDemons().ToString();
+            //add agent gameobject
+            Vector3 dotLocation = gameController.GetComponent<Player_Controller>().GetRegionRandomLocale(); // TODO: Could this be a static method in a utility class?
+            GameObject demonDot = Instantiate(demonDotPrefab, dotLocation, Quaternion.identity, unitsContainerRef.transform);
+            demonDot.name = "demon_" + currentRegion.name + "_" + localEvilAgents;
+            demonsByRegion.Add((currentRegion.name + localEvilAgents), demonDot);
         }
     }
 
     public void RemoveDemon() {
-        if (currentRegion.GetLocalDemons() > 0) {
-            print("-1 Demon");
+        if (currentRegion.GetLocalEvilAgents() > 0) {
+            // Destroy demon game object
+            string demonGOName = currentRegion.name + currentRegion.GetLocalEvilAgents().ToString();
+            GameObject demonPrefabInstance = demonsByRegion[demonGOName];
+            demonsByRegion.Remove(demonGOName);
+            Destroy(demonPrefabInstance);
 
-            //delete demon orange dot
-            Destroy(GameObject.Find("demonPresence_" + gameController.GetComponent<Player_Controller>().GetCountryHit().name + currentRegion.GetLocalDemons().ToString())); //TODO: Store it locally instead of Find().
-            currentRegion.DecrementLocalDemons();
-            localDemonsText.text = currentRegion.GetLocalDemons().ToString();
-            //increment available demons on world controller
-            gameController.GetComponent<Devil_Controller>().IncrementGlobalDemons();
+            currentRegion.DecrementLocalEvilAgents();
+            devilController.AvailableAgents++;
+            localDemonsText.text = currentRegion.GetLocalEvilAgents().ToString();
         }
     }
 
     public void AddBanshee() {
-        if (gameController.GetComponent<Devil_Controller>().GetAvailableBanshees() > 0) {
-            print("+1 Banshee");
-            currentRegion.IncrementLocalBanshees();
-            localBansheesText.text = currentRegion.GetLocalBanshees().ToString();
+        if (devilController.AvailableSecondaryUnits > 0) {
+            currentRegion.IncrementLocalEvilSecondaryUnits();
+            devilController.AvailableSecondaryUnits--;
 
-            //decrement available banshees on world controller
-            gameController.GetComponent<Devil_Controller>().DecrementGlobalBanshees();
+            string localEvilSecondaryUnits = currentRegion.GetLocalEvilSecondaryUnits().ToString();
+            localBansheesText.text = localEvilSecondaryUnits;
 
-            //add banshee dot
-            Vector3 dotLocation = new Vector3(0.0f, 0.0f, 0.0f);
-            dotLocation = gameController.GetComponent<Player_Controller>().GetRegionRandomLocale();
-            GameObject bansheeDot = Instantiate(bansheeDotPrefab, dotLocation, Quaternion.identity);
-
-            //Name the  dot (so it can be deleted when removed) //demonPresence UNITEDSTATES1
-            bansheeDot.name = "bansheePresence_" + gameController.GetComponent<Player_Controller>().GetCountryHit().name + currentRegion.GetLocalDemons().ToString(); 
+            //add banshee gameobject
+            Vector3 dotLocation = gameController.GetComponent<Player_Controller>().GetRegionRandomLocale(); // TODO: Could this be a static method in a utility class?
+            GameObject bansheeDot = Instantiate(bansheeDotPrefab, dotLocation, Quaternion.identity, unitsContainerRef.transform);
+            bansheeDot.name = "banshee_" + currentRegion.name + "_" + localEvilSecondaryUnits;
+            bansheesByRegion.Add((currentRegion.name + localEvilSecondaryUnits), bansheeDot);
         }
     }
 
     public void RemoveBanshee() {
-        if (currentRegion.GetLocalBanshees() > 0) {
-            print("-1 Banshee");
+        if (currentRegion.GetLocalEvilSecondaryUnits() > 0) {
+            // Destroy banshee game object
+            string bansheeGOName = currentRegion.name + currentRegion.GetLocalEvilSecondaryUnits().ToString();
+            GameObject bansheePrefabInstance = bansheesByRegion[bansheeGOName];
+            bansheesByRegion.Remove(bansheeGOName);
+            Destroy(bansheePrefabInstance);
 
-            //delete banshee dot
-            Destroy(GameObject.Find("bansheePresence_" + gameController.GetComponent<Player_Controller>().GetCountryHit().name + currentRegion.GetLocalDemons().ToString())); //TODO: Store it locally instead of Find().
-            currentRegion.DecrementLocalBanshees();
-            localBansheesText.text = currentRegion.GetLocalBanshees().ToString();
-
-            //increment available banshees on world controller
-            gameController.GetComponent<Devil_Controller>().IncrementGlobalBanshees();
+            currentRegion.DecrementLocalEvilSecondaryUnits();
+            devilController.AvailableSecondaryUnits++;
+            localBansheesText.text = currentRegion.GetLocalEvilSecondaryUnits().ToString();
         }
     }
 }

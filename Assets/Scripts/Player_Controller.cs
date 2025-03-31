@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Drawing;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
-using static UnityEngine.UI.Image;
 
 // Contains the player mouse/touch input. For Keyboard Controls see Keyboard_Controls class.
-public class Player_Controller : MonoBehaviour{
+public class Player_Controller : MonoBehaviour {
+
+    public Faction playerControlledFaction;
     
     public Hud_Controller hudController;
     public GameObject regionPanel;
@@ -19,6 +16,15 @@ public class Player_Controller : MonoBehaviour{
 
     public GameObject GetCountryHit(){
         return regionHit;
+    }
+
+    // TODO: Test the below.
+    public bool PlayingAsDevil() {
+        return playerControlledFaction.GetType() == typeof(Devil_Controller);
+    }
+
+    public bool PlayingAsGod() {
+        return playerControlledFaction.GetType() == typeof(God_Controller);
     }
 
     private void Update(){
@@ -105,6 +111,7 @@ public class Player_Controller : MonoBehaviour{
     public Vector3 GetRegionRandomLocale() {
         return GetRegionRandomLocale(regionHitCollider);
     }
+
 
     // TODO: Should not be on the player controller.
     public Vector3 GetRegionRandomLocale(Collider2D collider){

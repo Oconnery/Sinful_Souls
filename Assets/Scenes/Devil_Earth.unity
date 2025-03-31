@@ -231,6 +231,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: -5.92831, y: -10.954, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &11008319
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -737,6 +739,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: -53.428, y: 0.974, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!1 &38587108
 GameObject:
   m_ObjectHideFlags: 0
@@ -985,6 +989,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: -2.7707, y: 17.321655, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &42350405
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3242,6 +3248,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: 21.829, y: 0, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &276516355
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4162,6 +4170,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: -54.32, y: -25.03, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!1 &324803819
 GameObject:
   m_ObjectHideFlags: 0
@@ -4361,6 +4371,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: -1.89623, y: 4.0857, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &334483315
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5188,8 +5200,6 @@ GameObject:
   - component: {fileID: 442966051}
   - component: {fileID: 442966047}
   - component: {fileID: 442966044}
-  - component: {fileID: 442966049}
-  - component: {fileID: 442966048}
   - component: {fileID: 442966050}
   m_Layer: 0
   m_Name: GameController
@@ -5237,16 +5247,6 @@ MonoBehaviour:
   - {fileID: 535025627}
   - {fileID: 1634659823}
   - {fileID: 778686148}
-  hellDeathCount: 0
-  heavenDeathCount: 0
-  skullsSoulsText: {fileID: 1777258097}
-  sinsPrayersText: {fileID: 1074312576}
-  sinEfficencyText: {fileID: 1688511630}
-  currentDateText: {fileID: 464987664}
-  hellCountText: {fileID: 821316259}
-  heavenCountText: {fileID: 1002343118}
-  baseUnitCountText: {fileID: 1296137691}
-  specialUnitCountText: {fileID: 403206650}
 --- !u!4 &442966045
 Transform:
   m_ObjectHideFlags: 0
@@ -5274,6 +5274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c10548789653248b51ee5506a3f24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerControlledFaction: {fileID: 899610356}
   hudController: {fileID: 903152512}
   regionPanel: {fileID: 1256603949}
 --- !u!114 &442966047
@@ -5317,45 +5318,6 @@ MonoBehaviour:
   - AUSTRALIA
   eventsContentText: {fileID: 2117537818}
   hudController: {fileID: 903152512}
---- !u!114 &442966048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442966043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 608e0424a40da5a40a4b2e2e14a61bc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlayerControlled: 0
-  prayerEfficency: 0
-  startingAvailableAngels: 12
-  startingAvailableInquisitors: 2
-  maxDeployableAngels: 12
-  maxDeployableInquisitors: 2
-  worldController: {fileID: 0}
---- !u!114 &442966049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442966043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d6f0cb250e437b4daa8affff7d69863, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPlayerControlled: 1
-  sinEfficency: 0
-  startingAvailableDemons: 12
-  startingAvailableBanshees: 2
-  maxDeployableDemons: 12
-  maxDeployableBanshees: 2
-  buyDemonAudio: {fileID: 326491156886338865}
-  worldController: {fileID: 0}
 --- !u!114 &442966050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5967,6 +5929,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: -69.253, y: 21.0261, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &486398689
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6674,6 +6638,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: 13.9454, y: -7.719, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &535025628
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6955,6 +6921,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: -6.81223, y: -6.0123, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &543067273
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7145,6 +7113,53 @@ PolygonCollider2D:
       - {x: -0.25, y: 0.405}
       - {x: -0.21, y: 0.555}
   m_UseDelaunayMesh: 0
+--- !u!1 &544095960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 544095962}
+  - component: {fileID: 544095961}
+  m_Layer: 0
+  m_Name: GodController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &544095961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544095960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 608e0424a40da5a40a4b2e2e14a61bc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingAgents: 12
+  startingSecondaryUnits: 2
+  buyAgentAudio: {fileID: 0}
+--- !u!4 &544095962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544095960}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1161.077, y: 506.71768, z: 5.1179366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &558532376
 GameObject:
   m_ObjectHideFlags: 0
@@ -8882,6 +8897,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: -13, y: 0, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &695003807
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9675,6 +9692,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: -45.1409, y: 52.9972, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &778686149
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9944,14 +9963,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805049999}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.008000508, w: 0.999968}
   m_LocalPosition: {x: -12.947, y: 2.531, z: -0.005859375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 254127111}
   m_Father: {fileID: 1755741147}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.917}
 --- !u!114 &805050002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9974,6 +9993,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: 12.658, y: 13.066, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &805050003
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10581,6 +10602,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897168404}
   m_CullTransparentMesh: 0
+--- !u!1 &899610355
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 899610357}
+  - component: {fileID: 899610356}
+  m_Layer: 0
+  m_Name: DevilController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &899610356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899610355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d6f0cb250e437b4daa8affff7d69863, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingAgents: 12
+  startingSecondaryUnits: 2
+  buyAgentAudio: {fileID: 326491156886338865}
+--- !u!4 &899610357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899610355}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1161.077, y: 506.71768, z: 5.1179366}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &903152507
 GameObject:
   m_ObjectHideFlags: 0
@@ -10716,7 +10784,17 @@ MonoBehaviour:
   pauseBtn: {fileID: 1445187508}
   fastForwardBtn: {fileID: 995687433}
   researchTreeBtn: {fileID: 584406985}
-  worldController: {fileID: 442966044}
+  primaryResourceText: {fileID: 1777258097}
+  secondaryResourceText: {fileID: 1074312576}
+  secondaryResourceEfficencyText: {fileID: 1688511630}
+  currentDateText: {fileID: 464987664}
+  hellCountText: {fileID: 821316259}
+  heavenCountText: {fileID: 1002343118}
+  baseUnitCountText: {fileID: 1296137691}
+  specialUnitCountText: {fileID: 403206650}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
+  playerController: {fileID: 442966046}
 --- !u!1 &929405137
 GameObject:
   m_ObjectHideFlags: 0
@@ -10829,6 +10907,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: -12, y: 6, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &929405141
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11521,9 +11601,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 442966049}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: BuyDemon
+      - m_Target: {fileID: 899610356}
+        m_TargetAssemblyTypeName: Faction, NewAssembly
+        m_MethodName: BuyAgent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11533,8 +11613,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 442966044}
-        m_TargetAssemblyTypeName: World_Controller, NewAssembly
+      - m_Target: {fileID: 903152512}
+        m_TargetAssemblyTypeName: Hud_Controller, NewAssembly
         m_MethodName: SetBaseUnitCountText
         m_Mode: 1
         m_Arguments:
@@ -11545,9 +11625,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 442966044}
-        m_TargetAssemblyTypeName: World_Controller, NewAssembly
-        m_MethodName: SetSkullsSoulsText
+      - m_Target: {fileID: 903152512}
+        m_TargetAssemblyTypeName: Hud_Controller, NewAssembly
+        m_MethodName: SetPrimaryResourceText
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12365,6 +12445,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: 9.174, y: 5.60799, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &1037529061
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -12843,13 +12925,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 442966044}
-        m_TargetAssemblyTypeName: World_Controller, NewAssembly
+      - m_Target: {fileID: 903152512}
+        m_TargetAssemblyTypeName: Hud_Controller, NewAssembly
         m_MethodName: SetBaseUnitCountText
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: Faction, NewAssembly
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -13715,6 +13797,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: -10.8419, y: 13.37362, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &1104128528
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14279,6 +14363,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: 23.8368, y: 19.5014, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!1 &1165652102
 GameObject:
   m_ObjectHideFlags: 0
@@ -14510,13 +14596,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 442966044}
-        m_TargetAssemblyTypeName: World_Controller, NewAssembly
-        m_MethodName: SetSpecialUnitCountText
-        m_Mode: 1
+      - m_Target: {fileID: 903152512}
+        m_TargetAssemblyTypeName: Hud_Controller, NewAssembly
+        m_MethodName: SetSecondaryUnitCountText
+        m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: Faction, NewAssembly
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -15146,7 +15232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 109.4}
+  m_AnchoredPosition: {x: 0, y: 109.3999}
   m_SizeDelta: {x: 800, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1256603951
@@ -15219,6 +15305,7 @@ MonoBehaviour:
   bansheeDotPrefab: {fileID: 1334501732368336, guid: a070ae2bf0d7a2a49ae5ddc1582db5a5,
     type: 3}
   populationBar: {fileID: 257159222}
+  unitsContainerRef: {fileID: 1767724069}
 --- !u!1 &1270318754
 GameObject:
   m_ObjectHideFlags: 0
@@ -17846,6 +17933,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: 56.51, y: 16.84, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!1 &1525255788
 GameObject:
   m_ObjectHideFlags: 0
@@ -18348,7 +18437,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d9fe8fe4a232b74cb784cd7a8b36177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  worldController: {fileID: 442966044}
 --- !u!1 &1590155707
 GameObject:
   m_ObjectHideFlags: 0
@@ -18661,13 +18749,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 442966044}
-        m_TargetAssemblyTypeName: World_Controller, NewAssembly
+      - m_Target: {fileID: 903152512}
+        m_TargetAssemblyTypeName: Hud_Controller, NewAssembly
         m_MethodName: SetBaseUnitCountText
-        m_Mode: 1
+        m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: Faction, NewAssembly
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -18902,6 +18990,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: -47.0777, y: 6.3113, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &1634659824
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -19514,6 +19604,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: 11.2114, y: 7.0058, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &1654806600
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -20434,6 +20526,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: -88.57, y: -26.5243, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!1 &1663219326
 GameObject:
   m_ObjectHideFlags: 0
@@ -20992,6 +21086,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: 41.74369, y: -6.228013, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &1717114684
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21538,6 +21634,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765481206}
   m_CullTransparentMesh: 0
+--- !u!1 &1767724069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1767724070}
+  m_Layer: 0
+  m_Name: UnitsContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1767724070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767724069}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 969.9479, y: 561.7962, z: 1.2499602}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1769919834
 GameObject:
   m_ObjectHideFlags: 0
@@ -22167,6 +22294,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: -23.540218, y: -7.7482, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &1811110403
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -22672,6 +22801,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: 0, y: -6.98395, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!1 &1829631912
 GameObject:
   m_ObjectHideFlags: 0
@@ -22991,13 +23122,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 442966044}
-        m_TargetAssemblyTypeName: World_Controller, NewAssembly
-        m_MethodName: SetSpecialUnitCountText
-        m_Mode: 1
+      - m_Target: {fileID: 903152512}
+        m_TargetAssemblyTypeName: Hud_Controller, NewAssembly
+        m_MethodName: SetSecondaryUnitCountText
+        m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: Faction, NewAssembly
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -23539,6 +23670,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: 20.753, y: -33.1203, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &1916843838
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -24197,6 +24330,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: 2.654, y: -6.7183, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &1961780773
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -25375,6 +25510,8 @@ MonoBehaviour:
   goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
     type: 3}
   deathTextOffset: {x: -71.58, y: 9.2304, z: 0}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
 --- !u!60 &2031324510
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -26354,6 +26491,9 @@ SceneRoots:
   - {fileID: 1755741147}
   - {fileID: 973843940}
   - {fileID: 875555708}
-  - {fileID: 442966045}
   - {fileID: 583303640}
   - {fileID: 1247905026}
+  - {fileID: 1767724070}
+  - {fileID: 442966045}
+  - {fileID: 899610357}
+  - {fileID: 544095962}

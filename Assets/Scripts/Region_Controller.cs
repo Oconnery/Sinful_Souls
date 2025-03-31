@@ -2,19 +2,58 @@
 using TMPro;
 using UnityEngine;
 
-public class Region_Controller : MonoBehaviour {
-
+public class Region_Controller : MonoBehaviour { 
     public enum Alignment{
         GOOD,
         NEUTRAL,
         EVIL
     }
 
+    protected class RegionPopulation {
+        public PopulationFaction evilPopulation;
+        public PopulationFaction neutralPopulation;
+        public PopulationFaction goodPopulation;
+
+        public RegionPopulation(Region_Controller outerRef) {
+            evilPopulation = new PopulationFaction(outerRef, Alignment.EVIL);
+            neutralPopulation = new PopulationFaction(outerRef, Alignment.NEUTRAL);
+            goodPopulation = new PopulationFaction(outerRef, Alignment.GOOD);
+        }
+
+        public ulong GetTotalPopulation() {
+            return (evilPopulation.GetSize() + goodPopulation.GetSize() + neutralPopulation.GetSize());
+        }
+
+        public PopulationFaction GetPopulationFactionByAlignment(Alignment alignment) {
+            switch (alignment) {
+                case Alignment.GOOD:
+                    return goodPopulation;
+                case Alignment.NEUTRAL:
+                    return neutralPopulation;
+                case Alignment.EVIL:
+                    return evilPopulation;
+                default:
+                    throw new System.NotImplementedException("This alignment either has not been setup properly yet, or null was passed to GetPopulationFactionByAlignment function. Alignment: " + alignment.ToString());
+            }
+        }
+
+        public void SetInitialPopulationAlignments(ulong initialTotalPopulation) {
+            evilPopulation.IncreaseSize(initialTotalPopulation / 10L); //10%
+            goodPopulation.IncreaseSize(initialTotalPopulation / 10L); //10%
+            neutralPopulation.IncreaseSize(initialTotalPopulation / 10L * 8L); //80%
+        }
+
+        public void Convert(ulong numberToConvert, Alignment from, Alignment to) {
+            GetPopulationFactionByAlignment(from).ReduceWithoutKilling(numberToConvert);
+            GetPopulationFactionByAlignment(to).IncreaseSize(numberToConvert);
+        }
+    }
+
     protected class PopulationFaction {
         private Region_Controller outerRef;
         public Alignment alignment;
         private ulong size; // TODO: Tie this in a function with death text, so you can only get this, and when you change it to a lower number the death text instantiates.
-        public ulong diedToday; // should always be positive
+        public ulong diedToday; 
 
         // Since I'm not using diedToday for neutral pop, I could create a class/struct that extends PopulationFaction 
         // which contains diedToday and should only be used for good/evil pop, or something similar to this.
@@ -47,7 +86,6 @@ public class Region_Controller : MonoBehaviour {
             }
         }
         
-
         public void ReduceWithoutKilling(ulong reduceBy) {
             size -= reduceBy;
             // TODO: Exception if reduceBy is larger than size 
@@ -55,46 +93,6 @@ public class Region_Controller : MonoBehaviour {
 
         public void IncreaseSize(ulong increaseBy) {
             size += increaseBy;
-        }
-    }
-
-    protected class RegionPopulation{
-        public PopulationFaction evilPopulation;
-        public PopulationFaction neutralPopulation;
-        public PopulationFaction goodPopulation;
-
-        public RegionPopulation(Region_Controller outerRef){
-            evilPopulation = new PopulationFaction(outerRef, Alignment.EVIL);
-            neutralPopulation = new PopulationFaction(outerRef, Alignment.NEUTRAL);
-            goodPopulation = new PopulationFaction(outerRef, Alignment.GOOD);
-        }
-
-        public ulong GetTotalPopulation(){
-            return (evilPopulation.GetSize() + goodPopulation.GetSize() + neutralPopulation.GetSize());
-        }
-
-        public PopulationFaction GetPopulationFactionByAlignment(Alignment alignment){
-            switch (alignment){
-                case Alignment.GOOD:
-                    return goodPopulation;
-                case Alignment.NEUTRAL:
-                    return neutralPopulation;
-                case Alignment.EVIL:
-                    return evilPopulation;
-                default:
-                    throw new System.NotImplementedException("This alignment either has not been setup properly yet, or null was passed to GetPopulationFactionByAlignment function. Alignment: " + alignment.ToString());
-            }
-        }
-
-        public void SetInitialPopulationAlignments(ulong initialTotalPopulation){
-            evilPopulation.IncreaseSize(initialTotalPopulation / 10L); //10%
-            goodPopulation.IncreaseSize(initialTotalPopulation / 10L); //10%
-            neutralPopulation.IncreaseSize(initialTotalPopulation / 10L * 8L); //80%
-        }
-
-        public void Convert(ulong numberToConvert, Alignment from, Alignment to) {
-            GetPopulationFactionByAlignment(from).ReduceWithoutKilling(numberToConvert);
-            GetPopulationFactionByAlignment(to).IncreaseSize(numberToConvert);
         }
     }
 
@@ -121,10 +119,10 @@ public class Region_Controller : MonoBehaviour {
 
     private double sinEfficency;
 
-    private ushort localDemons;
-    private ushort localAngels;
-    private ushort localBanshees;
-    private ushort localInquisitors;
+    private ushort localEvilAgents;
+    private ushort localGoodAgents;
+    private ushort localEvilSecondaryUnits;
+    private ushort localGoodSecondaryUnits;
 
     //Colours according to pop
     private Renderer renderer;
@@ -140,8 +138,18 @@ public class Region_Controller : MonoBehaviour {
     private const ulong minProgressiveDeathTextDeathValue = 100;
     private const ulong maxProgressiveDeathTextDeathValue = 10000;
 
+    public Devil_Controller devilController;
+    public God_Controller godController;
+
     void Awake() {
-        World_Controller.OnDayPassedNotifyFirst += DailyCall; // In awake function because it needs to happen before other callbacks.
+        Clock.OnDayPassedNotifyRegions += DailyCall;
+
+        devilController.OnDailyShoutReturnPop += GetEvilPop;
+        devilController.OnDailyShoutReturnDiedToday += GetEvilDied;
+        devilController.OnDailyShoutResetDiedToday += ResetDeathCounterEvil;
+        godController.OnDailyShoutReturnPop += GetGoodPop;
+        godController.OnDailyShoutReturnDiedToday += GetGoodDied;
+        godController.OnDailyShoutResetDiedToday += ResetDeathCounterGood;
 
         SetInitialRates();
 
@@ -180,18 +188,20 @@ public class Region_Controller : MonoBehaviour {
     }
 
     private void SetInitialLocalUnits(){
-        localAngels = 0;
-        localDemons = 0;
-        localInquisitors = 0;
-        localBanshees = 0;
+        localGoodAgents = 0;
+        localEvilAgents = 0;
+        localGoodSecondaryUnits = 0;
+        localEvilSecondaryUnits = 0;
     }
 
     #region gets
     public ulong GetGoodPop() {
+        Debug.Log(this.name + "_GetGoodPop returning: " + population.goodPopulation.GetSize());
         return population.goodPopulation.GetSize();
     }
 
     public ulong GetEvilPop() {
+        Debug.Log(this.name + "_GetEvilPop returning: " + population.evilPopulation.GetSize());
         return population.evilPopulation.GetSize();
     }
 
@@ -203,22 +213,29 @@ public class Region_Controller : MonoBehaviour {
         return population.GetTotalPopulation();
     }
 
-    public ushort GetLocalDemons() {
-        return localDemons;
+    public ushort GetLocalEvilAgents() {
+        return localEvilAgents;
     }
 
-    public ushort GetLocalAngels(){
-        return localAngels;
+    public ushort GetLocalGoodAgents(){
+        return localGoodAgents;
     }
 
-    public ushort GetLocalBanshees() {
-        return localBanshees;
+    public ushort GetLocalEvilSecondaryUnits() {
+        return localEvilSecondaryUnits;
     }
+
+    public ushort GetLocalGoodSecondaryUnits() {
+        return localGoodSecondaryUnits;
+    }
+
     public ulong GetEvilDied(){
+        Debug.Log(this.name + "_GetEvilDied returning: " + population.evilPopulation.diedToday);
         return population.evilPopulation.diedToday;
     }
 
     public ulong GetGoodDied() {
+        Debug.Log(this.name + "_GetGoodDied returning: " + population.goodPopulation.diedToday);
         return population.goodPopulation.diedToday;
     }
 
@@ -234,7 +251,6 @@ public class Region_Controller : MonoBehaviour {
         return sinEfficency;
     }
 
-    // TODO: World controller really shouldn't be doing this. 
     public void ResetDeathCounterEvil(){
         population.evilPopulation.diedToday = 0;
     }
@@ -247,7 +263,7 @@ public class Region_Controller : MonoBehaviour {
         // Base rate
         float rate = 1.0f;
         // Apply Banshees 
-        if (localBanshees >= 1) {
+        if (localEvilSecondaryUnits >= 1) {
             rate = 0.6f;
         }
 
@@ -259,7 +275,7 @@ public class Region_Controller : MonoBehaviour {
         // Base rate
         float rate = 1.0f;
         // Apply Banshees 
-        if (localInquisitors >= 1) {
+        if (localGoodSecondaryUnits >= 1) {
             rate = 0.6f;
         }
 
@@ -270,37 +286,36 @@ public class Region_Controller : MonoBehaviour {
     #endregion
 
     #region increments and decrements
-
-    public void IncrementLocalDemons() {
-        localDemons++;
+    public void IncrementLocalEvilAgents() {
+        localEvilAgents++;
     }
 
-    public void DecrementLocalDemons() {
-        localDemons--;
+    public void DecrementLocalEvilAgents() {
+        localEvilAgents--;
     }
 
-    public void IncrementLocalAngels() {
-        localAngels++;
+    public void IncrementLocalGoodAgents() {
+        localGoodAgents++;
     }
 
-    public void DecrementLocalAngels() {
-        localAngels++;
+    public void DecrementLocalGoodAgents() {
+        localGoodAgents++;
     }
 
-    public void IncrementLocalBanshees() {
-        localBanshees++;
+    public void IncrementLocalEvilSecondaryUnits() {
+        localEvilSecondaryUnits++;
     }
 
-    public void DecrementLocalBanshees() {
-        localBanshees--;
+    public void DecrementLocalEvilSecondaryUnits() {
+        localEvilSecondaryUnits--;
     }
 
-    public void IncrementLocalInquisitors() {
-        localInquisitors++;
+    public void IncrementLocalGoodSecondaryUnits() {
+        localGoodSecondaryUnits++;
     }
 
-    public void DecrementLocalInquisitors() {
-        localInquisitors--;
+    public void DecrementLocalGoodSecondaryUnits() {
+        localGoodSecondaryUnits--;
     }
 
     #endregion
@@ -333,7 +348,7 @@ public class Region_Controller : MonoBehaviour {
         ulong neutralNumberToConvert = (uint)(8000 * conversionRateToEvil);
         ulong goodNumberToConvert = (uint)(2000 * conversionRateToEvil);
 
-        for (int i = 0; i < localDemons; i++) {
+        for (int i = 0; i < localEvilAgents; i++) {
             ulong evilPopulation = population.evilPopulation.GetSize();
             ulong neutralPopulation = population.neutralPopulation.GetSize();
             ulong goodPopulation = population.goodPopulation.GetSize();
@@ -368,7 +383,7 @@ public class Region_Controller : MonoBehaviour {
         ulong neutralNumberToConvert = (uint)(8000 * conversionRateToGood);
         ulong evilNumberToConvert = (uint)(2000 * conversionRateToGood);
 
-        for (int i = 0; i < localAngels; i++) {
+        for (int i = 0; i < localGoodAgents; i++) {
             ulong evilPopulation = population.evilPopulation.GetSize();
             ulong neutralPopulation = population.neutralPopulation.GetSize();
             ulong goodPopulation = population.goodPopulation.GetSize();
@@ -500,8 +515,7 @@ public class Region_Controller : MonoBehaviour {
         if (numberToKill > factionSize) {
             populationFaction.Kill(factionSize);            
             return factionSize;
-        }
-        else{
+        } else{
             populationFaction.Kill(numberToKill);
             return numberToKill;
         }

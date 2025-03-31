@@ -5,15 +5,17 @@ using UnityEngine.UI;
 using static Region_Controller;
 
 public class Minor_Events_Controller : MonoBehaviour {
-    //0-25 INCLUSIVE // maybe dont even need -- could just use to print name
+    //0-25 INCLUSIVE // maybe dont even need -- could just use to print name // TODO: Clean
     public string[] regionNames = {"UNITED STATES", "MEXICO", "CANADA", "ALASKA", "ARGENTINA", "BRAZIL", "COLOMBIA", "VENEZUALA", "EASTERN EUROPE", "WESTERN EUROPE", "ICELAND", "SCANDANAVIA", "CHINA", "INDIA", "JAPAN", "KHAZAKSTAN",
         "RUSSIA", "MIDDLEEAST", "THAILAND", "CENTRAL AFRICA", "SOUTH AFRICA", "EAST AFRICA", "NORTH AFRICA", "WEST AFRICA","INDONESIA", "AUSTRALIA"};
-
     public Text eventsContentText;
-    private string eventsDescr;
 
-    public Hud_Controller hudController;
+    private string eventsDescr;
+    [SerializeField]
+    private Hud_Controller hudController;
+    [SerializeField]
     private Devil_Controller devilController;
+    [SerializeField]
     private God_Controller godController;
 
     void Start() {
@@ -23,7 +25,7 @@ public class Minor_Events_Controller : MonoBehaviour {
         devilController = gameObject.GetComponent<Devil_Controller>();
         godController = gameObject.GetComponent<God_Controller>();
 
-        World_Controller.OnDayPassedNotifyFourth += ChanceToCallRandomMinorEvent;
+        Clock.OnDayPassedNotifyMinorEvents += ChanceToCallRandomMinorEvent;
     }
 
     // TODO: Place in a utility class.
@@ -36,7 +38,7 @@ public class Minor_Events_Controller : MonoBehaviour {
         return scale * System.Math.Round(d / scale, digits);
     }
 
-    // TODO: Remove?
+    // TODO: Remove? or is it used just commented out atm?
     private void SetDeathText(Vector3 location, Text textToChange, long deathCount) {
         textToChange.gameObject.SetActive(false);
         if (deathCount > 0) {
@@ -57,10 +59,10 @@ public class Minor_Events_Controller : MonoBehaviour {
     }
 
     private void ExecuteRandomMinorEvent() {
-        this.GetComponent<World_Controller>().Pause();
+        Clock.Pause();
 
         int randomCountryInt = (int)(Random.Range(0.0f, 25.0f));
-        Region_Controller currentRegion = this.GetComponent<World_Controller>().region_Controller[randomCountryInt];
+        Region_Controller currentRegion = this.GetComponent<Clock>().region_Controller[randomCountryInt];
         string regionName = regionNames[randomCountryInt];
 
         if (Random.value > 0.3f)

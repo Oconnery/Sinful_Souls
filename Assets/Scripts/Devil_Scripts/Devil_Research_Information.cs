@@ -2,12 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Devil_Research_Information : MonoBehaviour {
-    // This script should be attatched to a game object in the world regardless of scene
-
-    // references should really be at the top .. folowed by private internal stuff
-    private Devil_Controller devil_Controller;
-    
+public class Devil_Research_Information : MonoBehaviour {    
     // 2D array
     private bool[,] hasResearchedTreePositions;
 

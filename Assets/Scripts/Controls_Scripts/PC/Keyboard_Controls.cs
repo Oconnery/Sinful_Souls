@@ -2,13 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Keyboard_Controls : MonoBehaviour{
-    private World_Controller worldController;
     public Button playBtn;
     public Button pauseBtn;
-
-    private void Start(){
-        worldController = GetComponent<World_Controller>();
-    }
 
     void Update(){
         if (Input.GetKeyDown(KeyCode.Space)){
@@ -17,7 +12,7 @@ public class Keyboard_Controls : MonoBehaviour{
     }
 
     private void SpaceBarPressed(){
-        if (worldController.GetIsTimePaused()){
+        if (Clock.GetIsTimePaused()){
             InvokeClickIfActive(playBtn);
         } else {
             InvokeClickIfActive(pauseBtn);
