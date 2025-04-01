@@ -7,93 +7,6 @@ public class Region_Controller : MonoBehaviour {
         EVIL
     }
 
-    protected class RegionPopulation {
-        public PopulationFaction evilPopulation;
-        public PopulationFaction neutralPopulation;
-        public PopulationFaction goodPopulation;
-
-        public RegionPopulation(Region_Controller outerRef) {
-            evilPopulation = new PopulationFaction(outerRef, Alignment.EVIL);
-            neutralPopulation = new PopulationFaction(outerRef, Alignment.NEUTRAL);
-            goodPopulation = new PopulationFaction(outerRef, Alignment.GOOD);
-        }
-
-        public ulong GetTotalPopulation() {
-            return (evilPopulation.GetSize() + goodPopulation.GetSize() + neutralPopulation.GetSize());
-        }
-
-        public PopulationFaction GetPopulationFactionByAlignment(Alignment alignment) {
-            switch (alignment) {
-                case Alignment.GOOD:
-                    return goodPopulation;
-                case Alignment.NEUTRAL:
-                    return neutralPopulation;
-                case Alignment.EVIL:
-                    return evilPopulation;
-                default:
-                    throw new System.NotImplementedException("This alignment either has not been setup properly yet, or null was passed to GetPopulationFactionByAlignment function. Alignment: " + alignment.ToString());
-            }
-        }
-
-        public void SetInitialPopulationAlignments(ulong initialTotalPopulation) {
-            evilPopulation.IncreaseSize(initialTotalPopulation / 10L); //10%
-            goodPopulation.IncreaseSize(initialTotalPopulation / 10L); //10%
-            neutralPopulation.IncreaseSize(initialTotalPopulation / 10L * 8L); //80%
-        }
-
-        public void Convert(ulong numberToConvert, Alignment from, Alignment to) {
-            GetPopulationFactionByAlignment(from).ReduceWithoutKilling(numberToConvert);
-            GetPopulationFactionByAlignment(to).IncreaseSize(numberToConvert);
-        }
-    }
-
-    protected class PopulationFaction {
-        private Region_Controller outerRef;
-        public Alignment alignment;
-        private ulong size; // TODO: Tie this in a function with death text, so you can only get this, and when you change it to a lower number the death text instantiates.
-        public ulong diedToday; 
-
-        // Since I'm not using diedToday for neutral pop, I could create a class/struct that extends PopulationFaction 
-        // which contains diedToday and should only be used for good/evil pop, or something similar to this.
-
-        public PopulationFaction(Region_Controller outerRef, Alignment alignment) {
-            this.outerRef = outerRef;
-            this.alignment = alignment;
-            size = 0;
-            diedToday = 0;
-        }
-        
-        public ulong GetSize() {
-            return size;
-        }
-
-        public void Kill(ulong numberToKill) {
-            if (numberToKill < size) {
-                size -= numberToKill;
-                diedToday += numberToKill;
-                outerRef.InstantiateDeathText(alignment, numberToKill);
-            } else if (numberToKill == 0){
-                return;
-            } else {
-                ulong maxKillable = size;
-                size = 0;
-                diedToday += maxKillable;
-                outerRef.InstantiateDeathText(alignment, maxKillable);
-
-                Debug.LogError("The number to kill is larger than the size of this population. Not allowed. Region: " + outerRef.name + "numberToKill:  " + numberToKill + ", popSize: " + size);
-            }
-        }
-        
-        public void ReduceWithoutKilling(ulong reduceBy) {
-            size -= reduceBy;
-            // TODO: Exception if reduceBy is larger than size 
-        }
-
-        public void IncreaseSize(ulong increaseBy) {
-            size += increaseBy;
-        }
-    }
-
     public GameObject borderRef; //TODO: This is used in the player controller, not here. This is not good code.
 
     public ulong initialTotalPopulation; // TODO: This should be placed in RegionPopulation, and it should be read in by the .txt file.
@@ -121,11 +34,12 @@ public class Region_Controller : MonoBehaviour {
     private ushort localEvilSecondaryUnits;
     private ushort localGoodSecondaryUnits;
 
-    //Colours according to pop // TODO: New class.
+    //Colours according to pop 
+    // TODO: New class. for this renderer colour change stuff + tidy it up //
     private Renderer renderer;
-    private UnityEngine.Color currentClr;
-    private UnityEngine.Color goodClrMax;
-    private UnityEngine.Color evilClrMax;
+    private Color currentClr;
+    private Color goodClrMax;
+    private Color evilClrMax;
 
     public Vector3 deathTextOffset;
     [SerializeField] private Death_Text_Builder deathTextBuilder;
@@ -444,13 +358,15 @@ public class Region_Controller : MonoBehaviour {
     }
 
     private void InstantiateDeathText(Alignment alignment, ulong deaths){
-        switch (alignment){
-            case Alignment.GOOD:
-                //deathTextBuilder.InstantiateGoodDeathText(deaths, gameObject, deathTextOffset); // Only print out evil text for now. Is good text useful info. if player is devil?
-                break; // TODO: Get player faction and only instantiate death text if faction == playerFaction.
-            case Alignment.EVIL:
-                deathTextBuilder.InstantiateEvilDeathText(deaths, gameObject, deathTextOffset);
-                break;
+        if (deaths > 0) {
+            switch (alignment) {
+                case Alignment.GOOD:
+                    //deathTextBuilder.InstantiateGoodDeathText(deaths, gameObject, deathTextOffset); // Only print out evil text for now. Is good text useful info. if player is devil?
+                    break; // TODO: Get player faction and only instantiate death text if faction == playerFaction.
+                case Alignment.EVIL:
+                    deathTextBuilder.InstantiateEvilDeathText(deaths, gameObject, deathTextOffset);
+                    break;
+            }
         }
     }
     public ulong KillPeople(Alignment alignment, ulong numberToKill){
@@ -472,5 +388,92 @@ public class Region_Controller : MonoBehaviour {
         ulong numberToKill = (ulong)numberToKillF;
 
         return KillPeople(alignment, numberToKill);
+    }
+
+    protected class RegionPopulation {
+        public PopulationFaction evilPopulation;
+        public PopulationFaction neutralPopulation;
+        public PopulationFaction goodPopulation;
+
+        public RegionPopulation(Region_Controller outerRef) {
+            evilPopulation = new PopulationFaction(outerRef, Alignment.EVIL);
+            neutralPopulation = new PopulationFaction(outerRef, Alignment.NEUTRAL);
+            goodPopulation = new PopulationFaction(outerRef, Alignment.GOOD);
+        }
+
+        public ulong GetTotalPopulation() {
+            return (evilPopulation.GetSize() + goodPopulation.GetSize() + neutralPopulation.GetSize());
+        }
+
+        public PopulationFaction GetPopulationFactionByAlignment(Alignment alignment) {
+            switch (alignment) {
+                case Alignment.GOOD:
+                    return goodPopulation;
+                case Alignment.NEUTRAL:
+                    return neutralPopulation;
+                case Alignment.EVIL:
+                    return evilPopulation;
+                default:
+                    throw new System.NotImplementedException("This alignment either has not been setup properly yet, or null was passed to GetPopulationFactionByAlignment function. Alignment: " + alignment.ToString());
+            }
+        }
+
+        public void SetInitialPopulationAlignments(ulong initialTotalPopulation) {
+            evilPopulation.IncreaseSize(initialTotalPopulation / 10L); //10%
+            goodPopulation.IncreaseSize(initialTotalPopulation / 10L); //10%
+            neutralPopulation.IncreaseSize(initialTotalPopulation / 10L * 8L); //80%
+        }
+
+        public void Convert(ulong numberToConvert, Alignment from, Alignment to) {
+            GetPopulationFactionByAlignment(from).ReduceWithoutKilling(numberToConvert);
+            GetPopulationFactionByAlignment(to).IncreaseSize(numberToConvert);
+        }
+    }
+
+    protected class PopulationFaction {
+        private Region_Controller outerRef;
+        public Alignment alignment;
+        private ulong size; // TODO: Tie this in a function with death text, so you can only get this, and when you change it to a lower number the death text instantiates.
+        public ulong diedToday;
+
+        // Since I'm not using diedToday for neutral pop, I could create a class/struct that extends PopulationFaction 
+        // which contains diedToday and should only be used for good/evil pop, or something similar to this.
+
+        public PopulationFaction(Region_Controller outerRef, Alignment alignment) {
+            this.outerRef = outerRef;
+            this.alignment = alignment;
+            size = 0;
+            diedToday = 0;
+        }
+
+        public ulong GetSize() {
+            return size;
+        }
+
+        public void Kill(ulong numberToKill) {
+            if (numberToKill < size) {
+                size -= numberToKill;
+                diedToday += numberToKill;
+                outerRef.InstantiateDeathText(alignment, numberToKill);
+            } else if (numberToKill == 0) {
+                return;
+            } else {
+                ulong maxKillable = size;
+                size = 0;
+                diedToday += maxKillable;
+                outerRef.InstantiateDeathText(alignment, maxKillable);
+
+                Debug.LogError("The number to kill is larger than the size of this population. Not allowed. Region: " + outerRef.name + "numberToKill:  " + numberToKill + ", popSize: " + size);
+            }
+        }
+
+        public void ReduceWithoutKilling(ulong reduceBy) {
+            size -= reduceBy;
+            // TODO: Exception if reduceBy is larger than size 
+        }
+
+        public void IncreaseSize(ulong increaseBy) {
+            size += increaseBy;
+        }
     }
 }

@@ -25,19 +25,18 @@ public class Minor_Events_Controller : MonoBehaviour {
         // 1/20 days mean avg it should do a minor event once every 20 days. Would be cool to do this based upon an "activity level
         // variable, so when the user has not made many actions, and there hasn't been an event in a while, the chance for one
         // increases.
-        if (Random.value < randomEventChance) { // TODO CHANGE
+        if (Random.value < randomEventChance) {
             ExecuteRandomMinorEvent();
         }
     }
 
     private void ExecuteRandomMinorEvent() {
-        Clock.Pause();
         Region_Controller region = regionMasterController.GetRandomRegionController();
         string regionName = region.name;
 
-        if (Random.value > 0.3f)
-            RandomWar(region.GetComponent<Region_Controller>(), regionName);
-        else MurderousCult(region.GetComponent<Region_Controller>(), regionName);
+        if (Random.value > 0.5f)
+            RandomWar(region, regionName);
+        else MurderousCult(region, regionName);
 
         // Set populations and give resources.
         devilController.DailyShout();

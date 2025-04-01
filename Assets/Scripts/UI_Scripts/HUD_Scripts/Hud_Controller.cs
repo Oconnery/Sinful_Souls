@@ -3,33 +3,37 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Hud_Controller : MonoBehaviour{
-    public GameObject statsPanel;
+    // TODO: [SeralizeField] private instead of public
 
-    public GameObject researchTree;
-    public GameObject researchTreeBackground;
+    [SerializeField] private GameObject statsPanel;
 
-    public GameObject eventsPanel;
+    [SerializeField] private GameObject researchTree;
+    [SerializeField] private GameObject researchTreeBackground;
 
-    public Button playBtn;
-    public Button pauseBtn;
-    public Button fastForwardBtn;
+    [SerializeField] private GameObject eventsPanel;
 
-    public Button researchTreeBtn;
+    [SerializeField] private GameObject regionUI;
 
-    public Text primaryResourceText;
-    public Text secondaryResourceText;
-    public Text secondaryResourceEfficencyText;
-    public Text currentDateText;
-    public Text hellCountText;
-    public Text heavenCountText;
+    [SerializeField] private Button playBtn;
+    [SerializeField] private Button pauseBtn;
+    [SerializeField] private Button fastForwardBtn;
 
-    public Text baseUnitCountText;
-    public Text specialUnitCountText;
+    [SerializeField] private Button researchTreeBtn;
 
-    public Devil_Controller devilController;
-    public God_Controller godController;
+    [SerializeField] private Text primaryResourceText;
+    [SerializeField] private Text secondaryResourceText;
+    [SerializeField] private Text secondaryResourceEfficencyText;
+    [SerializeField] private Text currentDateText;
+    [SerializeField] private Text hellCountText;
+    [SerializeField] private Text heavenCountText;
 
-    public Player_Controller playerController;
+    [SerializeField] private Text baseUnitCountText;
+    [SerializeField] private Text specialUnitCountText;
+
+    [SerializeField] private Devil_Controller devilController;
+    [SerializeField] private God_Controller godController;
+
+    [SerializeField] private Player_Controller playerController;
 
     private void Start() {
         Clock.OnDayPassedNotifyHUD += SetHUD; 
@@ -131,13 +135,23 @@ public class Hud_Controller : MonoBehaviour{
         researchTreeBackground.SetActive(true);
         researchTree.SetActive(true);
         DisableClockHUDButtons();
+        CloseRegionUI();
+    }
+
+    private void CloseRegionUI() {
+        regionUI.SetActive(false);
     }
 
     public void CloseResearchTree(){
         researchTreeBackground.SetActive(false);
         researchTree.SetActive(false);
-        Clock.Unpause();
         EnableClockHUDButtons();
+        EnableRegionUI();
+        Clock.Unpause();
+    }
+
+    private void EnableRegionUI(){
+        regionUI.SetActive(true);
     }
 
     public void SetEventsPanelActive(){
@@ -149,6 +163,7 @@ public class Hud_Controller : MonoBehaviour{
     public void SetEventsPanelInactive(){
         eventsPanel.SetActive(false);
         EnableClockHUDButtons();
+        Clock.Unpause();
     }
 
     private void EnableClockHUDButtons(){

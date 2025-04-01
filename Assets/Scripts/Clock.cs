@@ -8,12 +8,12 @@ public class Clock : MonoBehaviour {
     public static ushort Day { get; private set; }
     public static ushort Month { get; private set; }
     public static ushort Year { get; private set; }
+    public static bool IsTimePaused { get; private set; }
 
     // Don't bother with leap year for now.
     private readonly short[] daysInMonths = new short[12] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
     private static float timer;
-    private static bool isTimePaused;
-
+  
     // Multiple delegates/actions to enforce ordering.
     public static event Action OnDayPassedNotifyRegions;
     public static event Action OnDayPassedNotifyFactions;
@@ -21,8 +21,8 @@ public class Clock : MonoBehaviour {
     public static event Action OnDayPassedNotifyMinorEvents;
     public static event Action OnDayPassedNotifyHUD;
 
-    public static event Action onSpeedChanged;
-    public static event Action onSpeedDecreased;
+    public static event Action OnPause;
+    public static event Action OnUnpause;
 
     // do I need one for pause?
 
@@ -43,13 +43,11 @@ public class Clock : MonoBehaviour {
 
         TimerMultiplier = 1.0f;
         timer = 0.0f;
-        isTimePaused = false;
-
-        Debug.Log("starting day: " + Day);
+        IsTimePaused = false;
     }
 
     private void Update() {
-        if (!isTimePaused) {
+        if (!IsTimePaused) {
             timer += Time.deltaTime * TimerMultiplier;
             if (timer >= DAY_LENGTH) {
                 timer = 0.0f;
@@ -71,7 +69,6 @@ public class Clock : MonoBehaviour {
                 SetDateToNewMonth();
             } else {
                 Day++;
-                Debug.Log("new day: " + Day);
             }
         } catch (IndexOutOfRangeException E) {
             Debug.LogError($"The public starting variables for day, month year need to be set in the World_Controller script on the gameobject {gameObject}");
@@ -83,14 +80,12 @@ public class Clock : MonoBehaviour {
         if (Month == 12) {
             SetDateToNewYear();
         } else {
-            Debug.Log("new month");
             Month += 1;
         }
     }
 
     private void SetDateToNewYear(){
         // Happy new year.
-        Debug.Log("happy new year");
         Month = 1;
         Year++;
     }
@@ -99,38 +94,42 @@ public class Clock : MonoBehaviour {
     /// Pauses the game.
     /// </summary>
     public static void Pause() {
-        isTimePaused = true;
+        OnPause?.Invoke();
+        Debug.Log("Pause");
+        IsTimePaused = true;
+        
     }
 
     /// <summary>
     /// Unpauses the game and resets the multiplier for daily clock timer speed.
     /// </summary>
     public static void UnpauseResetSpeed() {
+        OnUnpause?.Invoke();
+        Debug.Log("Unpause");
+        IsTimePaused = false;
         TimerMultiplier = 1.0f;
-        isTimePaused = false;
+        
     }
 
     /// <summary>
     /// Unpauses the game and resumes at the clock speed it was set to before the pause.
     /// </summary>
     public static void Unpause() {
-        isTimePaused = false;
-        onSpeedChanged?.Invoke();
+        OnUnpause?.Invoke();
+        Debug.Log("Unpause");
+        IsTimePaused = false;
+        
     }
 
     public static void FastForward() {
+        // If the game is paused, unpause.
+        if (IsTimePaused) {
+            IsTimePaused = false;
+            OnUnpause?.Invoke();
+        }
+
         // Increase game speed.
         if (TimerMultiplier < 32.0f)
             TimerMultiplier *= 2.0f;
-
-        // If the game is paused, unpause.
-        if (isTimePaused)
-            isTimePaused = false;
-
-        onSpeedChanged?.Invoke();
-    }
-
-    public static bool GetIsTimePaused() {
-        return isTimePaused;
     }
 }

@@ -30,20 +30,21 @@ public class Region_Panel_Script : MonoBehaviour {
 
     private void Start() {
         UpdateToWorldRegion();
+        Clock.OnDayPassedNotifyHUD += UpdateRegionPanel;
     }
 
     // TODO: Currentregion shouldn't exist in this context since it may accidently be used below. So this should be in a different class or something.
     public void UpdateToWorldRegion() {
         regionNameText.text = "WORLD";
 
-        Clock worldController = gameController.GetComponent<Clock>();
         ulong evilPop = Global_Population_Viewer.GetTotalEvilPopulation();
         ulong goodPop = Global_Population_Viewer.GetTotalGoodPopulation();
         ulong neutralPop = Global_Population_Viewer.GetTotalNeutralPopulation();
-        populationBar.SetFillAmounts(evilPop, goodPop, neutralPop);
+
         evilPopulationText.text = "Evil: " + evilPop.ToString();
         goodPopulationText.text = "Good: " + goodPop.ToString();
         neutralPopulationText.text = "Neutral: " + neutralPop.ToString();
+        populationBar.SetFillAmounts(evilPop, goodPop, neutralPop);
 
         localPlayerAgentText.text = Global_Units_Viewer.GetDeployedEvilAgents().ToString(); // TODO: This should actually just be the total number of placed demons.
         localEnemyAgentText.text = Global_Units_Viewer.GetDeployedGoodAgents().ToString(); //TODO: Should I even be able to see angels?
@@ -52,6 +53,7 @@ public class Region_Panel_Script : MonoBehaviour {
                                                                                                                // Local is to be replaced with anarchy levels                                                                                                       //conversionGood.text = (regionController.GetConversionGood() * 100).ToString() + "%";
     }
 
+    // TODO: Exit region panel when opening the research tree.
     public void ExitRegionPanel() {
         // Disable the border
         currentRegion.borderRef.SetActive(false);
@@ -59,6 +61,12 @@ public class Region_Panel_Script : MonoBehaviour {
         this.gameObject.SetActive(false);
     }
 
+    private void UpdateRegionPanel(){
+        GameObject region = (currentRegion == null)? null : currentRegion.gameObject;
+        UpdateRegionPanel(region);
+    }
+
+    // TODO: shouldn't be doing GetComponent. Can just store as a variable.
     public void UpdateRegionPanel(GameObject region) {
         if (region == null) {
             // Display world statistics.
@@ -71,12 +79,12 @@ public class Region_Panel_Script : MonoBehaviour {
             regionNameText.text = region.name + ", " + region.transform.parent.name;
             evilPopulationText.text = "Evil: " + currentRegion.GetEvilPop().ToString("0");
             goodPopulationText.text = "Good: " + currentRegion.GetGoodPop().ToString("0");
+            populationBar.SetFillAmounts(currentRegion);
             neutralPopulationText.text = "Neutral: " + currentRegion.GetNeutralPop().ToString("0");
             localPlayerAgentText.text = currentRegion.GetLocalEvilAgents().ToString();
             localEnemyAgentText.text = currentRegion.GetLocalGoodAgents().ToString();
             localPlayerSecondaryUnitText.text = currentRegion.GetLocalEvilSecondaryUnits().ToString();
             secondayResourceEfficencyText.text = (currentRegion.GetSinEfficency() * 100).ToString() + "%";
-            populationBar.SetFillAmounts(currentRegion);
         }
     }
 

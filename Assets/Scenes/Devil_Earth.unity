@@ -4678,18 +4678,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 442966044}
-        m_TargetAssemblyTypeName: World_Controller, NewAssembly
-        m_MethodName: Unpause
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &352279177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5174,8 +5162,6 @@ GameObject:
   - component: {fileID: 442966045}
   - component: {fileID: 442966046}
   - component: {fileID: 442966051}
-  - component: {fileID: 442966047}
-  - component: {fileID: 442966044}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -5183,18 +5169,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &442966044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442966043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9c0e0f58974ca54783e2b037b057d8f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &442966045
 Transform:
   m_ObjectHideFlags: 0
@@ -5225,24 +5199,6 @@ MonoBehaviour:
   playerControlledFaction: {fileID: 899610356}
   hudController: {fileID: 903152512}
   regionPanel: {fileID: 1256603949}
---- !u!114 &442966047
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442966043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a938ea6a4507b1141962adc146f13f4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventsContentText: {fileID: 2117537818}
-  hudController: {fileID: 903152512}
-  devilController: {fileID: 899610356}
-  godController: {fileID: 544095961}
-  regionMasterController: {fileID: 1745324915}
-  randomEventChance: 0.09
 --- !u!114 &442966051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6102,6 +6058,56 @@ PolygonCollider2D:
       - {x: 3.3, y: 1.18}
       - {x: 3.34, y: 1.22}
   m_UseDelaunayMesh: 0
+--- !u!1 &490513054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 490513056}
+  - component: {fileID: 490513055}
+  m_Layer: 0
+  m_Name: GameEventsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &490513055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490513054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a938ea6a4507b1141962adc146f13f4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventsContentText: {fileID: 2117537818}
+  hudController: {fileID: 903152512}
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
+  regionMasterController: {fileID: 1745324915}
+  randomEventChance: 0.25
+--- !u!4 &490513056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 490513054}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1052.2449, y: 498.43652, z: -5.8848743}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &491916807
 GameObject:
   m_ObjectHideFlags: 0
@@ -10770,6 +10776,7 @@ MonoBehaviour:
   researchTree: {fileID: 1563372022}
   researchTreeBackground: {fileID: 1252497856}
   eventsPanel: {fileID: 1388978207}
+  regionUI: {fileID: 1256603949}
   playBtn: {fileID: 1298393337}
   pauseBtn: {fileID: 1445187508}
   fastForwardBtn: {fileID: 995687433}
@@ -11744,8 +11751,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 442966044}
-        m_TargetAssemblyTypeName: World_Controller, NewAssembly
+      - m_Target: {fileID: 1917655440}
+        m_TargetAssemblyTypeName: Clock, NewAssembly
         m_MethodName: FastForward
         m_Mode: 1
         m_Arguments:
@@ -15610,9 +15617,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 442966044}
-        m_TargetAssemblyTypeName: World_Controller, NewAssembly
-        m_MethodName: UnpauseResetSpeed
+      - m_Target: {fileID: 1917655440}
+        m_TargetAssemblyTypeName: Clock, NewAssembly
+        m_MethodName: Unpause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17093,8 +17100,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 442966044}
-        m_TargetAssemblyTypeName: World_Controller, NewAssembly
+      - m_Target: {fileID: 1917655440}
+        m_TargetAssemblyTypeName: Clock, NewAssembly
         m_MethodName: Pause
         m_Mode: 1
         m_Arguments:
@@ -18308,7 +18315,6 @@ GameObject:
   - component: {fileID: 1563372023}
   - component: {fileID: 1563372025}
   - component: {fileID: 1563372024}
-  - component: {fileID: 1563372026}
   m_Layer: 5
   m_Name: Research_Tree_Panel
   m_TagString: Untagged
@@ -18396,18 +18402,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1563372022}
   m_CullTransparentMesh: 0
---- !u!114 &1563372026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1563372022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d9fe8fe4a232b74cb784cd7a8b36177, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1590155707
 GameObject:
   m_ObjectHideFlags: 0
@@ -23862,6 +23856,50 @@ PolygonCollider2D:
       - {x: 1.155, y: 1.54}
       - {x: 1.145, y: 1.55}
   m_UseDelaunayMesh: 0
+--- !u!1 &1917655439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1917655441}
+  - component: {fileID: 1917655440}
+  m_Layer: 0
+  m_Name: ClockController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1917655440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917655439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c0e0f58974ca54783e2b037b057d8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1917655441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917655439}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1052.2449, y: 498.43652, z: -5.8848743}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1919597793
 GameObject:
   m_ObjectHideFlags: 0
@@ -24542,7 +24580,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 442966044}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: World_Controller, NewAssembly
         m_MethodName: UnPause
         m_Mode: 1
@@ -26504,4 +26542,6 @@ SceneRoots:
   - {fileID: 544095962}
   - {fileID: 483085137}
   - {fileID: 583303640}
+  - {fileID: 490513056}
+  - {fileID: 1917655441}
   - {fileID: 875555708}

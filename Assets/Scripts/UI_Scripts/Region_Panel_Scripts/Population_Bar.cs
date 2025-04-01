@@ -20,7 +20,6 @@ public class Population_Bar : MonoBehaviour{
     public void SetFillAmounts(ulong evilPop, ulong goodPop, ulong neutralPop) {
         ulong totalPop = evilPop + neutralPop + goodPop;
 
-        Debug.Log(evilPop / totalPop);
         evilBar.fillAmount = (float)evilPop / (float)totalPop;
         goodBar.fillAmount = (float)goodPop / (float)totalPop;
         // The remaining percentage is neutral which is all of the background.

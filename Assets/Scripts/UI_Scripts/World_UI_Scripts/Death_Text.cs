@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 
 public class Death_Text : MonoBehaviour {
+    // TODO: Code clean  on fields
     private Vector3 firstTargetPosition;
     private const float firstTargetSpeed = 0.4f;
     private const float firstTargetDistance = 0.8f;
@@ -27,6 +28,8 @@ public class Death_Text : MonoBehaviour {
 
     TextMeshProUGUI textComponent;
 
+    [SerializeField] private bool isTextPaused;
+
     private void Start() {
         firstTargetPosition = transform.position;
         firstTargetPosition.y += firstTargetDistance;
@@ -39,26 +42,40 @@ public class Death_Text : MonoBehaviour {
 
         zeroAlphaColor = textComponent.color;
         zeroAlphaColor.a = 0.0f;
+
+        isTextPaused = Clock.IsTimePaused;
+
+        Clock.OnPause += PauseText;
+        Clock.OnUnpause += UnPauseText;
+    }
+
+    private void PauseText() {
+        isTextPaused = true;
+    }
+
+    private void UnPauseText() {
+        isTextPaused = false;
     }
 
     // Update is not called when the gameObject is disabled, so no need for a isEnabled check
     private void Update() {
-        float deltaTime = Time.deltaTime;
-        if (!inSecondPhase) {
-            // FIRST PHASE
-            transform.position = Vector3.MoveTowards(transform.position, firstTargetPosition, secondSpeed * Clock.TimerMultiplier * deltaTime);
-            if (transform.position == firstTargetPosition) {
-                inSecondPhase = true;
+        if (!isTextPaused) {
+            float deltaTime = Time.deltaTime;
+            if (!inSecondPhase) {
+                // FIRST PHASE
+                transform.position = Vector3.MoveTowards(transform.position, firstTargetPosition, secondSpeed * Clock.TimerMultiplier * deltaTime); 
+                if (transform.position == firstTargetPosition) {
+                    inSecondPhase = true;
+                }
+            } else {
+                // SECOND PHASE
+                transform.position = Vector3.MoveTowards(transform.position, secondTargetPosition, firstTargetSpeed * Clock.TimerMultiplier * deltaTime);
+                UpdateFont(deltaTime);
+                if (transform.position == secondTargetPosition) {
+                    Destroy(gameObject);
+                }
             }
-        } else {
-            // SECOND PHASE
-            transform.position = Vector3.MoveTowards(transform.position, secondTargetPosition, firstTargetSpeed * Clock.TimerMultiplier * deltaTime);
-            UpdateFont(deltaTime);
-            if (transform.position == secondTargetPosition) {
-                Destroy(gameObject);
-                Debug.Log("destroyed");
-            }
-        }
+        } 
     }
 
     // TODO: issue: At the moment the font changes take a different amount of time depending on how 
@@ -86,6 +103,7 @@ public class Death_Text : MonoBehaviour {
         }
     } // 17 to 25.5 to 12.75 ... so 1.5 times as much .. it only reaches 22 in time though ...
 
+    // TODO: Work in progress.
     private void UpdateFontOpacity(float deltaTime){
         if (textComponent.color.a != 0.0f){ // TODO: Instead of using Color.clear, use the alpha from above, and compare results.
             textComponent.color = Color.Lerp(textComponent.color, Color.clear, fadeSpeed * deltaTime);
