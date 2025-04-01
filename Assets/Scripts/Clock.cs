@@ -1,16 +1,8 @@
 ﻿using UnityEngine;
 using System;
 
-// SINGLETON //
 public class Clock : MonoBehaviour {
-    //public static Clock instance { get; private set; }
-
-    private const int numberOfCountries = 26;
-
-    // TODO: Clock shouldnt have the below.
-    // 26 country references are stored here and accessed from methods in this class and the devil/god controller classes.
-    public Region_Controller[] region_Controller = new Region_Controller[numberOfCountries];
-
+    //public static Clock instance { get; private set; } TODO: SINGLETON?
     private const float DAY_LENGTH = 3.0f;
     private static float timerMultiplier = 1.0f; // at 2.0f, this represents a double increase in speed. i.e. a 10 second day would now be a 5 second day, since the timer moves faster.
     public static ushort Day { get; private set; }
@@ -30,6 +22,7 @@ public class Clock : MonoBehaviour {
     public static event Action OnDayPassedNotifyHUD;
 
     private void Awake() {
+        // SINGLETON CODE //
         //// If there is an instance, and it's not me, delete myself.
         //if (instance != null && instance != this) {
         //    Destroy(this);
@@ -44,13 +37,6 @@ public class Clock : MonoBehaviour {
         Year = (ushort) DateTime.Now.Year;
         
         timer = 0.0f;
-
-        // Gives appropriate string names to the region controller which are assigned in the Unity editor.
-        // TODO: This is terrible. I don't know why I did this way back then but it's terrible.
-        for (int i = 0; i < region_Controller.Length; i++){
-            region_Controller[i].name = this.GetComponent<Minor_Events_Controller>().regionNames[i];
-        }
-
         isTimePaused = false;
     }
 
@@ -123,76 +109,5 @@ public class Clock : MonoBehaviour {
 
     public static bool GetIsTimePaused() {
         return isTimePaused;
-    }
-
-    // TODO: Move below to somewhere else (a static populations_viewer?)
-    public ulong GetTotalEvilPopulation(){
-        ulong evilPopulation = 0;
-
-        for (int i = 0; i < region_Controller.Length; i++) {
-            evilPopulation += region_Controller[i].GetEvilPop();
-        }
-
-        return evilPopulation;
-    }
-
-    public ulong GetTotalGoodPopulation(){
-        ulong goodPopulation = 0;
-
-        for (int i = 0; i < region_Controller.Length; i++) {
-            goodPopulation += region_Controller[i].GetGoodPop();
-        }
-
-        return goodPopulation;
-    }
-
-    public ulong GetTotalNeutralPopulation(){
-        ulong neutralPopulation = 0;
-
-        for (int i = 0; i < region_Controller.Length; i++) {
-            neutralPopulation += region_Controller[i].GetNeutralPop();
-        }
-
-        return neutralPopulation;
-    }
-
-    public ushort GetDeployedDemons() {
-        ushort deployedDemons = 0;
-
-        for (int i = 0; i < region_Controller.Length; i++) {
-            deployedDemons += region_Controller[i].GetLocalEvilAgents();
-        }
-
-        return deployedDemons;
-    }
-
-    public ushort GetDeployedBanshees() {
-        ushort deployedBanshees = 0;
-
-        for (int i = 0; i < region_Controller.Length; i++) {
-            deployedBanshees += region_Controller[i].GetLocalEvilSecondaryUnits();
-        }
-
-        return deployedBanshees;
-    }
-
-    public ushort GetDeployedAngels() {
-        ushort deployedAngels = 0;
-
-        for (int i = 0; i < region_Controller.Length; i++) {
-            deployedAngels += region_Controller[i].GetLocalGoodAgents();
-        }
-
-        return deployedAngels;
-    }
-
-    public ushort GetDeployedInquisitors() {
-        ushort deployedInquisitors = 0;
-
-        for (int i = 0; i < region_Controller.Length; i++) {
-            deployedInquisitors += region_Controller[i].GetLocalGoodSecondaryUnits();
-        }
-
-        return deployedInquisitors;
     }
 }

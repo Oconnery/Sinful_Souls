@@ -64,8 +64,8 @@ public class Faction : MonoBehaviour { // TODO: Should use singleton pattern too
     }
 
     private void UpdateDailyStatistics() {
-        Debug.Log($"Faction {this.name} - Before Update: factionPopToday = {factionPopToday}");
         // Update the daily statistics for today.
+        Debug.Log($"Faction {this.name} - Before Update: factionPopToday = {factionPopToday}");
         Debug.Log($"OnDailyShoutReturnPop has {OnDailyShoutReturnPop?.GetInvocationList().Length ?? 0} subscribers.");
         Debug.Log($"OnDailyShoutReturnDiedToday has {OnDailyShoutReturnDiedToday?.GetInvocationList().Length ?? 0} subscribers.");
 

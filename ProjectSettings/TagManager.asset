@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - Panel2
+  - 
   - 
   - 
   - 
@@ -44,6 +44,20 @@ TagManager:
   - name: Infront
     uniqueID: 2998472445
     locked: 0
+  - name: Region
+    uniqueID: 1557889915
+    locked: 0
+  - name: Region Border
+    uniqueID: 2333405643
+    locked: 0
+  - name: Units
+    uniqueID: 2244427173
+    locked: 0
+  - name: World Canvas
+    uniqueID: 4268602887
+    locked: 0
   - name: Behind
     uniqueID: 1052381025
     locked: 0
+  m_RenderingLayers:
+  - Default

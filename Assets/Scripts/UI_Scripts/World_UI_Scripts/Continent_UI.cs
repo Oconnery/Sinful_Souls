@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Continent_HUD : MonoBehaviour {
+public class Continent_UI : MonoBehaviour {
 
     private SpriteRenderer spriteRenderer;
     private Color neutralColour;

@@ -1,24 +1,23 @@
 using TMPro;
 using UnityEngine;
 
-public class DeathText : MonoBehaviour {
-
+public class Death_Text : MonoBehaviour {
     private Vector3 firstTargetPosition;
-    private float speed = 0.4f;
-    private float distance = 0.8f;
+    private const float firstTargetSpeed = 0.4f;
+    private const float firstTargetDistance = 0.8f;
 
     private Vector3 secondTargetPosition;
-    private float secondSpeed = 0.3f;
-    private float secondDistance = 0.3f;
+    private const float secondSpeed = 0.4f;
+    private const float secondDistance = 0.3f;
 
     bool inSecondPhase = false;
 
     private float fontSizeIncreaseModifier = 0.0f;
     private float fontSizeDecreaseModifier = 0.0f;
-    private float fontSizeChangeSpeed = 1.0f;
+    private const float fontSizeChangeSpeed = 1.0f;
     private float originalFontSize;
-    private float maxFontSize;
-    private float minFontSize;
+    private float largestFontSize;
+    private float smallestFontSize;
     bool maxFontSizeReached = false;
     bool minFontSizeReached = false;
 
@@ -30,13 +29,13 @@ public class DeathText : MonoBehaviour {
 
     private void Start() {
         firstTargetPosition = transform.position;
-        firstTargetPosition.y += distance;
+        firstTargetPosition.y += firstTargetDistance;
         secondTargetPosition = new Vector3(firstTargetPosition.x, firstTargetPosition.y + secondDistance, firstTargetPosition.z);
 
         textComponent = GetComponent<TextMeshProUGUI>();
         originalFontSize = textComponent.fontSize;
-        maxFontSize = textComponent.fontSize * 1.50f;
-        minFontSize = textComponent.fontSize * 0.75f;
+        largestFontSize = textComponent.fontSize * 1.50f;
+        smallestFontSize = textComponent.fontSize * 0.75f;
 
         zeroAlphaColor = textComponent.color;
         zeroAlphaColor.a = 0.0f;
@@ -53,7 +52,7 @@ public class DeathText : MonoBehaviour {
             }
         } else {
             // SECOND PHASE
-            transform.position = Vector3.MoveTowards(transform.position, secondTargetPosition, speed * deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, secondTargetPosition, firstTargetSpeed * deltaTime);
             UpdateFont(deltaTime);
             if (transform.position == secondTargetPosition) {
                 Destroy(gameObject);
@@ -70,7 +69,7 @@ public class DeathText : MonoBehaviour {
         if (!maxFontSizeReached){
             textComponent.fontSize += fontSizeIncreaseModifier;
             fontSizeIncreaseModifier = fontSizeChangeSpeed * deltaTime * originalFontSize; // include OG font size so the change happens in the same amount of time no matter what font size the text is
-            if (textComponent.fontSize >= maxFontSize){
+            if (textComponent.fontSize >= largestFontSize){
                 maxFontSizeReached = true;
             }
         } else if (!minFontSizeReached){
@@ -80,7 +79,7 @@ public class DeathText : MonoBehaviour {
 
             //UpdateFontOpacity(deltaTime);
 
-            if (textComponent.fontSize <= minFontSize) {
+            if (textComponent.fontSize <= smallestFontSize) {
                 Debug.Log("minFontsize reached");
                 minFontSizeReached = true;
             }

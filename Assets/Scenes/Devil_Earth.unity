@@ -179,8 +179,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 59388b35b74e92640a4451aabd3592a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -202,7 +202,7 @@ Transform:
   m_GameObject: {fileID: 11008315}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.304661, y: 2.061, z: -0.005859375}
+  m_LocalPosition: {x: -14.304661, y: 2.061, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -222,15 +222,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 2107429961}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 270000000
   birthRate: 0.00006438356
   deathRate: 0.00003969863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: -5.92831, y: -10.954, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &11008319
@@ -464,8 +460,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6b40ff35da3a51f40b3a21ac53371cef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -487,7 +483,7 @@ Transform:
   m_GameObject: {fileID: 33272779}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.188, y: -0.571, z: -0.005859375}
+  m_LocalPosition: {x: -13.188, y: -0.571, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -730,15 +726,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 856338317}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 201000000
   birthRate: 0.00006438356
   deathRate: 0.00003969863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: -53.428, y: 0.974, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!1 &38587108
@@ -905,7 +897,7 @@ Transform:
   m_GameObject: {fileID: 42350401}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5124317, y: 1.951, z: 0.12109375}
+  m_LocalPosition: {x: -1.5124317, y: 1.951, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -953,8 +945,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 16ea7e93af3a0c84482c2cb71355ff7b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -980,15 +972,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 1814799268}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 775000000
   birthRate: 0.00003769863
   deathRate: 0.00002969863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: -2.7707, y: 17.321655, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &42350405
@@ -1646,8 +1634,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 19c87f50398e85a4da3eae2770afdd41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -2640,8 +2628,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 233022924}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.190204, y: -4.286326, z: -0.2265625}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -485.22363, y: -374.3474, z: -0.52348936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2650,7 +2638,7 @@ Transform:
   - {fileID: 276516352}
   - {fileID: 1654806597}
   - {fileID: 1528515776}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1745324914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &233022926
 MonoBehaviour:
@@ -2769,7 +2757,7 @@ Transform:
   m_GameObject: {fileID: 235489044}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2816,8 +2804,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 47eb2517c1fe4d94dbedda7fe51b74fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -2903,8 +2891,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f6fef33b047ce784cb393df6ed235c1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -2990,8 +2978,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4da153516d28a094ba7d9f56f805067a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -3164,7 +3152,7 @@ Transform:
   m_GameObject: {fileID: 276516351}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.894447, y: 0.8067256, z: 0.2265625}
+  m_LocalPosition: {x: -23.894447, y: 0.8067256, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3212,8 +3200,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0f0947bb37f49b6409df9c100e729227, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3239,15 +3227,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 1769919834}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 88000000
   birthRate: 0.00002569863
   deathRate: 0.00001969863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: 21.829, y: 0, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &276516355
@@ -3477,7 +3461,7 @@ Transform:
   m_GameObject: {fileID: 321019375}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.155, y: 2.869, z: 0.2265625}
+  m_LocalPosition: {x: -11.155, y: 2.869, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3525,8 +3509,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ffcc1702cb6665a43bbbd190e8a32246, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4161,15 +4145,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 1333965350}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 37000000
   birthRate: 0.00001669863
   deathRate: 0.00001769863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: -54.32, y: -25.03, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!1 &324803819
@@ -4245,8 +4225,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 408817d0db5351f41a122fcdcc75971b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -4287,7 +4267,7 @@ Transform:
   m_GameObject: {fileID: 334483310}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.689, y: 0.128, z: 0.11328125}
+  m_LocalPosition: {x: -7.689, y: 0.128, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4335,8 +4315,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 55c8abdac32355349a0ae4418b063257, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -4362,15 +4342,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 1308452557}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 261000000
   birthRate: 0.00001819863
   deathRate: 0.00001769863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: -1.89623, y: 4.0857, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &334483315
@@ -5200,7 +5176,6 @@ GameObject:
   - component: {fileID: 442966051}
   - component: {fileID: 442966047}
   - component: {fileID: 442966044}
-  - component: {fileID: 442966050}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -5220,33 +5195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9c0e0f58974ca54783e2b037b057d8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  region_Controller:
-  - {fileID: 929405140}
-  - {fileID: 2031324509}
-  - {fileID: 321019379}
-  - {fileID: 1501362062}
-  - {fileID: 695003806}
-  - {fileID: 1150667228}
-  - {fileID: 276516354}
-  - {fileID: 1654806599}
-  - {fileID: 334483313}
-  - {fileID: 543067271}
-  - {fileID: 486398688}
-  - {fileID: 1811110401}
-  - {fileID: 1823204648}
-  - {fileID: 1104128527}
-  - {fileID: 1916843837}
-  - {fileID: 1961780772}
-  - {fileID: 1660548643}
-  - {fileID: 42350404}
-  - {fileID: 1037529060}
-  - {fileID: 11008318}
-  - {fileID: 33272783}
-  - {fileID: 805050002}
-  - {fileID: 1717114683}
-  - {fileID: 535025627}
-  - {fileID: 1634659823}
-  - {fileID: 778686148}
 --- !u!4 &442966045
 Transform:
   m_ObjectHideFlags: 0
@@ -5289,47 +5237,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a938ea6a4507b1141962adc146f13f4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  regionNames:
-  - UNITED STATES
-  - MEXICO
-  - CANADA
-  - ALASKA
-  - ARGENTINA
-  - BRAZIL
-  - COLOMBIA
-  - VENEZUALA
-  - EASTERN EUROPE
-  - WESTERN EUROPE
-  - ICELAND
-  - SCANDANAVIA
-  - CHINA
-  - INDIA
-  - JAPAN
-  - KHAZAKSTAN
-  - RUSSIA
-  - MIDDLEEAST
-  - THAILAND
-  - CENTRAL AFRICA
-  - SOUTH AFRICA
-  - EAST AFRICA
-  - NORTH AFRICA
-  - WEST AFRICA
-  - INDONESIA
-  - AUSTRALIA
   eventsContentText: {fileID: 2117537818}
   hudController: {fileID: 903152512}
---- !u!114 &442966050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 442966043}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9da9102f711b9646b309dfa9a207377, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  devilController: {fileID: 899610356}
+  godController: {fileID: 544095961}
+  regionMasterController: {fileID: 1745324915}
+  randomEventChance: 0.09
 --- !u!114 &442966051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5768,6 +5681,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464987662}
   m_CullTransparentMesh: 0
+--- !u!1 &483085135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 483085137}
+  - component: {fileID: 483085136}
+  m_Layer: 0
+  m_Name: AIController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &483085136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483085135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9da9102f711b9646b309dfa9a207377, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regionMasterController: {fileID: 1745324915}
+  playerController: {fileID: 442966046}
+  aiControlledFaction: {fileID: 544095961}
+--- !u!4 &483085137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483085135}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &484247697
 GameObject:
   m_ObjectHideFlags: 0
@@ -5793,8 +5753,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 484247697}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.466708, y: 2.233376, z: -0.11328125}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -490.94714, y: -367.82773, z: -0.41020808}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5803,7 +5763,7 @@ Transform:
   - {fileID: 486398686}
   - {fileID: 1811110399}
   - {fileID: 87678677}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1745324914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &484247699
 MonoBehaviour:
@@ -5845,7 +5805,7 @@ Transform:
   m_GameObject: {fileID: 486398685}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.510178, y: 3.740215, z: 0.11328125}
+  m_LocalPosition: {x: -11.510178, y: 3.740215, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5893,8 +5853,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8b3e29421de948c4fb3e03397079d03f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5920,15 +5880,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 106022918}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 500000
   birthRate: 0.00001669863
   deathRate: 0.00001769863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: -69.253, y: 21.0261, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &486398689
@@ -6586,8 +6542,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a696c0fde39290b47b0cc32a9752f802, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6609,7 +6565,7 @@ Transform:
   m_GameObject: {fileID: 535025624}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.106026, y: 3.1584997, z: -0.005859375}
+  m_LocalPosition: {x: -17.106026, y: 3.1584997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6629,15 +6585,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 240395349}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 391000000
   birthRate: 0.00006438356
   deathRate: 0.00003969863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: 13.9454, y: -7.719, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &535025628
@@ -6837,7 +6789,7 @@ Transform:
   m_GameObject: {fileID: 543067268}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.685, y: -0.035, z: 0.11328125}
+  m_LocalPosition: {x: -9.685, y: -0.035, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6885,8 +6837,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f9d91d8d712a52d499f97cd6d7928389, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6912,15 +6864,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 1898237176}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 425000000
   birthRate: 0.00001819863
   deathRate: 0.00001769863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: -6.81223, y: -6.0123, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &543067273
@@ -7154,7 +7102,7 @@ Transform:
   m_GameObject: {fileID: 544095960}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1161.077, y: 506.71768, z: 5.1179366}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8433,7 +8381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &645931481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8477,7 +8425,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -26364409
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &645931483
@@ -8491,7 +8439,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.018518519, y: 0.018518519, z: 0.018518519}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 831901572}
   m_Father: {fileID: 1247905026}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -8572,8 +8521,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 112eb729807a17142921ead2959ec530, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -8771,8 +8720,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7c596c57b30d9c149a987c6a0f2339a0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -8813,7 +8762,7 @@ Transform:
   m_GameObject: {fileID: 695003803}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.795864, y: -2.7432745, z: 0.2265625}
+  m_LocalPosition: {x: -21.795864, y: -2.7432745, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8861,8 +8810,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6ef2019849cf3dc4fbbf37ff6ced7540, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8888,15 +8837,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 1829631912}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 91000000
   birthRate: 0.00002569863
   deathRate: 0.00001969863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: -13, y: 0, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &695003807
@@ -9083,7 +9028,7 @@ Transform:
   m_GameObject: {fileID: 709698867}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9130,8 +9075,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3e74d52ad982faa4cafd5319b28316b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -9656,8 +9601,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5209d7f726f8a3449a2598ee59f7a64e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9683,15 +9628,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 324803819}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 35000000
   birthRate: 0.00001819863
   deathRate: 0.00001769863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: -45.1409, y: 52.9972, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &778686149
@@ -9941,8 +9882,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e121bfeb5a0c1c943842f12b62428df2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -9964,7 +9905,7 @@ Transform:
   m_GameObject: {fileID: 805049999}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.008000508, w: 0.999968}
-  m_LocalPosition: {x: -12.947, y: 2.531, z: -0.005859375}
+  m_LocalPosition: {x: -12.947, y: 2.531, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9984,15 +9925,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 254127110}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 174000000
   birthRate: 0.00006438356
   deathRate: 0.00003969863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: 12.658, y: 13.066, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &805050003
@@ -10212,6 +10149,59 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821316257}
   m_CullTransparentMesh: 0
+--- !u!1 &831901571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 831901572}
+  - component: {fileID: 831901573}
+  m_Layer: 5
+  m_Name: Death_Texts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &831901572
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831901571}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 645931483}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &831901573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831901571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d0984d8e4160c4297be053c9848ad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldCanvasTransform: {fileID: 645931483}
+  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
+    type: 3}
+  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
+    type: 3}
 --- !u!1 &856338317
 GameObject:
   m_ObjectHideFlags: 0
@@ -10285,8 +10275,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: dcd5a165cb8e7e346bf0c22d5ca0ab73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -10643,7 +10633,7 @@ Transform:
   m_GameObject: {fileID: 899610355}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1161.077, y: 506.71768, z: 5.1179366}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10823,7 +10813,7 @@ Transform:
   m_GameObject: {fileID: 929405137}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.231, y: -0.7042999, z: 0.2265625}
+  m_LocalPosition: {x: -12.231, y: -0.7042999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10871,8 +10861,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fc552cf229cda1b4fb4f1192bab3342e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10898,15 +10888,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 709698867}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 330000000
   birthRate: 0.00001669863
   deathRate: 0.00001769863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: -12, y: 6, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &929405141
@@ -11496,14 +11482,14 @@ Transform:
   m_GameObject: {fileID: 973843939}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.355339, y: -7.4055047, z: 0}
+  m_LocalPosition: {x: -487.0585, y: -377.4666, z: -0.29692683}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1634659821}
   - {fileID: 778686145}
   - {fileID: 996950475}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1745324914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &973843941
 MonoBehaviour:
@@ -12361,7 +12347,7 @@ Transform:
   m_GameObject: {fileID: 1037529057}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.646, y: 0.5882899, z: 0.12109375}
+  m_LocalPosition: {x: 3.646, y: 0.5882899, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12409,8 +12395,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3011d4c633147264d868cd3075378f82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -12436,15 +12422,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 2105324894}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 279000000
   birthRate: 0.00003169863
   deathRate: 0.00002909863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: 9.174, y: 5.60799, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &1037529061
@@ -12915,7 +12897,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1256603953}
         m_TargetAssemblyTypeName: Region_Panel_Script, NewAssembly
-        m_MethodName: RemoveDemon
+        m_MethodName: RemoveAgent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12928,10 +12910,10 @@ MonoBehaviour:
       - m_Target: {fileID: 903152512}
         m_TargetAssemblyTypeName: Hud_Controller, NewAssembly
         m_MethodName: SetBaseUnitCountText
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: Faction, NewAssembly
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -13713,7 +13695,7 @@ Transform:
   m_GameObject: {fileID: 1104128524}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.7, y: 1.3000376, z: 0.12109375}
+  m_LocalPosition: {x: 1.7, y: 1.3000376, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13761,8 +13743,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fc99640351a21c64e85b0040057bd316, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -13788,15 +13770,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 1270318754}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 1595000000
   birthRate: 0.00003169863
   deathRate: 0.00002909863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: -10.8419, y: 13.37362, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &1104128528
@@ -13970,8 +13948,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 162abc681baa09d4998f6a33c0ee9bde, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -14149,7 +14127,7 @@ Transform:
   m_GameObject: {fileID: 1150667224}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.253849, y: -0.57666326, z: 0.2265625}
+  m_LocalPosition: {x: -21.253849, y: -0.57666326, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14197,8 +14175,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2b8aa9bad44de2e4eaebd65fe74254af, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -14354,15 +14332,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 657062850}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 209000000
   birthRate: 0.00002569863
   deathRate: 0.00001969863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: 23.8368, y: 19.5014, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!1 &1165652102
@@ -14586,7 +14560,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1256603953}
         m_TargetAssemblyTypeName: Region_Panel_Script, NewAssembly
-        m_MethodName: RemoveBanshee
+        m_MethodName: RemoveSecondaryUnit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -14599,10 +14573,10 @@ MonoBehaviour:
       - m_Target: {fileID: 903152512}
         m_TargetAssemblyTypeName: Hud_Controller, NewAssembly
         m_MethodName: SetSecondaryUnitCountText
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: Faction, NewAssembly
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -14719,8 +14693,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 67b9f276946d61c4097ae90fff9a3396, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -15286,6 +15260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 442966043}
+  devilController: {fileID: 899610356}
   playerController: {fileID: 442966046}
   unitButtons:
   - {fileID: 1595447641}
@@ -15296,10 +15271,10 @@ MonoBehaviour:
   evilPopulationText: {fileID: 582886513}
   goodPopulationText: {fileID: 1003100602}
   neutralPopulationText: {fileID: 1890752879}
-  localDemonsText: {fileID: 1165652104}
-  localAngelsText: {fileID: 1068815455}
-  localBansheesText: {fileID: 1321431971}
-  sinEfficencyText: {fileID: 1733001536}
+  localPlayerAgentText: {fileID: 1165652104}
+  localEnemyAgentText: {fileID: 1068815455}
+  localPlayerSecondaryUnitText: {fileID: 1321431971}
+  secondayResourceEfficencyText: {fileID: 1733001536}
   demonDotPrefab: {fileID: 1253765987344338, guid: ccc69211ebaf7804b8f23d998bde0785,
     type: 3}
   bansheeDotPrefab: {fileID: 1334501732368336, guid: a070ae2bf0d7a2a49ae5ddc1582db5a5,
@@ -15379,8 +15354,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d6ad2065dd9811a48aa566fdf592c89d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -15771,8 +15746,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 89b7eab9db5e01f4fa5d5f201e29672b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -15858,8 +15833,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7015c75a2255a6540905871512807355, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -16170,7 +16145,7 @@ Transform:
   m_GameObject: {fileID: 1333965350}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16217,8 +16192,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b56acd6d979f8bd4ba46fc8ff735c3de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -16934,8 +16909,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 088fcb9701d918b48baf839f94eb603b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -17021,8 +16996,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: fff6b1474b1e455459fcdd3da265461c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -17650,7 +17625,7 @@ Transform:
   m_GameObject: {fileID: 1501362058}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.472393, y: 4.0381126, z: 0.2265625}
+  m_LocalPosition: {x: -16.472393, y: 4.0381126, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17698,8 +17673,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 88900d625a53c9543855a7b499fb960d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -17924,15 +17899,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 1542975428}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 1000000
   birthRate: 0.00001669863
   deathRate: 0.00001769863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: 56.51, y: 16.84, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!1 &1525255788
@@ -18216,7 +18187,7 @@ Transform:
   m_GameObject: {fileID: 1542975428}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18263,8 +18234,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 65bc0bad74ce83a46bd70be5722a5c0b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -18302,8 +18273,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1546623647}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.744339, y: 2.2703998, z: -0.2265625}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -497.6695, y: -367.7907, z: -0.52348936}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18312,7 +18283,7 @@ Transform:
   - {fileID: 321019376}
   - {fileID: 1501362059}
   - {fileID: 1934531861}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1745324914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1546623649
 MonoBehaviour:
@@ -18739,7 +18710,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1256603953}
         m_TargetAssemblyTypeName: Region_Panel_Script, NewAssembly
-        m_MethodName: AddDemon
+        m_MethodName: AddAgent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18752,10 +18723,10 @@ MonoBehaviour:
       - m_Target: {fileID: 903152512}
         m_TargetAssemblyTypeName: Hud_Controller, NewAssembly
         m_MethodName: SetBaseUnitCountText
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: Faction, NewAssembly
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -18954,8 +18925,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4da0c4a859e543a4ab771b091b08f081, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -18981,15 +18952,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 689666585}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 44000000
   birthRate: 0.00003169863
   deathRate: 0.00002909863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: -47.0777, y: 6.3113, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &1634659824
@@ -19520,7 +19487,7 @@ Transform:
   m_GameObject: {fileID: 1654806596}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.066341, y: 1.8269582, z: 0.2265625}
+  m_LocalPosition: {x: -22.066341, y: 1.8269582, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19568,8 +19535,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 574f988335079cb42ad57e2ea9923934, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -19595,15 +19562,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 1187654081}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 34000000
   birthRate: 0.00002569863
   deathRate: 0.00001969863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: 11.2114, y: 7.0058, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &1654806600
@@ -19866,7 +19829,7 @@ Transform:
   m_GameObject: {fileID: 1660548639}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.682, y: 7.2, z: 0.12109375}
+  m_LocalPosition: {x: 2.682, y: 7.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19914,8 +19877,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7627efc393b9f5445b4a931bb0315d2f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -20517,15 +20480,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 1313630139}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 143800000
   birthRate: 0.00002438356
   deathRate: 0.00003369863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: -88.57, y: -26.5243, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!1 &1663219326
@@ -20553,8 +20512,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663219326}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.8507776, y: -1.9588084, z: -0.12109375}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -494.56308, y: -372.0199, z: -0.41802058}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20566,7 +20525,7 @@ Transform:
   - {fileID: 42350402}
   - {fileID: 1037529058}
   - {fileID: 1488624029}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1745324914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1663219328
 MonoBehaviour:
@@ -21034,8 +20993,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b2bee09806533f548bafdef0f0e1edda, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -21057,7 +21016,7 @@ Transform:
   m_GameObject: {fileID: 1717114680}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.42266, y: 4.742, z: -0.005859375}
+  m_LocalPosition: {x: -16.42266, y: 4.742, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21077,15 +21036,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 1111759648}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 180000000
   birthRate: 0.00006438356
   deathRate: 0.00003969863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: 41.74369, y: -6.228013, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &1717114684
@@ -21355,8 +21310,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: baeb2937cddea374381c4a34015adc83, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -21505,6 +21460,84 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733001534}
   m_CullTransparentMesh: 1
+--- !u!1 &1745324913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1745324914}
+  - component: {fileID: 1745324915}
+  m_Layer: 0
+  m_Name: World
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1745324914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745324913}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 499.41385, y: 370.0611, z: 0.29692683}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1546623648}
+  - {fileID: 233022925}
+  - {fileID: 484247698}
+  - {fileID: 1663219327}
+  - {fileID: 1755741147}
+  - {fileID: 973843940}
+  - {fileID: 1767724070}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1745324915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745324913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d44c638f3e34a64c886b56d83c4092d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regionController:
+  - {fileID: 929405140}
+  - {fileID: 2031324509}
+  - {fileID: 321019379}
+  - {fileID: 1501362062}
+  - {fileID: 695003806}
+  - {fileID: 1150667228}
+  - {fileID: 276516354}
+  - {fileID: 1654806599}
+  - {fileID: 334483313}
+  - {fileID: 543067271}
+  - {fileID: 486398688}
+  - {fileID: 1811110401}
+  - {fileID: 1823204648}
+  - {fileID: 1104128527}
+  - {fileID: 1916843837}
+  - {fileID: 1961780772}
+  - {fileID: 1660548643}
+  - {fileID: 42350404}
+  - {fileID: 1037529060}
+  - {fileID: 1717114683}
+  - {fileID: 805050002}
+  - {fileID: 535025627}
+  - {fileID: 11008318}
+  - {fileID: 33272783}
+  - {fileID: 1634659823}
+  - {fileID: 778686148}
 --- !u!1 &1755741146
 GameObject:
   m_ObjectHideFlags: 0
@@ -21530,8 +21563,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755741146}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.12, y: -4.66, z: 0.005859375}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -484.29385, y: -374.7211, z: -0.29106745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -21541,7 +21574,7 @@ Transform:
   - {fileID: 11008317}
   - {fileID: 33272781}
   - {fileID: 1048760320}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1745324914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1755741148
 MonoBehaviour:
@@ -21658,12 +21691,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1767724069}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 969.9479, y: 561.7962, z: 1.2499602}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1745324914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1769919834
 GameObject:
@@ -21738,8 +21771,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b6b3ae13222276a40a3a5e2567327739, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -22210,7 +22243,7 @@ Transform:
   m_GameObject: {fileID: 1811110398}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.553, y: 2.1786277, z: 0.11328125}
+  m_LocalPosition: {x: -8.553, y: 2.1786277, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22258,8 +22291,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b3c3a007435ed764d9273a2bcf2086b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -22285,15 +22318,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 1429466217}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 50000000
   birthRate: 0.00001819863
   deathRate: 0.00001769863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: -23.540218, y: -7.7482, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &1811110403
@@ -22514,8 +22543,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e281f80bc7f1e884a929018c5db4ac77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -22556,7 +22585,7 @@ Transform:
   m_GameObject: {fileID: 1823204644}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.1047277, y: 3.675178, z: 0.12109375}
+  m_LocalPosition: {x: 3.1047277, y: 3.675178, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22604,8 +22633,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 963126643abb7cc43b927c86d5757663, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -22792,15 +22821,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 1718305232}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 1400000000
   birthRate: 0.00001169863
   deathRate: 0.0000269863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: 0, y: -6.98395, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!1 &1829631912
@@ -22876,8 +22901,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7d1aeecd828e4e040a86344c5d7e62c5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -23112,7 +23137,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1256603953}
         m_TargetAssemblyTypeName: Region_Panel_Script, NewAssembly
-        m_MethodName: AddBanshee
+        m_MethodName: AddAgent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -23125,10 +23150,10 @@ MonoBehaviour:
       - m_Target: {fileID: 903152512}
         m_TargetAssemblyTypeName: Hud_Controller, NewAssembly
         m_MethodName: SetSecondaryUnitCountText
-        m_Mode: 2
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: Faction, NewAssembly
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -23544,8 +23569,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: a222ce2fcbcf57649a2d956f2eca176e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -23586,7 +23611,7 @@ Transform:
   m_GameObject: {fileID: 1916843834}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.4278708, y: 4.724, z: 0.12109375}
+  m_LocalPosition: {x: 6.4278708, y: 4.724, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -23634,8 +23659,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4b33cd8f396f5a4408efb056351ccba8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -23661,15 +23686,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 2049977539}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 203000000
   birthRate: 0.00001219863
   deathRate: 0.00001119863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: 20.753, y: -33.1203, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &1916843838
@@ -24246,7 +24267,7 @@ Transform:
   m_GameObject: {fileID: 1961780769}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.424, y: 4.311, z: 0.12109375}
+  m_LocalPosition: {x: -0.424, y: 4.311, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -24294,8 +24315,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 33746cafeec8cea41a595ffce7f8bbd5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -24321,15 +24342,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 1441389735}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 66000000
   birthRate: 0.00003769863
   deathRate: 0.00002969863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: 2.654, y: -6.7183, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &1961780773
@@ -25426,7 +25443,7 @@ Transform:
   m_GameObject: {fileID: 2031324506}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.067005, y: -2.958, z: 0.2265625}
+  m_LocalPosition: {x: -12.067005, y: -2.958, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -25474,8 +25491,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1557889915
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ab0153b693a31594284da5ab8526ea75, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -25501,15 +25518,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderRef: {fileID: 235489044}
-  canvasRefTransform: {fileID: 645931483}
   initialTotalPopulation: 211000000
   birthRate: 0.00002969863
   deathRate: 0.00003969863
-  evilTextPrefab: {fileID: 2776731619936296430, guid: 2340efa808253c3489a5746962236a69,
-    type: 3}
-  goodTextPrefab: {fileID: 8659561839270546862, guid: 8df5a23bb60de564c86a2a2eb101c559,
-    type: 3}
   deathTextOffset: {x: -71.58, y: 9.2304, z: 0}
+  deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
 --- !u!60 &2031324510
@@ -25999,8 +26012,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 48fb279e9ca872042a7698971e79ae7c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -26165,8 +26178,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e0f22e622b96c3240a7326fddd2a5a4c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -26252,8 +26265,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1961561653
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5c10ab6fff6c0a64b8b2aece86c4ce57, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.6862745}
@@ -26484,16 +26497,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
-  - {fileID: 1546623648}
-  - {fileID: 233022925}
-  - {fileID: 484247698}
-  - {fileID: 1663219327}
-  - {fileID: 1755741147}
-  - {fileID: 973843940}
-  - {fileID: 875555708}
-  - {fileID: 583303640}
+  - {fileID: 1745324914}
   - {fileID: 1247905026}
-  - {fileID: 1767724070}
   - {fileID: 442966045}
   - {fileID: 899610357}
   - {fileID: 544095962}
+  - {fileID: 483085137}
+  - {fileID: 583303640}
+  - {fileID: 875555708}

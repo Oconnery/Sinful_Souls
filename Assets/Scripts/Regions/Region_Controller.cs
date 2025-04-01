@@ -82,7 +82,7 @@ public class Region_Controller : MonoBehaviour {
                 diedToday += maxKillable;
                 outerRef.InstantiateDeathText(alignment, maxKillable);
 
-                throw new ArgumentException("The number to kill is larger than the size of this population. Not allowed. numberToKill: " + numberToKill + ", popSize: " + size);
+                throw new ArgumentException("The number to kill is larger than the size of this population. Not allowed. Region: " + outerRef.name + "numberToKill:  " + numberToKill + ", popSize: " + size);
             }
         }
         
@@ -97,7 +97,6 @@ public class Region_Controller : MonoBehaviour {
     }
 
     public GameObject borderRef; //TODO: This is used in the player controller, not here. This is not good code.
-    public Transform canvasRefTransform;
 
     public ulong initialTotalPopulation; // TODO: This should be placed in RegionPopulation, and it should be read in by the .txt file.
     RegionPopulation population;
@@ -124,19 +123,14 @@ public class Region_Controller : MonoBehaviour {
     private ushort localEvilSecondaryUnits;
     private ushort localGoodSecondaryUnits;
 
-    //Colours according to pop
+    //Colours according to pop // TODO: New class.
     private Renderer renderer;
     private UnityEngine.Color currentClr;
     private UnityEngine.Color goodClrMax;
     private UnityEngine.Color evilClrMax;
 
-    public GameObject evilTextPrefab;
-    public GameObject goodTextPrefab;
     public Vector3 deathTextOffset;
-    private float minDeathTextSize;
-    private float maxDeathTextSize;
-    private const ulong minProgressiveDeathTextDeathValue = 100;
-    private const ulong maxProgressiveDeathTextDeathValue = 10000;
+    [SerializeField] private Death_Text_Builder deathTextBuilder;
 
     public Devil_Controller devilController;
     public God_Controller godController;
@@ -151,6 +145,15 @@ public class Region_Controller : MonoBehaviour {
         godController.OnDailyShoutReturnDiedToday += GetGoodDied;
         godController.OnDailyShoutResetDiedToday += ResetDeathCounterGood;
 
+        Global_Population_Viewer.OnTotalEvilPopulationRequest += GetEvilPop;
+        Global_Population_Viewer.OnTotalGoodPopulationRequest += GetGoodPop;
+        Global_Population_Viewer.OnTotalNeutralPopulationRequest += GetNeutralPop;
+
+        Global_Units_Viewer.OnDeployedEvilAgentsRequest += GetLocalEvilAgents;
+        Global_Units_Viewer.OnDeployedEvilSecondaryUnitsRequest += GetLocalEvilSecondaryUnits;
+        Global_Units_Viewer.OnDeployedGoodAgentsRequest += GetLocalGoodAgents;
+        Global_Units_Viewer.OnDeployedGoodSecondaryUnitsRequest += GetLocalGoodSecondaryUnits;
+
         SetInitialRates();
 
         population = new RegionPopulation(this);
@@ -164,9 +167,6 @@ public class Region_Controller : MonoBehaviour {
         //renderer.material.color = currentClr;
 
         SetInitialLocalUnits();
-  
-        minDeathTextSize = 14;
-        maxDeathTextSize = 72;
     }
 
     private void SetInitialRates(){
@@ -196,12 +196,10 @@ public class Region_Controller : MonoBehaviour {
 
     #region gets
     public ulong GetGoodPop() {
-        Debug.Log(this.name + "_GetGoodPop returning: " + population.goodPopulation.GetSize());
         return population.goodPopulation.GetSize();
     }
 
     public ulong GetEvilPop() {
-        Debug.Log(this.name + "_GetEvilPop returning: " + population.evilPopulation.GetSize());
         return population.evilPopulation.GetSize();
     }
 
@@ -452,61 +450,13 @@ public class Region_Controller : MonoBehaviour {
     private void InstantiateDeathText(Alignment alignment, ulong deaths){
         switch (alignment){
             case Alignment.GOOD:
-                InstantiateGoodDeathText(deaths);
-                break;
+                //deathTextBuilder.InstantiateGoodDeathText(deaths, gameObject, deathTextOffset); // Only print out evil text for now. Is good text useful info. if player is devil?
+                break; // TODO: Get player faction and only instantiate death text if faction == playerFaction.
             case Alignment.EVIL:
-                InstantiateEvilDeathText(deaths);
+                deathTextBuilder.InstantiateEvilDeathText(deaths, gameObject, deathTextOffset);
                 break;
         }
     }
-
-    // TODO: All the death text stuff should be in it's own class
-    private void InstantiateGoodDeathText(ulong deaths){
-        Vector3 offset = canvasRefTransform.TransformPoint(deathTextOffset);
-        Vector3 initialPos = new Vector3((transform.position.x + offset.x), (transform.position.y + offset.y), 0);
-        float fontSize = CalculateDeathTextFontSize(deaths);
-
-        GameObject textGO = Instantiate(evilTextPrefab, initialPos, Quaternion.identity, canvasRefTransform);
-        textGO.GetComponent<TextMeshProUGUI>().text = deaths.ToString(); // todo: don't get component twice
-        textGO.GetComponent<TextMeshProUGUI>().fontSize = fontSize;
-        textGO.name += "_" + name;
-        textGO.SetActive(true);
-    }
-
-    private void InstantiateEvilDeathText(ulong deaths){
-        Vector3 offset = canvasRefTransform.TransformPoint(deathTextOffset);
-        Vector3 initialPos = new Vector3((transform.position.x + offset.x), (transform.position.y + offset.y), 0);
-        float fontSize = CalculateDeathTextFontSize(deaths);
-
-        GameObject textGO = Instantiate(goodTextPrefab, initialPos, Quaternion.identity, canvasRefTransform);
-        textGO.GetComponent<TextMeshProUGUI>().text = deaths.ToString();
-        textGO.GetComponent<TextMeshProUGUI>().fontSize = fontSize;
-        textGO.name += "_" + name;
-        textGO.SetActive(true);
-    }
-
-    private float CalculateDeathTextFontSize(ulong deaths){
-        // have a few different font sizes for different death levels? or make it progressively bigger each death up until a certain max size (72 or something)
-        // lets try make the font bigger progressively with each death.
-        switch(deaths){
-            case < minProgressiveDeathTextDeathValue:
-                return minDeathTextSize;
-            case > maxProgressiveDeathTextDeathValue: 
-                return maxDeathTextSize;
-            default:
-                return CalculateDeathTextFontSizeProgessively(deaths);
-        }
-    }
-
-    private float CalculateDeathTextFontSizeProgessively(ulong deaths) {
-        float fontSizeDifference = maxDeathTextSize - minDeathTextSize;
-        ulong deathMinMaxDifference = maxProgressiveDeathTextDeathValue - minProgressiveDeathTextDeathValue;
-
-        // Calculate how much above the minimum font size it should be:
-        float fontSizeIncrease = (float) Math.Floor(deaths / (deathMinMaxDifference / fontSizeDifference));
-        return minDeathTextSize + fontSizeIncrease;
-    }
-
     public ulong KillPeople(Alignment alignment, ulong numberToKill){
         PopulationFaction populationFaction = population.GetPopulationFactionByAlignment(alignment);
 
