@@ -1,5 +1,4 @@
 using System;
-using System.Drawing;
 using TMPro;
 using UnityEngine;
 
@@ -10,11 +9,11 @@ public class Death_Text_Builder : MonoBehaviour{
     [SerializeField] private GameObject evilTextPrefab;
     [SerializeField] private GameObject goodTextPrefab;
 
-    private const float MIN_FONT_SIZE = 14;
-    private const float MAX_FONT_SIZE = 72;
+    private const float MIN_INITIAL_FONT_SIZE = 14;
+    private const float MAX_INITIAL_FONT_SIZE = 72;
 
-    private const ulong MIN_PROGRESSIVE_DEATHS = 100;
-    private const ulong MAX_PROGRESSIVE_DEATHS = 10000;
+    private const ulong DEATHS_FOR_INITIAL_MIN_FONT_SIZE = 100; // At this point the font will be min size
+    private const ulong DEATHS_FOR_INITIAL_MAX_FONT_SIZE = 10000; // At this point the font will be max size
 
     public void InstantiateEvilDeathText(ulong deaths, GameObject region, Vector3 offset) {
         InstantiateDeathText(deaths, region, evilTextPrefab, worldCanvasTransform.TransformPoint(offset));
@@ -38,21 +37,21 @@ public class Death_Text_Builder : MonoBehaviour{
         // have a few different font sizes for different death levels? or make it progressively bigger each death up until a certain max size (72 or something)
         // lets try make the font bigger progressively with each death.
         switch (deaths) {
-            case < MIN_PROGRESSIVE_DEATHS:
-                return MIN_FONT_SIZE;
-            case > MAX_PROGRESSIVE_DEATHS:
-                return MAX_FONT_SIZE;
+            case < DEATHS_FOR_INITIAL_MIN_FONT_SIZE:
+                return MIN_INITIAL_FONT_SIZE;
+            case > DEATHS_FOR_INITIAL_MAX_FONT_SIZE:
+                return MAX_INITIAL_FONT_SIZE;
             default:
                 return CalculateInitialFontSizeProgressively(deaths);
         }
     }
 
     private float CalculateInitialFontSizeProgressively(ulong deaths) {
-        float fontSizeDifference = MAX_FONT_SIZE - MIN_FONT_SIZE;
-        ulong deathMinMaxDifference = MAX_PROGRESSIVE_DEATHS - MIN_PROGRESSIVE_DEATHS;
+        float fontSizeDifference = MAX_INITIAL_FONT_SIZE - MIN_INITIAL_FONT_SIZE;
+        ulong deathMinMaxDifference = DEATHS_FOR_INITIAL_MAX_FONT_SIZE - DEATHS_FOR_INITIAL_MIN_FONT_SIZE;
 
         // Calculate how much above the minimum font size the text should be:
         float fontSizeIncrease = (float)Math.Floor(deaths / (deathMinMaxDifference / fontSizeDifference));
-        return MIN_FONT_SIZE + fontSizeIncrease;
+        return MIN_INITIAL_FONT_SIZE + fontSizeIncrease;
     }
 }

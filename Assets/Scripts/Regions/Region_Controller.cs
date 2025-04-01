@@ -1,6 +1,4 @@
-﻿using System;
-using TMPro;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Region_Controller : MonoBehaviour { 
     public enum Alignment{
@@ -82,7 +80,7 @@ public class Region_Controller : MonoBehaviour {
                 diedToday += maxKillable;
                 outerRef.InstantiateDeathText(alignment, maxKillable);
 
-                throw new ArgumentException("The number to kill is larger than the size of this population. Not allowed. Region: " + outerRef.name + "numberToKill:  " + numberToKill + ", popSize: " + size);
+                Debug.LogError("The number to kill is larger than the size of this population. Not allowed. Region: " + outerRef.name + "numberToKill:  " + numberToKill + ", popSize: " + size);
             }
         }
         
@@ -228,12 +226,10 @@ public class Region_Controller : MonoBehaviour {
     }
 
     public ulong GetEvilDied(){
-        Debug.Log(this.name + "_GetEvilDied returning: " + population.evilPopulation.diedToday);
         return population.evilPopulation.diedToday;
     }
 
     public ulong GetGoodDied() {
-        Debug.Log(this.name + "_GetGoodDied returning: " + population.goodPopulation.diedToday);
         return population.goodPopulation.diedToday;
     }
 

@@ -7,7 +7,7 @@ public class Faction : MonoBehaviour { // TODO: Should use singleton pattern too
     public double PrimaryResource { get; private set; }// (Skulls and Souls)
     public double SecondaryResource { get; private set; }// (Sins and Prayers)
 
-    private const double PRIMARY_RESOURCE_MULTIPLIER = 0.1948;
+    private const double PRIMARY_RESOURCE_MULTIPLIER = 0.03896;
     public double SecondaryResourceGenerationEfficency { get; set; }
     private const double SECONDARY_RESOURCE_MULTIPLIER = 0.00000000005;
    

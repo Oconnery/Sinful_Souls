@@ -49,11 +49,9 @@ public class Player_Controller : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)){
             // Check that pointer is not over a game object.
             if (!EventSystem.current.IsPointerOverGameObject()) {
-                Debug.Log("Mouse pos" + Input.mousePosition);
                 RaycastHit2D objectHit = DrawRayCast();
 
                 if (objectHit){ // TODO: Check it's a region/has a region component
-                    Debug.Log("Clicked country: " + objectHit.collider.gameObject);
                     StoreHitInfo(objectHit);
                     SetCountryPanelUI(objectHit);
 

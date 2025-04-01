@@ -56,17 +56,18 @@ public class Hud_Controller : MonoBehaviour{
     }
 
     private void SetDateText() {
-        //Check if single digit = needs 0 
         ushort day = Clock.Day;
         ushort month = Clock.Month;
 
         if (day < 10) {
-            currentDateText.text = "0" + day + "/"; //+ month + "/" + year;
+            // If single digits it should be prefixed with 0
+            currentDateText.text = "0" + day + "/";
         } else {
             currentDateText.text = day + "/";
         }
 
         if (month < 10) {
+            // If single digits it should be prefixed with 0
             currentDateText.text += "0" + month + "/";
         } else {
             currentDateText.text += month + "/";

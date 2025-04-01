@@ -14,9 +14,9 @@ public class Death_Text : MonoBehaviour {
 
     private float fontSizeIncreaseModifier = 0.0f;
     private float fontSizeDecreaseModifier = 0.0f;
-    private const float fontSizeChangeSpeed = 1.0f;
+    private const float FONT_SIZE_CHANGE_SPEED = 1.0f;
     private float originalFontSize;
-    private float largestFontSize;
+    private float largestFontSize; 
     private float smallestFontSize;
     bool maxFontSizeReached = false;
     bool minFontSizeReached = false;
@@ -46,13 +46,13 @@ public class Death_Text : MonoBehaviour {
         float deltaTime = Time.deltaTime;
         if (!inSecondPhase) {
             // FIRST PHASE
-            transform.position = Vector3.MoveTowards(transform.position, firstTargetPosition, secondSpeed * deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, firstTargetPosition, secondSpeed * Clock.TimerMultiplier * deltaTime);
             if (transform.position == firstTargetPosition) {
                 inSecondPhase = true;
             }
         } else {
             // SECOND PHASE
-            transform.position = Vector3.MoveTowards(transform.position, secondTargetPosition, firstTargetSpeed * deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, secondTargetPosition, firstTargetSpeed * Clock.TimerMultiplier * deltaTime);
             UpdateFont(deltaTime);
             if (transform.position == secondTargetPosition) {
                 Destroy(gameObject);
@@ -68,14 +68,14 @@ public class Death_Text : MonoBehaviour {
     private void UpdateFont(float deltaTime) { // 12 to 18, and then from 18 to 9 .... so moving 6 and then moving 9 ... so the second one should be * 1.50 speed.
         if (!maxFontSizeReached){
             textComponent.fontSize += fontSizeIncreaseModifier;
-            fontSizeIncreaseModifier = fontSizeChangeSpeed * deltaTime * originalFontSize; // include OG font size so the change happens in the same amount of time no matter what font size the text is
+            fontSizeIncreaseModifier = FONT_SIZE_CHANGE_SPEED * deltaTime * Clock.TimerMultiplier * originalFontSize; // include OG font size so the change happens in the same amount of time no matter what font size the text is
             if (textComponent.fontSize >= largestFontSize){
                 maxFontSizeReached = true;
             }
         } else if (!minFontSizeReached){
             // Change size
             textComponent.fontSize -= fontSizeDecreaseModifier;
-            fontSizeDecreaseModifier = fontSizeChangeSpeed * deltaTime * originalFontSize * 1.50f * 2.0f; // TODO: make these numbers a variable or something. .. 1.5f is the extra amount the decrease has to change in the same amount of frames. 2.0 is because it has to do it in half the time (s=d/t)
+            fontSizeDecreaseModifier = FONT_SIZE_CHANGE_SPEED * deltaTime * Clock.TimerMultiplier * originalFontSize * 1.50f * 2.0f; // TODO: make these numbers a variable or something. .. 1.5f is the extra amount the decrease has to change in the same amount of frames. 2.0 is because it has to do it in half the time (s=d/t)
 
             //UpdateFontOpacity(deltaTime);
 
