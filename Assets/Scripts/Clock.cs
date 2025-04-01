@@ -34,12 +34,10 @@ public class Clock : MonoBehaviour {
         //} else {
         //    instance = this;
         //}
-    }
 
-    private void Start () {
-        Day = (ushort) DateTime.Now.Day;
-        Month = (ushort) DateTime.Now.Month;
-        Year = (ushort) DateTime.Now.Year;
+        Day = (ushort)DateTime.Now.Day;
+        Month = (ushort)DateTime.Now.Month;
+        Year = (ushort)DateTime.Now.Year;
 
         TimerMultiplier = 1.0f;
         timer = 0.0f;
@@ -94,31 +92,28 @@ public class Clock : MonoBehaviour {
     /// Pauses the game.
     /// </summary>
     public static void Pause() {
-        OnPause?.Invoke();
         Debug.Log("Pause");
         IsTimePaused = true;
-        
+        OnPause?.Invoke();
     }
 
     /// <summary>
     /// Unpauses the game and resets the multiplier for daily clock timer speed.
     /// </summary>
     public static void UnpauseResetSpeed() {
-        OnUnpause?.Invoke();
         Debug.Log("Unpause");
         IsTimePaused = false;
         TimerMultiplier = 1.0f;
-        
+        OnUnpause?.Invoke();
     }
 
     /// <summary>
     /// Unpauses the game and resumes at the clock speed it was set to before the pause.
     /// </summary>
     public static void Unpause() {
-        OnUnpause?.Invoke();
         Debug.Log("Unpause");
         IsTimePaused = false;
-        
+        OnUnpause?.Invoke();
     }
 
     public static void FastForward() {

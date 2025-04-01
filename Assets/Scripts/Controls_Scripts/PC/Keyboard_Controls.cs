@@ -2,8 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Keyboard_Controls : MonoBehaviour{
-    [SerializeField] private Button playBtn;
-    [SerializeField] private Button pauseBtn;
+    //[SerializeField] private Button playBtn;
+    //[SerializeField] private Button pauseBtn;
+    [SerializeField] private AudioSource playAudio;
+    [SerializeField] private AudioSource pauseAudio;
 
     void Update(){
         if (Input.GetKeyDown(KeyCode.Space)){
@@ -12,10 +14,14 @@ public class Keyboard_Controls : MonoBehaviour{
     }
 
     private void SpaceBarPressed(){
-        if (Clock.IsTimePaused){
-            InvokeClickIfActive(playBtn);
+        if (Clock.IsTimePaused) {
+            //InvokeClickIfActive(playBtn); This is buggy. Issues with invoking click. Doesn't work as expected.
+            Clock.UnpauseResetSpeed();
+            playAudio.Play();
         } else {
-            InvokeClickIfActive(pauseBtn);
+            //InvokeClickIfActive(pauseBtn);
+            Clock.Pause();
+            pauseAudio.Play();
         }
     }
 
