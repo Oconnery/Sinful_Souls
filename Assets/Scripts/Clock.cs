@@ -1,17 +1,18 @@
 ﻿using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 public class Clock : MonoBehaviour {
-    //public static Clock instance { get; private set; } TODO: SINGLETON?
     private const float DAY_LENGTH = 3.0f;
     public static float TimerMultiplier { get; private set; } // at 2.0f, this represents a double increase in speed. i.e. a 10 second day would now be a 5 second day, since the timer moves faster.
-    public static ushort Day { get; private set; }
-    public static ushort Month { get; private set; }
-    public static ushort Year { get; private set; }
+    public static byte Day { get; private set; }
+    public static byte Month { get; private set; }
+    public static byte Year { get; private set; }
     public static bool IsTimePaused { get; private set; }
 
     // Don't bother with leap year for now.
-    private readonly short[] daysInMonths = new short[12] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    private readonly IReadOnlyList<byte> daysInMonths = Array.AsReadOnly(new byte[12] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 });
+
     private static float timer;
   
     // Multiple delegates/actions to enforce ordering.
@@ -27,17 +28,9 @@ public class Clock : MonoBehaviour {
     // do I need one for pause?
 
     private void Awake() {
-        // SINGLETON CODE //
-        //// If there is an instance, and it's not me, delete myself.
-        //if (instance != null && instance != this) {
-        //    Destroy(this);
-        //} else {
-        //    instance = this;
-        //}
-
-        Day = (ushort)DateTime.Now.Day;
-        Month = (ushort)DateTime.Now.Month;
-        Year = (ushort)DateTime.Now.Year;
+        Day = (byte)DateTime.Now.Day;
+        Month = (byte)DateTime.Now.Month;
+        Year = (byte)DateTime.Now.Year;
 
         TimerMultiplier = 1.0f;
         timer = 0.0f;

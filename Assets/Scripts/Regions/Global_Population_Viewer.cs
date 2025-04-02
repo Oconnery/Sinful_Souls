@@ -5,7 +5,6 @@ public static class Global_Population_Viewer{
     public static event Func<ulong> OnTotalGoodPopulationRequest;
     public static event Func<ulong> OnTotalNeutralPopulationRequest;
 
-
     public static ulong GetTotalEvilPopulation() {
         ulong evilPopulation = 0;
 
