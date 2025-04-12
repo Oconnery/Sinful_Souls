@@ -1,0 +1,702 @@
+fileFormatVersion: 2
+guid: 8efaef3ca480c3e46967e79cb9b14f34
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8392331468884103129
+    second: Mexico_BORDER_WHITE_0
+  - first:
+      213: -8863966096547192933
+    second: Mexico_BORDER_WHITE_1
+  - first:
+      213: -8990098804733230555
+    second: Mexico_BORDER_WHITE_2
+  - first:
+      213: 2661481807289991900
+    second: Mexico_BORDER_WHITE_3
+  - first:
+      213: -1269948150516346823
+    second: Mexico_BORDER_WHITE_4
+  - first:
+      213: 7061965109883563243
+    second: Mexico_BORDER_WHITE_5
+  - first:
+      213: -2373192032749391403
+    second: Mexico_BORDER_WHITE_6
+  - first:
+      213: -420711587675066210
+    second: Mexico_BORDER_WHITE_7
+  - first:
+      213: -2893286137497436111
+    second: Mexico_BORDER_WHITE_8
+  - first:
+      213: -7649483934949850558
+    second: Mexico_BORDER_WHITE_9
+  - first:
+      213: -157293043530706816
+    second: Mexico_BORDER_WHITE_10
+  - first:
+      213: 6923703196515733340
+    second: Mexico_BORDER_WHITE_11
+  - first:
+      213: 4430402219636361690
+    second: Mexico_BORDER_WHITE_12
+  - first:
+      213: 5250197556448868881
+    second: Mexico_BORDER_WHITE_13
+  - first:
+      213: -3820183112556408444
+    second: Mexico_BORDER_WHITE_14
+  - first:
+      213: -380643114795061709
+    second: Mexico_BORDER_WHITE_15
+  - first:
+      213: -2497952430276845050
+    second: Mexico_BORDER_WHITE_16
+  - first:
+      213: -7370981825020642651
+    second: Mexico_BORDER_WHITE_17
+  - first:
+      213: -7638292999414207096
+    second: Mexico_BORDER_WHITE_18
+  - first:
+      213: 3498810187413719388
+    second: Mexico_BORDER_WHITE_19
+  - first:
+      213: -1221523144670955600
+    second: Mexico_BORDER_WHITE_20
+  - first:
+      213: -8859560874919613525
+    second: Mexico_BORDER_WHITE_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 89
+        width: 276
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9df4b28a10d877470800000000000000
+      internalID: 8392331468884103129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_1
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 215
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9fd23a6ccddcf480800000000000000
+      internalID: -8863966096547192933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_2
+      rect:
+        serializedVersion: 2
+        x: 362
+        y: 191
+        width: 12
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5224638c4c0cc3380800000000000000
+      internalID: -8990098804733230555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_3
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 179
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd24fa34a9b7fe420800000000000000
+      internalID: 2661481807289991900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_4
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 193
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9301f45b2ec306ee0800000000000000
+      internalID: -1269948150516346823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_5
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 139
+        width: 99
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: becefcef9d3210260800000000000000
+      internalID: 7061965109883563243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_6
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 174
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d17f208b6ab01fd0800000000000000
+      internalID: -2373192032749391403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_7
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 62
+        width: 46
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e90bcbf3a05592af0800000000000000
+      internalID: -420711587675066210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_8
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 120
+        width: 23
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13047e4569bf8d7d0800000000000000
+      internalID: -2893286137497436111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_9
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 115
+        width: 61
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 242c14ec3e297d590800000000000000
+      internalID: -7649483934949850558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_10
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 117
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08056be6fce21ddf0800000000000000
+      internalID: -157293043530706816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_11
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 110
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5f8e86bf5fe51060800000000000000
+      internalID: 6923703196515733340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_12
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 59
+        width: 57
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad907817853fb7d30800000000000000
+      internalID: 4430402219636361690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_13
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 100
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11a32c06cd27cd840800000000000000
+      internalID: 5250197556448868881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_14
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 42
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 481112703bbfbfac0800000000000000
+      internalID: -3820183112556408444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_15
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 84
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33e21749a1fa7baf0800000000000000
+      internalID: -380643114795061709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_16
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 69
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6026687df7d755dd0800000000000000
+      internalID: -2497952430276845050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_17
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 46
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aab8c1551305b990800000000000000
+      internalID: -7370981825020642651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_18
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 55
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88d20978cf45ff590800000000000000
+      internalID: -7638292999414207096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_19
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 7
+        width: 36
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c590055f3554e8030800000000000000
+      internalID: 3498810187413719388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_20
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 0
+        width: 68
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b738fcfb274c0fe0800000000000000
+      internalID: -1221523144670955600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mexico_BORDER_WHITE_21
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 24
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baba77003548c0580800000000000000
+      internalID: -8859560874919613525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Mexico_BORDER_WHITE_0: 8392331468884103129
+      Mexico_BORDER_WHITE_1: -8863966096547192933
+      Mexico_BORDER_WHITE_10: -157293043530706816
+      Mexico_BORDER_WHITE_11: 6923703196515733340
+      Mexico_BORDER_WHITE_12: 4430402219636361690
+      Mexico_BORDER_WHITE_13: 5250197556448868881
+      Mexico_BORDER_WHITE_14: -3820183112556408444
+      Mexico_BORDER_WHITE_15: -380643114795061709
+      Mexico_BORDER_WHITE_16: -2497952430276845050
+      Mexico_BORDER_WHITE_17: -7370981825020642651
+      Mexico_BORDER_WHITE_18: -7638292999414207096
+      Mexico_BORDER_WHITE_19: 3498810187413719388
+      Mexico_BORDER_WHITE_2: -8990098804733230555
+      Mexico_BORDER_WHITE_20: -1221523144670955600
+      Mexico_BORDER_WHITE_21: -8859560874919613525
+      Mexico_BORDER_WHITE_3: 2661481807289991900
+      Mexico_BORDER_WHITE_4: -1269948150516346823
+      Mexico_BORDER_WHITE_5: 7061965109883563243
+      Mexico_BORDER_WHITE_6: -2373192032749391403
+      Mexico_BORDER_WHITE_7: -420711587675066210
+      Mexico_BORDER_WHITE_8: -2893286137497436111
+      Mexico_BORDER_WHITE_9: -7649483934949850558
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

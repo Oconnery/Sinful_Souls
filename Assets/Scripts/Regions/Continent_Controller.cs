@@ -11,7 +11,7 @@ public class Continent_Controller : MonoBehaviour {
    
     private enum Faction{ GOD, DEVIL, NONE}
 
-    private GameObject border; // Apply the border when player has clicked on a region
+    [SerializeField] private GameObject border; // Apply the border when player has clicked on a region
 
     // This should be called in a different script whenever a region in the continent switches faction.
     public void DesignateOwner(){
@@ -24,5 +24,14 @@ public class Continent_Controller : MonoBehaviour {
     // Check if the continent belongs to a faction.
     private Faction CheckIfOwned(){
         return Faction.NONE;
+    }
+
+    // TODO: Should be on HUD?
+    public void ActivateBorder(){
+        border.SetActive(true); 
+    }
+
+    public void DeactivateBorder() {
+        border.SetActive(false);
     }
 }

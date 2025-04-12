@@ -41,11 +41,14 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Infront
-    uniqueID: 2998472445
+  - name: Behind
+    uniqueID: 1052381025
     locked: 0
   - name: Region
     uniqueID: 1557889915
+    locked: 0
+  - name: Continent Border
+    uniqueID: 2979013177
     locked: 0
   - name: Region Border
     uniqueID: 2333405643
@@ -56,8 +59,8 @@ TagManager:
   - name: World Canvas
     uniqueID: 4268602887
     locked: 0
-  - name: Behind
-    uniqueID: 1052381025
+  - name: Infront
+    uniqueID: 2998472445
     locked: 0
   m_RenderingLayers:
   - Default

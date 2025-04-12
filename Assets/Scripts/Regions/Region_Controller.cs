@@ -7,7 +7,7 @@ public class Region_Controller : MonoBehaviour {
         EVIL
     }
 
-    public GameObject borderRef; //TODO: This is used in the player controller, not here. This is not good code.
+    [SerializeField] private GameObject borderRef;
 
     public ulong initialTotalPopulation; // TODO: This should be placed in RegionPopulation, and it should be read in by the .txt file.
     RegionPopulation population;
@@ -106,7 +106,7 @@ public class Region_Controller : MonoBehaviour {
         localEvilSecondaryUnits = 0;
     }
 
-    #region gets
+    #region getters
     public ulong GetGoodPop() {
         return population.goodPopulation.GetSize();
     }
@@ -158,6 +158,7 @@ public class Region_Controller : MonoBehaviour {
     public double GetSinEfficency(){
         return sinEfficency;
     }
+    #endregion
 
     public void ResetDeathCounterEvil(){
         population.evilPopulation.diedToday = 0;
@@ -191,7 +192,19 @@ public class Region_Controller : MonoBehaviour {
         conversionRateToEvil = rate;
     }
 
-    #endregion
+    public void ActivateBorder() {
+        if (borderRef != null)
+            borderRef.SetActive(true);
+
+        transform.parent.GetComponent<Continent_Controller>().ActivateBorder();
+    }
+
+    public void DeactivateBorder() {
+        if (borderRef != null)
+            borderRef.SetActive(false);
+
+        transform.parent.GetComponent<Continent_Controller>().DeactivateBorder();
+    }
 
     #region increments and decrements
     public void IncrementLocalEvilAgents() {

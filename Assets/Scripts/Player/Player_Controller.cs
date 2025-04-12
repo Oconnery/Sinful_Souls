@@ -7,15 +7,13 @@ public class Player_Controller : MonoBehaviour {
     public Faction playerControlledFaction;
     
     public Hud_Controller hudController;
-    public GameObject regionPanel;
+    public Region_Panel_Script regionPanelScript;
 
-    private GameObject regionHit;
-    private Collider2D regionHitCollider;
+    private GameObject lastRegionHit;
+    private Collider2D lastRegionHitCollider;
 
-    private GameObject lastBorderRef;
-
-    public GameObject GetCountryHit(){
-        return regionHit;
+    public GameObject GetRegionHit(){
+        return lastRegionHit;
     }
 
     // TODO: Test the below.
@@ -51,14 +49,17 @@ public class Player_Controller : MonoBehaviour {
             if (!EventSystem.current.IsPointerOverGameObject()) {
                 RaycastHit2D objectHit = DrawRayCast();
 
-                if (objectHit){ // TODO: Check it's a region/has a region component
-                    StoreHitInfo(objectHit);
-                    SetCountryPanelUI(objectHit);
 
-                    if (lastBorderRef != null)
-                        lastBorderRef.SetActive(false);
-                    lastBorderRef = regionHit.GetComponent<Region_Controller>().borderRef;
-                    lastBorderRef.SetActive(true);
+                // Raycast hit something that is a region.
+                if (objectHit && objectHit.collider.gameObject.GetComponent<Region_Controller>() != null){
+                    if (lastRegionHit != null){
+                        // deactivate the borders of the last region.
+                        DeactivateBorder();
+                    }
+
+                    SetRegionHitInfo(objectHit);
+                    SetCountryPanelUI(objectHit);
+                    ActivateBorder();
                 } else {
                     DeselectRegion();
                 }
@@ -70,12 +71,18 @@ public class Player_Controller : MonoBehaviour {
         }
     }
 
+    private void ActivateBorder() {
+        lastRegionHit.GetComponent<Region_Controller>().ActivateBorder();
+    }
+
+    private void DeactivateBorder() {
+        lastRegionHit.GetComponent<Region_Controller>().DeactivateBorder();
+    }
+
     private void DeselectRegion(){
+        DeactivateBorder();
         StoreNullHitInfo();
-        regionPanel.GetComponent<Region_Panel_Script>().UpdateRegionPanel(null);
-        if (lastBorderRef != null)
-            lastBorderRef.SetActive(false);
-        lastBorderRef = null;
+        regionPanelScript.UpdateRegionPanel(null);
     }
 
     private RaycastHit2D DrawRayCast(){
@@ -86,28 +93,26 @@ public class Player_Controller : MonoBehaviour {
         return raycastHit2D;
     }
 
-    private void StoreHitInfo(RaycastHit2D raycastHit2D){
+    private void SetRegionHitInfo(RaycastHit2D raycastHit2D){
         // Store collider as class wide object.
-        regionHitCollider = raycastHit2D.collider;
+        lastRegionHitCollider = raycastHit2D.collider;
         // Store country hit as class wide object.
-        regionHit = raycastHit2D.collider.gameObject;
+        lastRegionHit = raycastHit2D.collider.gameObject;
     }
 
     private void StoreNullHitInfo(){
         // Store collider as class wide object.
-        regionHitCollider = null;
+        lastRegionHitCollider = null;
         // Store country hit as class wide object.
-        regionHit = null;
+        lastRegionHit = null;
     }
 
     private void SetCountryPanelUI(RaycastHit2D raycastHit2D){
-        // Change the information displayed on the panel
-        Region_Panel_Script regionPanelScript = regionPanel.GetComponent<Region_Panel_Script>();
-        regionPanelScript.UpdateRegionPanel(regionHit);
+        regionPanelScript.UpdateRegionPanel(lastRegionHit);
     }
 
     public Vector3 GetRegionRandomLocale() {
-        return GetRegionRandomLocale(regionHitCollider);
+        return GetRegionRandomLocale(lastRegionHitCollider);
     }
 
 
@@ -117,10 +122,10 @@ public class Player_Controller : MonoBehaviour {
         Vector3 colliderPos = collider.transform.position;
         do {
             randomPosition = new Vector3(
-                    UnityEngine.Random.Range(collider.bounds.min.x, collider.bounds.max.x),
-                    UnityEngine.Random.Range(collider.bounds.min.y, collider.bounds.max.y),
+                    Random.Range(collider.bounds.min.x, collider.bounds.max.x),
+                    Random.Range(collider.bounds.min.y, collider.bounds.max.y),
                     colliderPos.z);
-        } while (!regionHitCollider.OverlapPoint(randomPosition));
+        } while (!lastRegionHitCollider.OverlapPoint(randomPosition));
 
         randomPosition.z -= 1;
         return randomPosition;

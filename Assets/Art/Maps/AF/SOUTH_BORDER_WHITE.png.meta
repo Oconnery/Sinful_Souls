@@ -1,0 +1,468 @@
+fileFormatVersion: 2
+guid: c60b35fe02e306f4dbe51d54c6b34f37
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -698924242940291946
+    second: SOUTH_BORDER_WHITE_0
+  - first:
+      213: 5663030568793951573
+    second: SOUTH_BORDER_WHITE_1
+  - first:
+      213: -1471219157617481502
+    second: SOUTH_BORDER_WHITE_2
+  - first:
+      213: -3637232923016209366
+    second: SOUTH_BORDER_WHITE_3
+  - first:
+      213: 8347245759167125805
+    second: SOUTH_BORDER_WHITE_4
+  - first:
+      213: -6035061055196518115
+    second: SOUTH_BORDER_WHITE_5
+  - first:
+      213: 1945295026876952795
+    second: SOUTH_BORDER_WHITE_6
+  - first:
+      213: -8231839240552846303
+    second: SOUTH_BORDER_WHITE_7
+  - first:
+      213: -2481307813160075881
+    second: SOUTH_BORDER_WHITE_8
+  - first:
+      213: 8732679007999993343
+    second: SOUTH_BORDER_WHITE_9
+  - first:
+      213: 3354607122071212084
+    second: SOUTH_BORDER_WHITE_10
+  - first:
+      213: -7086156365343344744
+    second: SOUTH_BORDER_WHITE_11
+  - first:
+      213: -5826210884929850884
+    second: SOUTH_BORDER_WHITE_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SOUTH_BORDER_WHITE_0
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 329
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69492a6aa1cec46f0800000000000000
+      internalID: -698924242940291946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOUTH_BORDER_WHITE_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 194
+        width: 123
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55d442d5c40279e40800000000000000
+      internalID: 5663030568793951573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOUTH_BORDER_WHITE_2
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 298
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e8e57398fd259be0800000000000000
+      internalID: -1471219157617481502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOUTH_BORDER_WHITE_3
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 310
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2c534a6de3f58dc0800000000000000
+      internalID: -3637232923016209366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOUTH_BORDER_WHITE_4
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 192
+        width: 121
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d29da08dacf57d370800000000000000
+      internalID: 8347245759167125805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOUTH_BORDER_WHITE_5
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 89
+        width: 118
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d19a73702f72f3ca0800000000000000
+      internalID: -6035061055196518115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOUTH_BORDER_WHITE_6
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 199
+        width: 31
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd0b55435831ffa10800000000000000
+      internalID: 1945295026876952795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOUTH_BORDER_WHITE_7
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 106
+        width: 84
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12ce9ba23d1a2cd80800000000000000
+      internalID: -8231839240552846303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOUTH_BORDER_WHITE_8
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 255
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79d3132c0bf909dd0800000000000000
+      internalID: -2481307813160075881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOUTH_BORDER_WHITE_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 209
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff5a9514a45b03970800000000000000
+      internalID: 8732679007999993343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOUTH_BORDER_WHITE_10
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 143
+        width: 77
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 430dc007765fd8e20800000000000000
+      internalID: 3354607122071212084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOUTH_BORDER_WHITE_11
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 141
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89736dc645ae8ad90800000000000000
+      internalID: -7086156365343344744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SOUTH_BORDER_WHITE_12
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 147
+        width: 15
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf1fd399114252fa0800000000000000
+      internalID: -5826210884929850884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SOUTH_BORDER_WHITE_0: -698924242940291946
+      SOUTH_BORDER_WHITE_1: 5663030568793951573
+      SOUTH_BORDER_WHITE_10: 3354607122071212084
+      SOUTH_BORDER_WHITE_11: -7086156365343344744
+      SOUTH_BORDER_WHITE_12: -5826210884929850884
+      SOUTH_BORDER_WHITE_2: -1471219157617481502
+      SOUTH_BORDER_WHITE_3: -3637232923016209366
+      SOUTH_BORDER_WHITE_4: 8347245759167125805
+      SOUTH_BORDER_WHITE_5: -6035061055196518115
+      SOUTH_BORDER_WHITE_6: 1945295026876952795
+      SOUTH_BORDER_WHITE_7: -8231839240552846303
+      SOUTH_BORDER_WHITE_8: -2481307813160075881
+      SOUTH_BORDER_WHITE_9: 8732679007999993343
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

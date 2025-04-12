@@ -1,0 +1,442 @@
+fileFormatVersion: 2
+guid: 1212875f239c04f4ba311616aba4b753
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3688250859735106007
+    second: EASTERN_EUROPE_BORDER_WHITE_0
+  - first:
+      213: -3420443664011863671
+    second: EASTERN_EUROPE_BORDER_WHITE_1
+  - first:
+      213: -4815495410399212210
+    second: EASTERN_EUROPE_BORDER_WHITE_2
+  - first:
+      213: -3012350195764449563
+    second: EASTERN_EUROPE_BORDER_WHITE_3
+  - first:
+      213: 4150898941128361640
+    second: EASTERN_EUROPE_BORDER_WHITE_4
+  - first:
+      213: 6005343062454921159
+    second: EASTERN_EUROPE_BORDER_WHITE_5
+  - first:
+      213: -1934576667671661602
+    second: EASTERN_EUROPE_BORDER_WHITE_6
+  - first:
+      213: -732663098791533716
+    second: EASTERN_EUROPE_BORDER_WHITE_7
+  - first:
+      213: 3776805926448233930
+    second: EASTERN_EUROPE_BORDER_WHITE_8
+  - first:
+      213: -3270297440280138208
+    second: EASTERN_EUROPE_BORDER_WHITE_9
+  - first:
+      213: 369370445439714151
+    second: EASTERN_EUROPE_BORDER_WHITE_10
+  - first:
+      213: -3267103160690669890
+    second: EASTERN_EUROPE_BORDER_WHITE_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_WHITE_0
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 252
+        width: 65
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d14a01ad9c4f2330800000000000000
+      internalID: 3688250859735106007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_WHITE_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 278
+        width: 37
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98956502c942880d0800000000000000
+      internalID: -3420443664011863671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_WHITE_2
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 160
+        width: 88
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4d81a5107ceb2db0800000000000000
+      internalID: -4815495410399212210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_WHITE_3
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 225
+        width: 60
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eea162057bf136d0800000000000000
+      internalID: -3012350195764449563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_WHITE_4
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 194
+        width: 79
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a640843894fa9930800000000000000
+      internalID: 4150898941128361640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_WHITE_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 149
+        width: 57
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c76bf792b3475350800000000000000
+      internalID: 6005343062454921159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_WHITE_6
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 100
+        width: 208
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed3fba445c00725e0800000000000000
+      internalID: -1934576667671661602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_WHITE_7
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 72
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c636e702bce05d5f0800000000000000
+      internalID: -732663098791533716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_WHITE_8
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 71
+        width: 61
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acd798fcaf8e96430800000000000000
+      internalID: 3776805926448233930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_WHITE_9
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02eab3a0ec19d92d0800000000000000
+      internalID: -3270297440280138208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_WHITE_10
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 40
+        width: 17
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76346fe8674402500800000000000000
+      internalID: 369370445439714151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EASTERN_EUROPE_BORDER_WHITE_11
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 0
+        width: 86
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb60a763cfae8a2d0800000000000000
+      internalID: -3267103160690669890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      EASTERN_EUROPE_BORDER_WHITE_0: 3688250859735106007
+      EASTERN_EUROPE_BORDER_WHITE_1: -3420443664011863671
+      EASTERN_EUROPE_BORDER_WHITE_10: 369370445439714151
+      EASTERN_EUROPE_BORDER_WHITE_11: -3267103160690669890
+      EASTERN_EUROPE_BORDER_WHITE_2: -4815495410399212210
+      EASTERN_EUROPE_BORDER_WHITE_3: -3012350195764449563
+      EASTERN_EUROPE_BORDER_WHITE_4: 4150898941128361640
+      EASTERN_EUROPE_BORDER_WHITE_5: 6005343062454921159
+      EASTERN_EUROPE_BORDER_WHITE_6: -1934576667671661602
+      EASTERN_EUROPE_BORDER_WHITE_7: -732663098791533716
+      EASTERN_EUROPE_BORDER_WHITE_8: 3776805926448233930
+      EASTERN_EUROPE_BORDER_WHITE_9: -3270297440280138208
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

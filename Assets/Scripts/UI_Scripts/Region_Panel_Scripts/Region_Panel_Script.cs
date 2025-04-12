@@ -55,9 +55,7 @@ public class Region_Panel_Script : MonoBehaviour {
 
     // TODO: Exit region panel when opening the research tree.
     public void ExitRegionPanel() {
-        // Disable the border
-        currentRegion.borderRef.SetActive(false);
-        // Disable the region panel
+        currentRegion.GetComponent<Region_Controller>().DeactivateBorder();
         this.gameObject.SetActive(false);
     }
 
