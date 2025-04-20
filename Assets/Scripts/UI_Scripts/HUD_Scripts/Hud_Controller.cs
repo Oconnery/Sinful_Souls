@@ -88,35 +88,35 @@ public class Hud_Controller : MonoBehaviour{
     }
     public void SetPrimaryResourceText() {
         //Need to round like the sins
-        if (playerController.PlayingAsDevil()) {
+        if (Player_Controller.PlayingAsDevil()) {
             primaryResourceText.text = Math.Floor(devilController.PrimaryResource).ToString();
-        } else if (playerController.PlayingAsGod()) {
+        } else if (Player_Controller.PlayingAsGod()) {
             throw new NotImplementedException("God faction not implemented."); // TODO
         } else { throw new System.Exception("The player isn't controlling the god or devil class."); }
     }
     private void SetSecondaryResourceText() {
-        if (playerController.PlayingAsDevil()) {
+        if (Player_Controller.PlayingAsDevil()) {
             secondaryResourceText.text = "Sins: " + Math.Floor(devilController.SecondaryResource) + " Million";
-        } else if (playerController.PlayingAsGod()) {
+        } else if (Player_Controller.PlayingAsGod()) {
             throw new NotImplementedException("God faction not implemented."); // TODO
         } else { throw new System.Exception("The player isn't controlling the god or devil class."); }
     }
 
     private void SetSecondaryResourceEfficencyText() {
-        if (playerController.PlayingAsDevil()) {
+        if (Player_Controller.PlayingAsDevil()) {
             secondaryResourceEfficencyText.text = (devilController.SecondaryResourceGenerationEfficency).ToString("F0");
-        } else if (playerController.PlayingAsGod()) {
+        } else if (Player_Controller.PlayingAsGod()) {
             throw new NotImplementedException("God faction not implemented."); // TODO
         }
     }
 
     public void SetBaseUnitCountText() {
-        Faction faction = playerController.playerControlledFaction;
+        Faction faction = Player_Controller.playerControlledFaction; // TODO:
         baseUnitCountText.text = ($"{devilController.AvailableAgents} / {devilController.AgentPool}");
     }
 
     public void SetSecondaryUnitCountText() {
-        Faction faction = playerController.playerControlledFaction;
+        Faction faction = Player_Controller.playerControlledFaction; // TODO:
         specialUnitCountText.text = ($"{devilController.AvailableSecondaryUnits} / {devilController.SecondaryUnitPool}");
     }
 

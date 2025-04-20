@@ -229,6 +229,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &11008319
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -733,6 +736,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!1 &38587108
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,6 +1072,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &42350405
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3584,6 +3593,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &276516355
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -4589,6 +4601,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!1 &324803819
 GameObject:
   m_ObjectHideFlags: 0
@@ -4786,6 +4801,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &334483315
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5807,7 +5825,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c10548789653248b51ee5506a3f24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerControlledFaction: {fileID: 899610356}
   hudController: {fileID: 903152512}
   regionPanelScript: {fileID: 1256603953}
 --- !u!114 &442966051
@@ -6456,6 +6473,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &486398689
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7298,6 +7318,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &535025628
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7577,6 +7600,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &543067273
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -9768,6 +9794,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &695003807
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10594,6 +10623,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &778686149
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -10926,6 +10958,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &805050003
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11890,6 +11925,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &929405141
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -13513,6 +13551,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &1037529061
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -14948,6 +14989,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &1104128528
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -15630,6 +15674,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!1 &1165652102
 GameObject:
   m_ObjectHideFlags: 0
@@ -16638,13 +16685,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameController: {fileID: 442966043}
+  unitUI: {fileID: 1767724071}
   devilController: {fileID: 899610356}
   playerController: {fileID: 442966046}
   unitButtons:
   - {fileID: 1595447641}
   - {fileID: 1852769508}
-  - {fileID: 1047353987}
-  - {fileID: 1187332424}
   regionNameText: {fileID: 931824803}
   evilPopulationText: {fileID: 582886513}
   goodPopulationText: {fileID: 1003100602}
@@ -16653,12 +16699,7 @@ MonoBehaviour:
   localEnemyAgentText: {fileID: 1068815455}
   localPlayerSecondaryUnitText: {fileID: 1321431971}
   secondayResourceEfficencyText: {fileID: 1733001536}
-  demonDotPrefab: {fileID: 1253765987344338, guid: ccc69211ebaf7804b8f23d998bde0785,
-    type: 3}
-  bansheeDotPrefab: {fileID: 1334501732368336, guid: a070ae2bf0d7a2a49ae5ddc1582db5a5,
-    type: 3}
   populationBar: {fileID: 257159222}
-  unitsContainerRef: {fileID: 1767724069}
 --- !u!1 &1270318754
 GameObject:
   m_ObjectHideFlags: 0
@@ -19632,6 +19673,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!1 &1525255788
 GameObject:
   m_ObjectHideFlags: 0
@@ -20358,7 +20402,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1595447642
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20376,7 +20420,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -384.2, y: 3.9}
+  m_AnchoredPosition: {x: -384.2, y: -9.799982}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1595447643
@@ -20761,6 +20805,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &1634659824
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -21493,6 +21540,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &1654806600
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -22411,6 +22461,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!1 &1663219326
 GameObject:
   m_ObjectHideFlags: 0
@@ -22969,6 +23022,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &1717114684
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -23729,6 +23785,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1767724070}
+  - component: {fileID: 1767724071}
   m_Layer: 0
   m_Name: UnitsContainer
   m_TagString: Untagged
@@ -23751,6 +23808,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1745324914}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1767724071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1767724069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 834291d70729cd84d9b9d8566514ff36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  evilAgentDotPrefab: {fileID: 1253765987344338, guid: ccc69211ebaf7804b8f23d998bde0785,
+    type: 3}
+  evilSecondaryUnitPrefab: {fileID: 1334501732368336, guid: a070ae2bf0d7a2a49ae5ddc1582db5a5,
+    type: 3}
+  goodAgentDotPrefab: {fileID: 0}
+  goodSecondaryUnitPrefab: {fileID: 0}
 --- !u!1 &1769919834
 GameObject:
   m_ObjectHideFlags: 0
@@ -24378,6 +24453,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &1811110403
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -24881,6 +24959,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!1 &1829631912
 GameObject:
   m_ObjectHideFlags: 0
@@ -25123,7 +25204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1852769509
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25141,7 +25222,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -247, y: 3.8999825}
+  m_AnchoredPosition: {x: -247, y: -9.8}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1852769510
@@ -25920,6 +26001,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &1916843838
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -26743,6 +26827,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &1961780773
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -27919,6 +28006,9 @@ MonoBehaviour:
   deathTextBuilder: {fileID: 831901573}
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
+  hudController: {fileID: 903152512}
+  regionPanelScript: {fileID: 1256603953}
+  unitUI: {fileID: 1767724071}
 --- !u!60 &2031324510
 PolygonCollider2D:
   m_ObjectHideFlags: 0

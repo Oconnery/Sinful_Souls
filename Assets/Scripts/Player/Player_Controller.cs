@@ -3,25 +3,28 @@ using UnityEngine.EventSystems;
 
 // Contains the player mouse/touch input. For Keyboard Controls see Keyboard_Controls class.
 public class Player_Controller : MonoBehaviour {
-
-    public Faction playerControlledFaction;
+    // TODO: MVC pattern for player controller? 
+    public static Faction playerControlledFaction; // TODO: This should not be here. It should ideally be on it's own thing, and preferably static.
     
     public Hud_Controller hudController;
-    public Region_Panel_Script regionPanelScript;
+    public Region_Panel_Script regionPanelScript; // TODO: PlayerController and RegionPanelScript should not both reference eacother as it is too tightly coupled.
 
     private GameObject lastRegionHit;
     private Collider2D lastRegionHitCollider;
+
+    static Player_Controller(){
+        playerControlledFaction = new Devil_Controller();
+    }
 
     public GameObject GetRegionHit(){
         return lastRegionHit;
     }
 
-    // TODO: Test the below.
-    public bool PlayingAsDevil() {
+    public static bool PlayingAsDevil() {
         return playerControlledFaction.GetType() == typeof(Devil_Controller);
     }
 
-    public bool PlayingAsGod() {
+    public static bool PlayingAsGod() {
         return playerControlledFaction.GetType() == typeof(God_Controller);
     }
 
@@ -114,7 +117,6 @@ public class Player_Controller : MonoBehaviour {
     public Vector3 GetRegionRandomLocale() {
         return GetRegionRandomLocale(lastRegionHitCollider);
     }
-
 
     // TODO: Should not be on the player controller.
     public Vector3 GetRegionRandomLocale(Collider2D collider){

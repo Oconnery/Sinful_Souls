@@ -96,6 +96,14 @@ public class Faction : MonoBehaviour { // TODO: Should use singleton pattern too
         }
     }
 
+    public void ReturnLocalAgentsToGlobalPool(uint agents) {
+        AvailableAgents += agents;
+    }
+
+    public void EradicateAgents(uint agents){
+        AgentPool -= agents;
+    }
+
     public void SpendSecondaryResource(double resourceToSpend) {
         if (resourceToSpend > SecondaryResource) {
             throw new System.ArgumentException($"The number of sins ({SecondaryResource}) is less than the amount passed from the Devil_Research_Information class object ({resourceToSpend}).");

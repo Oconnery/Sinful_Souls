@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Region_Controller : MonoBehaviour { 
     public enum Alignment{
         GOOD,
         NEUTRAL,
-        EVIL
+        EVIL,
+        NONE
     }
 
     [SerializeField] private GameObject borderRef;
@@ -46,6 +48,14 @@ public class Region_Controller : MonoBehaviour {
 
     public Devil_Controller devilController;
     public God_Controller godController;
+
+    [SerializeField] private Hud_Controller hudController;
+    [SerializeField] private Region_Panel_Script regionPanelScript;
+    [SerializeField] private Unit_UI unitUI;
+
+
+    // The alignment of the faction that has locked this region (if it is locked)
+    private Alignment lockedAlignment = Alignment.NONE;
 
     void Awake() {
         Clock.OnDayPassedNotifyRegions += DailyCall;
@@ -104,6 +114,10 @@ public class Region_Controller : MonoBehaviour {
         localEvilAgents = 0;
         localGoodSecondaryUnits = 0;
         localEvilSecondaryUnits = 0;
+    }
+
+    public bool isLocked(){
+        return !lockedAlignment.Equals(Alignment.NONE);
     }
 
     #region getters
@@ -247,10 +261,17 @@ public class Region_Controller : MonoBehaviour {
     /// <returns></returns>
     public void DailyCall(){
         PerformDailyBirthsAndDeaths();
+
         // TODO: Below two methods should effectively be called at the same time. I.e. Update Good Pop should be using the temp pop values from before UpdatePopEvil() ...
-        UpdatePopEvil();
-        UpdatePopGood();
-        ChangeColour();
+        if (lockedAlignment == Alignment.NONE) {
+            SetGoodConversionRate();
+            SetEvilConversionRate();
+            UpdatePopulation();
+            // TODO: Put below into a delegate in a class called 'region renderer'.
+            ChangeColour();
+            // If the local population shares the same alignment, lock this region into that alignment. 
+            LockRegionIfPopAlignmentIsHomogenous();
+        }
     }
 
     private void PerformDailyBirthsAndDeaths() {
@@ -259,81 +280,9 @@ public class Region_Controller : MonoBehaviour {
         PopulationFactionBirthsAndDeaths(population.evilPopulation);
     }
 
-    /// <summary>
-    /// Updates the local evil population based off of the number of demons and inquisitors in the local area.
-    /// </summary> // TODO: This and the UpdatePopGood methods should be the same method.
-    private void UpdatePopEvil() {
-        SetEvilConversionRate();
-        // NW: Each demon increases evilPop by 10,000 each day.
-        // This is done by converting 8000 neutral people to evil, and 2000 good people to evil.
-        ulong neutralNumberToConvert = (uint)(8000 * conversionRateToEvil);
-        ulong goodNumberToConvert = (uint)(2000 * conversionRateToEvil);
-
-        for (int i = 0; i < localEvilAgents; i++) {
-            ulong evilPopulation = population.evilPopulation.GetSize();
-            ulong neutralPopulation = population.neutralPopulation.GetSize();
-            ulong goodPopulation = population.goodPopulation.GetSize();
-
-            if (evilPopulation < population.GetTotalPopulation()) {
-                // Convert neutral people to evil.
-                if (neutralPopulation > neutralNumberToConvert) {
-                    population.Convert(neutralNumberToConvert, Alignment.NEUTRAL, Alignment.EVIL);
-                } else {
-                    // Convert as many neutral people as there are.
-                    population.Convert(neutralPopulation, Alignment.NEUTRAL, Alignment.EVIL);
-                }
-
-                // Convert good people to evil.
-                if (goodPopulation > goodNumberToConvert) {
-                    population.Convert(goodNumberToConvert, Alignment.GOOD, Alignment.EVIL);
-                } else if (population.goodPopulation.GetSize() > 0) {
-                    population.Convert(goodPopulation, Alignment.GOOD, Alignment.EVIL);
-                }
-            } else {
-                print("Demons in " + this.name + " aren't converting people");
-            }
-            //after make variables for effictiveness so the banshee and inquisitor can have effects 
-        }
-    }
-
-    private void UpdatePopGood(){
-        SetGoodConversionRate();
-
-        // NW: Each angel increases goodPop by 10,000 each day.
-        // This is done by converting 8000 neutral people to good, and 2000 evil people to good.
-        ulong neutralNumberToConvert = (uint)(8000 * conversionRateToGood);
-        ulong evilNumberToConvert = (uint)(2000 * conversionRateToGood);
-
-        for (int i = 0; i < localGoodAgents; i++) {
-            ulong evilPopulation = population.evilPopulation.GetSize();
-            ulong neutralPopulation = population.neutralPopulation.GetSize();
-            ulong goodPopulation = population.goodPopulation.GetSize();
-
-            if (goodPopulation < population.GetTotalPopulation()) {
-                // Convert neutral people to good.
-                if (neutralPopulation > neutralNumberToConvert) {
-                    population.Convert(neutralNumberToConvert, Alignment.NEUTRAL, Alignment.GOOD);
-                } else {
-                    // Convert as many neutral people as there are.
-                    population.Convert(neutralPopulation, Alignment.NEUTRAL, Alignment.GOOD);
-                }
-
-                // Convert evil people to good.
-                if (evilPopulation > evilNumberToConvert) {
-                    population.Convert(evilNumberToConvert, Alignment.EVIL, Alignment.GOOD);
-                } else if (population.evilPopulation.GetSize() > 0) {
-                    population.Convert(evilPopulation, Alignment.EVIL, Alignment.GOOD);
-                }
-            }
-            else {
-                print("Angels in " + this.name + " aren't converting people");
-            }
-        }
-    }
-
-    private void PopulationFactionBirthsAndDeaths(PopulationFaction populationFaction){
+    private void PopulationFactionBirthsAndDeaths(PopulationFaction populationFaction) {
         double naturalCausesDeathsD = populationFaction.GetSize() * deathRate;
-        ulong naturalCausesDeaths = (ulong) naturalCausesDeathsD;
+        ulong naturalCausesDeaths = (ulong)naturalCausesDeathsD;
 
         double dBirths = populationFaction.GetSize() * birthRate;
         ulong births = (ulong)dBirths;
@@ -342,6 +291,137 @@ public class Region_Controller : MonoBehaviour {
         KillPeople(populationFaction.alignment, naturalCausesDeaths);
         // Birth people according to the birth rate. // TODO: THESE PEOPLE SHOULD BE ASSIGNED AS CLOSE TO THE SAME FRACTION OF THE CURRENT POP AS IS EVIL/NEUTRAL/GOOD as is possible.
         populationFaction.IncreaseSize(births);
+    }
+
+    private void UpdatePopulation() {
+        ulong evilPopulation = population.evilPopulation.GetSize();
+        ulong neutralPopulation = population.neutralPopulation.GetSize();
+        ulong goodPopulation = population.goodPopulation.GetSize();
+
+        Dictionary<Alignment, ulong> popUpdatesToEvil = CalculatePopUpdatesToEvil(neutralPopulation);
+        Dictionary<Alignment, ulong> popUpdatesToGood = CalculatePopUpdatesToGood(neutralPopulation);
+
+        // GOOD/EVIL UPDATE
+        // Whichever is larger goes second
+        if (popUpdatesToEvil[Alignment.GOOD] > popUpdatesToGood[Alignment.EVIL]) {
+            // Find difference and just update good pop to evil.
+            ulong numberToConvert = popUpdatesToEvil[Alignment.GOOD] - popUpdatesToGood[Alignment.EVIL];
+            // TODO: the check vs max population should be done here. NOT below in the other methods.
+            if (numberToConvert > goodPopulation){
+                numberToConvert = goodPopulation;
+            }
+            population.Convert(numberToConvert, Alignment.GOOD, Alignment.EVIL);
+        } else if (popUpdatesToEvil[Alignment.GOOD] < popUpdatesToGood[Alignment.EVIL]) {
+            // Find difference and just update evil pop to good.
+            ulong numberToConvert = popUpdatesToGood[Alignment.EVIL] - popUpdatesToEvil[Alignment.GOOD];
+            if (numberToConvert > evilPopulation){
+                numberToConvert = evilPopulation;
+            }
+
+            population.Convert(numberToConvert, Alignment.EVIL, Alignment.GOOD);
+        }
+
+        // NEUTRAL UPDATE
+        if (neutralPopulation != 0) {
+            if ((popUpdatesToEvil[Alignment.NEUTRAL] + popUpdatesToGood[Alignment.NEUTRAL]) < neutralPopulation) {
+                population.Convert(popUpdatesToEvil[Alignment.NEUTRAL], Alignment.NEUTRAL, Alignment.EVIL);
+                population.Convert(popUpdatesToGood[Alignment.NEUTRAL], Alignment.NEUTRAL, Alignment.GOOD);
+            } else if (popUpdatesToEvil[Alignment.NEUTRAL] > popUpdatesToGood[Alignment.NEUTRAL]) {
+                population.Convert(popUpdatesToGood[Alignment.NEUTRAL], Alignment.NEUTRAL, Alignment.GOOD);
+                population.Convert(population.neutralPopulation.GetSize(), Alignment.NEUTRAL, Alignment.EVIL);
+            } else {
+                population.Convert(popUpdatesToEvil[Alignment.NEUTRAL], Alignment.NEUTRAL, Alignment.EVIL);
+                population.Convert(population.neutralPopulation.GetSize(), Alignment.NEUTRAL, Alignment.GOOD);
+            }
+        }
+    }
+
+    private Dictionary<Alignment, ulong> CalculatePopUpdatesToEvil(ulong neutralPopulation) {
+        // NW: Each evil agent increases evilPop by 10,000 each day.
+        // This is done by converting 8000 neutral people to evil, and 2000 good people to evil.
+        // TODO: create evilAgentEffectiveness and goodAgentEffectiveness variables. Use them in place of 8000 and 2000 below.
+        ulong neutralConversionGoal = (uint)(8000 * localEvilAgents * conversionRateToEvil);
+        ulong goodConversionGoal = (uint)(2000 * localEvilAgents * conversionRateToEvil);
+
+        Dictionary<Alignment, ulong> populationChanges = new Dictionary<Alignment, ulong>();
+
+        AddPopulationUpdateNeutralMapping(populationChanges, neutralPopulation, neutralConversionGoal);
+        populationChanges.Add(Alignment.GOOD, goodConversionGoal);
+        return populationChanges;
+    }
+
+    private Dictionary<Alignment, ulong> CalculatePopUpdatesToGood(ulong neutralPopulation) {
+        ulong neutralConversionGoal = (uint)(8000 * localGoodAgents * conversionRateToGood);
+        ulong evilConversionGoal = (uint)(2000 * localGoodAgents * conversionRateToGood);
+
+        Dictionary<Alignment, ulong> populationChanges = new Dictionary<Alignment, ulong>();
+
+        AddPopulationUpdateNeutralMapping(populationChanges, neutralPopulation, neutralConversionGoal);
+
+        populationChanges.Add(Alignment.EVIL, evilConversionGoal);
+        return populationChanges;
+    }
+
+    private Dictionary<Alignment, ulong> AddPopulationUpdateNeutralMapping(Dictionary<Alignment, ulong> populationChanges, ulong neutralPopulation, ulong neutralConversionGoal) {
+        if (neutralPopulation > neutralConversionGoal || neutralConversionGoal == 0) {
+            populationChanges.Add(Alignment.NEUTRAL, neutralConversionGoal);
+        } else {
+            populationChanges.Add(Alignment.NEUTRAL, neutralPopulation);
+        }
+        return populationChanges;
+    }
+
+    // If a factions population = 100%, return that alignment
+    private bool LockRegionIfPopAlignmentIsHomogenous() {
+        ulong totalPop = GetTotalPop();
+        ulong evilPop = GetEvilPop();
+        ulong goodPop = GetGoodPop();
+
+        if (evilPop == totalPop) {
+            LockRegion(Alignment.EVIL);
+            return true;
+        } else if (goodPop == totalPop) {
+            LockRegion(Alignment.GOOD);
+            return true;
+        } else return false;
+    }
+
+    private void LockRegion(Alignment alignment) {
+        lockedAlignment = alignment;
+        ReturnAgents(alignment);
+        EradicateOpposingAgents(alignment);
+        // TODO: Remove this region from certain minor events?
+        hudController.SetBaseUnitCountText();
+    }
+
+    private void ReturnAgents(Alignment alignment) {
+        if (alignment == Alignment.GOOD) {
+            ushort temp = localGoodAgents;
+            localGoodAgents = 0;
+            godController.ReturnLocalAgentsToGlobalPool(temp);
+            if (Player_Controller.PlayingAsGod()) {
+                unitUI.RemoveAllAgents(devilController, this.gameObject.name, temp);
+            }
+        } else if (alignment == Alignment.EVIL) {
+            ushort temp = localEvilAgents;
+            localEvilAgents = 0;
+            devilController.ReturnLocalAgentsToGlobalPool(temp);
+            if (Player_Controller.PlayingAsDevil()) {
+                unitUI.RemoveAllAgents(devilController, this.gameObject.name, temp);
+            }
+        }
+    }
+
+    private void EradicateOpposingAgents(Alignment alignment) {
+        if (alignment == Alignment.GOOD) {
+            ushort temp = localGoodAgents;
+            localGoodAgents = 0;
+            devilController.EradicateAgents(temp);
+        } else if (alignment == Alignment.EVIL) {
+            ushort temp = localEvilAgents;
+            localEvilAgents = 0;
+            godController.EradicateAgents(temp);
+        }
     }
 
     /// <summary>
@@ -438,8 +518,10 @@ public class Region_Controller : MonoBehaviour {
         }
 
         public void Convert(ulong numberToConvert, Alignment from, Alignment to) {
-            GetPopulationFactionByAlignment(from).ReduceWithoutKilling(numberToConvert);
-            GetPopulationFactionByAlignment(to).IncreaseSize(numberToConvert);
+            if (numberToConvert > 0) {
+                GetPopulationFactionByAlignment(from).ReduceWithoutKilling(numberToConvert);
+                GetPopulationFactionByAlignment(to).IncreaseSize(numberToConvert);
+            }
         }
     }
 

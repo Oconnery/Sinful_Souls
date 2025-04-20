@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -7,6 +6,7 @@ public class Region_Panel_Script : MonoBehaviour {
     public GameObject gameController; // TODO: Should not be using GetComponent throughout this class. Should instead have public references to Devil Controller etc. here.
 
     // TODO: Make texts abstract from the different factions.
+    [SerializeField] private Unit_UI unitUI;
     [SerializeField] private Devil_Controller devilController;
     [SerializeField] private Player_Controller playerController;
     [SerializeField] private GameObject[] unitButtons;
@@ -18,15 +18,9 @@ public class Region_Panel_Script : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI localEnemyAgentText;
     [SerializeField] private TextMeshProUGUI localPlayerSecondaryUnitText;
     [SerializeField] private TextMeshProUGUI secondayResourceEfficencyText;
-    [SerializeField] private GameObject demonDotPrefab;
-    [SerializeField] private GameObject bansheeDotPrefab;
-    // TODO: Prefabs for God faction.
     [SerializeField] private Population_Bar populationBar;
-    [SerializeField] private GameObject unitsContainerRef;
-
+  
     private Region_Controller currentRegion;
-    private Dictionary<string, GameObject> playerAgentsByRegion = new Dictionary<string, GameObject>();
-    private Dictionary<string, GameObject> playerSecondaryUnitsByRegion = new Dictionary<string, GameObject>();
 
     private void Start() {
         UpdateToWorldRegion();
@@ -72,8 +66,12 @@ public class Region_Panel_Script : MonoBehaviour {
             DisableUnitButtons();
             UpdateToWorldRegion();
         } else {
-            EnableUnitButtons();
             currentRegion = region.GetComponent<Region_Controller>();
+            if (currentRegion.isLocked()) {
+                DisableUnitButtons();
+            } else {
+                EnableUnitButtons();
+            }
             regionNameText.text = region.name + ", " + region.transform.parent.name;
             evilPopulationText.text = "Evil: " + currentRegion.GetEvilPop().ToString("0");
             goodPopulationText.text = "Good: " + currentRegion.GetGoodPop().ToString("0");
@@ -88,17 +86,21 @@ public class Region_Panel_Script : MonoBehaviour {
 
     private void EnableUnitButtons() {
         foreach (GameObject button in unitButtons) {
-            button.SetActive(true);
+            if (!button.activeSelf) {
+                button.SetActive(true);
+            }
         }
     }
 
     private void DisableUnitButtons() {
         foreach (GameObject button in unitButtons) {
-            button.SetActive(false);
+            if (button.activeSelf) {
+                button.SetActive(false);
+            }
         }
     }
 
-    // TODO: Get the playerController.PlayerFaction. If statement for God faction (when playable)
+    // TODO: Below methods should have no reference to devil controller or god controller, or Evil/Good agents. It should be agnostic.
     public void AddAgent() {
         if (devilController.AvailableAgents > 0) {
             currentRegion.IncrementLocalEvilAgents();
@@ -108,53 +110,41 @@ public class Region_Panel_Script : MonoBehaviour {
             localPlayerAgentText.text = localEvilAgents;
 
             //add agent gameobject
-            Vector3 dotLocation = gameController.GetComponent<Player_Controller>().GetRegionRandomLocale(); // TODO: Could this be a static method in a utility class?
-            GameObject demonDot = Instantiate(demonDotPrefab, dotLocation, Quaternion.identity, unitsContainerRef.transform);
-            demonDot.name = "demon_" + currentRegion.name + "_" + localEvilAgents;
-            playerAgentsByRegion.Add((currentRegion.name + localEvilAgents), demonDot);
+            Vector3 desiredAgentLocation = gameController.GetComponent<Player_Controller>().GetRegionRandomLocale(); // TODO: Could this be a static method in a utility class?
+            unitUI.AddAgent(Player_Controller.playerControlledFaction ,currentRegion.name, localEvilAgents, desiredAgentLocation);
         }
     }
 
-    // TODO: Get the playerController.PlayerFaction. If statement for God faction (when playable)
     public void RemoveAgent() {
-        if (currentRegion.GetLocalEvilAgents() > 0) {
+        ushort localEvilAgents = currentRegion.GetLocalEvilAgents();
+        if (localEvilAgents > 0) {
             // Destroy demon game object
-            string demonGOName = currentRegion.name + currentRegion.GetLocalEvilAgents().ToString();
-            GameObject demonPrefabInstance = playerAgentsByRegion[demonGOName];
-            playerAgentsByRegion.Remove(demonGOName);
-            Destroy(demonPrefabInstance);
-
+            unitUI.RemoveAgent(Player_Controller.playerControlledFaction, currentRegion.name, localEvilAgents);
             currentRegion.DecrementLocalEvilAgents();
             devilController.AvailableAgents++;
             localPlayerAgentText.text = currentRegion.GetLocalEvilAgents().ToString();
         }
     }
 
-    // TODO: Get the playerController.PlayerFaction. If statement for God faction (when playable)
     public void AddSecondaryUnit() {
         if (devilController.AvailableSecondaryUnits > 0) {
             currentRegion.IncrementLocalEvilSecondaryUnits();
             devilController.AvailableSecondaryUnits--;
 
-            string localEvilSecondaryUnits = currentRegion.GetLocalEvilSecondaryUnits().ToString();
-            localPlayerSecondaryUnitText.text = localEvilSecondaryUnits;
+            ushort localEvilSecondaryUnits = currentRegion.GetLocalEvilSecondaryUnits();
+            localPlayerSecondaryUnitText.text = localEvilSecondaryUnits.ToString();
 
-            //add banshee gameobject
-            Vector3 dotLocation = gameController.GetComponent<Player_Controller>().GetRegionRandomLocale(); // TODO: Could this be a static method in a utility class?
-            GameObject bansheeDot = Instantiate(bansheeDotPrefab, dotLocation, Quaternion.identity, unitsContainerRef.transform);
-            bansheeDot.name = "banshee_" + currentRegion.name + "_" + localEvilSecondaryUnits;
-            playerSecondaryUnitsByRegion.Add((currentRegion.name + localEvilSecondaryUnits), bansheeDot);
+            //add unit gameobject
+            Vector3 desiredUnitLocation = gameController.GetComponent<Player_Controller>().GetRegionRandomLocale(); // TODO: Could this be a static method in a utility class?
+            unitUI.AddSecondaryUnit(Player_Controller.playerControlledFaction, currentRegion.name, localEvilSecondaryUnits, desiredUnitLocation);
         }
     }
 
-    // TODO: Get the playerController.PlayerFaction. If statement for God faction (when playable)
     public void RemoveSecondaryUnit() {
+        ushort localEvilSecondaryUnits = currentRegion.GetLocalEvilSecondaryUnits();
         if (currentRegion.GetLocalEvilSecondaryUnits() > 0) {
-            // Destroy banshee game object
-            string bansheeGOName = currentRegion.name + currentRegion.GetLocalEvilSecondaryUnits().ToString();
-            GameObject bansheePrefabInstance = playerSecondaryUnitsByRegion[bansheeGOName];
-            playerSecondaryUnitsByRegion.Remove(bansheeGOName);
-            Destroy(bansheePrefabInstance);
+            // Destroy unit game object
+            unitUI.RemoveSecondaryUnit(Player_Controller.playerControlledFaction, currentRegion.name, localEvilSecondaryUnits);
 
             currentRegion.DecrementLocalEvilSecondaryUnits();
             devilController.AvailableSecondaryUnits++;

@@ -10,7 +10,7 @@ public class AI_Controller : MonoBehaviour {
     void Start(){
         Clock.OnDayPassedNotifyAI += DailyActions;
 
-        if (aiControlledFaction == playerController.playerControlledFaction){
+        if (aiControlledFaction == Player_Controller.playerControlledFaction){
             throw new NotImplementedException("Player and AI are playing as the same faction. Not currently allowed.");
         }
     }
