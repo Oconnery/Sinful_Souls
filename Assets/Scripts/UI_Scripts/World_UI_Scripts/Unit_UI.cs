@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.FilePathAttribute;
 
 public class Unit_UI : MonoBehaviour{
     // At the moment the player can only see their own units, but in the future it's possible enemy units could be displayed on the screen. So I should remove "player" link

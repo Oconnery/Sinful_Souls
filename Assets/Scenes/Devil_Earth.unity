@@ -6725,7 +6725,7 @@ MonoBehaviour:
   devilController: {fileID: 899610356}
   godController: {fileID: 544095961}
   regionMasterController: {fileID: 1745324915}
-  randomEventChance: 0.09
+  randomEventChance: 0.07
 --- !u!4 &490513056
 Transform:
   m_ObjectHideFlags: 0
